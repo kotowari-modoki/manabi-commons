@@ -6,7 +6,7 @@ import starlight from "@astrojs/starlight";
 
 export default defineConfig({
   site: "https://kotowari-modoki.github.io/",
-  base: "manabi-commons",
+  base: "/manabi-commons",
   integrations: [
     starlight({
       title: "まなびコモンズ",
@@ -31,22 +31,6 @@ export default defineConfig({
         {
           label: "算数・数学",
           autogenerate: { directory: "math" },
-        },
-        {
-          label: "理科",
-          autogenerate: { directory: "science" },
-        },
-        {
-          label: "英語",
-          autogenerate: { directory: "english" },
-        },
-        {
-          label: "社会",
-          autogenerate: { directory: "social" },
-        },
-        {
-          label: "国語",
-          autogenerate: { directory: "japanese" },
         },
         {
           label: "このサイトについて",
