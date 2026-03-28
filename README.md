@@ -2,6 +2,73 @@
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
+## プロジェクト概要
+
+小学3年生〜高校3年生を対象とした、無料・オープンな日本語教科書サイト。
+Starlight (Astro) で構築し、GitHub Pages で公開する。
+ライセンス: CC BY 4.0
+
+## ファイル構成
+
+```
+src/content/docs/
+├── index.mdx              # トップページ
+├── math/                  # 算数・数学
+│   ├── index.md
+│   └── grade5/
+│       └── fractions.md
+├── science/               # 理科
+├── english/               # 英語
+├── social/                # 社会
+└── japanese/              # 国語
+```
+
+## コンテンツ追加ルール
+
+### frontmatter 必須フィールド
+
+```yaml
+---
+title: ページタイトル（子供が読んでわかる言葉で）
+description: 1〜2文の説明
+sidebar:
+  order: 数字（章内の順序）
+---
+```
+
+### 文体ルール
+
+- 対象学年を冒頭に明記（例：「小学5年生向け」）
+- 漢字にはルビを振る（MDXコンポーネント `<Ruby>` を使う）
+- 一文を短く。60字以内を目安
+- 「です・ます」調
+- 難しい概念は必ず具体例を先に出す
+
+### 禁止事項
+
+- 著作権のある図版・文章の転載
+- 特定の教科書・出版社への言及
+- 政治的・宗教的に偏った内容
+
+## よく使うコマンド
+
+```bash
+npm run dev      # ローカル確認
+npm run build    # ビルド
+npm run preview  # ビルド確認
+```
+
+## Codexへの典型的な指示パターン
+
+```
+「src/content/docs/math/grade5/fractions.md を作成して。
+小学5年生向けに分数の足し算を説明する章。
+frontmatterを含め、Starlightの形式で。
+具体例はピザを使って。」
+```
+
+
+
 ```
 pnpm create astro@latest -- --template starlight
 ```
