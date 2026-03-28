@@ -1,40 +1,36 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: まなびコモンズ
+description: 小学生から高校生まで使える、無料で開かれた学習サイトです。
 template: splash # Remove or comment out this line to display the site sidebar on this page.
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: 子どもたちが安心して学べる、ひらかれた教材をそろえていきます。
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: 利用ライセンスを見る
+      link: /about/license/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
+    - text: 使い方を確認する
+      link: /about/license/
+      icon: right-arrow
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## このサイトでできること
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="教材を使う" icon="open-book">
+		学校でも家でも、必要に応じて印刷や配布をして活用できます。
 	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
+	<Card title="無料で使う" icon="document">
+		教材は CC BY 4.0 を前提に公開し、使い方をわかりやすく案内します。
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="学びを広げる" icon="pencil">
+		学校でも家でも、必要に応じて印刷や編集をして活用できます。
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	<Card title="利用ルールを確認する" icon="document">
+		使う前に [利用ライセンス](/about/license/) を読むと、必要な表示がすぐわかります。
 	</Card>
 </CardGrid>
