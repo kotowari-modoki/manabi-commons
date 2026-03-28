@@ -10,12 +10,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "まなびコモンズ",
-      description: "小学生・中学生のための無料教科書",
-      defaultLocale: "ja",
-      locales: {
-        ja: { label: "日本語", lang: "ja" },
-        en: { label: "English", lang: "en" },
-      },
+      description: "小中高生のための無料教科書",
       // logo: {
       //   src: "./public/logo.svg",
       // },
