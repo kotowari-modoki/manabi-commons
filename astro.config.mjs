@@ -1,3 +1,5 @@
+// ABOUTME: Astro と Starlight のサイト設定をまとめる設定ファイルです。
+// ABOUTME: サイドバーや編集リンクなど、公開サイト全体の基本動作を定義します。
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
@@ -45,6 +47,10 @@ export default defineConfig({
         {
           label: "国語",
           autogenerate: { directory: "japanese" },
+        },
+        {
+          label: "このサイトについて",
+          autogenerate: { directory: "about" },
         },
       ],
       // customCss: ["./src/styles/custom.css"],
