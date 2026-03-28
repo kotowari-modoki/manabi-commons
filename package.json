@@ -2,8 +2,9 @@
   "name": "",
   "type": "module",
   "version": "0.0.1",
-  "description":	"小中高生のための無料教科書",
-  "license":	"CC-BY-4.0"
+  "description": "小中高生のための無料教科書",
+  "license": "CC-BY-4.0",
+  "packageManager": "pnpm@9.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
