@@ -33,6 +33,14 @@ export default defineConfig({
           autogenerate: { directory: "math" },
         },
         {
+          label: "ガイド",
+          autogenerate: { directory: "guides" },
+        },
+        {
+          label: "リファレンス",
+          autogenerate: { directory: "reference" },
+        },
+        {
           label: "このサイトについて",
           autogenerate: { directory: "about" },
         },
