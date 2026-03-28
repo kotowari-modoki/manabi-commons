@@ -1,19 +1,16 @@
+// ABOUTME: Configures the Astro/Starlight site metadata, routing, and sidebar.
+// ABOUTME: Keeps deployment-specific URL settings in one place for the docs site.
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
 export default defineConfig({
   site: "https://kotowari-modoki.github.io/",
-  base: "manabi-commons",
+  base: "/manabi-commons",
   integrations: [
     starlight({
       title: "まなびコモンズ",
       description: "小学生・中学生のための無料教科書",
-      defaultLocale: "ja",
-      locales: {
-        ja: { label: "日本語", lang: "ja" },
-        en: { label: "English", lang: "en" },
-      },
       // logo: {
       //   src: "./public/logo.svg",
       // },
