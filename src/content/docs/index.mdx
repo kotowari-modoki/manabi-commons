@@ -7,11 +7,11 @@ hero:
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: まずはガイドを見る
-      link: guides/example/
+    - text: 算数を学ぶ
+      link: math/elementary-math-overview/
       icon: right-arrow
-    - text: 参考ページを見る
-      link: reference/example/
+    - text: 国語を学ぶ
+      link: japanese/
       icon: right-arrow
 ---
 
@@ -23,11 +23,20 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 気になる項目をそのまま選んでください。
 
 <CardGrid stagger>
-	<Card title="まず読む" icon="open-book">
-		学び方の流れをつかむなら [ガイド](guides/example/) から始められます。
+	<Card title="算数" icon="open-book">
+		1年生から6年生までの算数の学びをやさしくまとめました。[小学生の算数で学ぶこと](math/elementary-math-overview/)
 	</Card>
-	<Card title="知りたいことを調べる" icon="document">
-		用語や考え方を確認したいときは [リファレンス](reference/example/) が便利です。
+	<Card title="国語" icon="document">
+		小学校の国語で大切にすることをわかりやすくまとめました。[小学校の国語で学ぶこと](japanese/)
+	</Card>
+	<Card title="理科" icon="document">
+		3年生から6年生までに学ぶ理科の内容をまとめました。[小学校理科で学ぶこと](science/)
+	</Card>
+	<Card title="社会" icon="document">
+		3年生から6年生までの社会科の学びをまとめました。[小学生の社会って何を学ぶの？](social/)
+	</Card>
+	<Card title="外国語" icon="document">
+		外国語活動と外国語で学ぶことをまとめました。[小学校の外国語って何を学ぶの？](english/elementary-foreign-language-summary/)
 	</Card>
 	<Card title="利用ルールを確認する" icon="document">
 		使う前に [利用ライセンス](about/license/) を読むと、必要な表示がすぐわかります。
@@ -36,6 +45,9 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 ## 使い方のヒント
 
-- 学び始めるときは [ガイド](guides/example/) へ
-- 必要な情報をすぐ確認したいときは [リファレンス](reference/example/) へ
+- 算数を学びたいときは [小学生の算数で学ぶこと](math/elementary-math-overview/) へ
+- 国語を学びたいときは [小学校の国語で学ぶこと](japanese/) へ
+- 理科を学びたいときは [小学校理科で学ぶこと](science/) へ
+- 社会を学びたいときは [小学生の社会って何を学ぶの？](social/) へ
+- 外国語を学びたいときは [小学校の外国語って何を学ぶの？](english/elementary-foreign-language-summary/) へ
 - 利用条件を確認したいときは [利用ライセンス](about/license/) へ
