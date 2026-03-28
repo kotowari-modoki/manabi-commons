@@ -1,116 +1,56 @@
-# Starlight Starter Kit: Basics
+# まなびコモンズ
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+小学生から高校生までを対象にした、無料で使える日本語教科書サイトです。
+Astro + Starlight で構築し、GitHub Pages で公開します。
 
-## プロジェクト概要
+## このリポジトリでできること
 
-小学3年生〜高校3年生を対象とした、無料・オープンな日本語教科書サイト。
-Starlight (Astro) で構築し、GitHub Pages で公開する。
-ライセンス: CC BY 4.0
+- `src/content/docs/` に教材ページを追加する
+- `astro.config.mjs` でサイドバーやサイト設定を調整する
+- `src/styles/custom.css` で見た目を整える
+- `public/` に画像や配布アセットを追加する
 
-## ファイル構成
+## 開発環境
 
-```
-src/content/docs/
-├── index.mdx              # トップページ
-├── math/                  # 算数・数学
-│   ├── index.md
-│   └── grade5/
-│       └── fractions.md
-├── science/               # 理科
-├── english/               # 英語
-├── social/                # 社会
-└── japanese/              # 国語
-```
+- Node.js 22 系以上を推奨
+- `pnpm`
 
-## コンテンツ追加ルール
+## はじめかた
 
-### frontmatter 必須フィールド
-
-```yaml
----
-title: ページタイトル（子供が読んでわかる言葉で）
-description: 1〜2文の説明
-sidebar:
-  order: 数字（章内の順序）
----
+```bash
+pnpm install
+pnpm dev
 ```
 
-### 文体ルール
-
-- 対象学年を冒頭に明記（例：「小学5年生向け」）
-- 漢字にはルビを振る（MDXコンポーネント `<Ruby>` を使う）
-- 一文を短く。60字以内を目安
-- 「です・ます」調
-- 難しい概念は必ず具体例を先に出す
-
-### 禁止事項
-
-- 著作権のある図版・文章の転載
-- 特定の教科書・出版社への言及
-- 政治的・宗教的に偏った内容
+ローカルサーバーは通常 `http://localhost:4321` で起動します。
 
 ## よく使うコマンド
 
 ```bash
-npm run dev      # ローカル確認
-npm run build    # ビルド
-npm run preview  # ビルド確認
+pnpm dev
+pnpm build
+pnpm preview
+pnpm astro -- --help
 ```
 
-## Codexへの典型的な指示パターン
+## ドキュメント案内
 
-```
-「src/content/docs/math/grade5/fractions.md を作成して。
-小学5年生向けに分数の足し算を説明する章。
-frontmatterを含め、Starlightの形式で。
-具体例はピザを使って。」
-```
+- [開発ガイド](docs/development.md)
+- [コンテンツ作成ガイド](docs/content-authoring.md)
+- [エージェント向け運用ルール](AGENTS.md)
 
+## ディレクトリ概要
 
-
-```
-pnpm create astro@latest -- --template starlight
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro + Starlight project, you'll see the following folders and files:
-
-```
+```text
 .
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+├── public/                  # 画像や静的アセット
+├── src/content/docs/        # Starlight の教材コンテンツ
+├── src/styles/custom.css    # サイト固有のスタイル
+├── astro.config.mjs         # サイト設定とサイドバー
+├── AGENTS.md                # 開発・運用ルール
+└── docs/                    # 開発者向けドキュメント
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+## ライセンス
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
-
-Static assets, like favicons, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+コンテンツとコードの扱いは、各ファイルの表記およびリポジトリ設定に従ってください。
