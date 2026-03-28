@@ -3,7 +3,8 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
 export default defineConfig({
-  site: "https://kotowari-modoki.github.io/manabi-commons/",
+  site: "https://kotowari-modoki.github.io/",
+  base: "manabi-commons",
   integrations: [
     starlight({
       title: "まなびコモンズ",
