@@ -1,36 +1,41 @@
 ---
 title: まなびコモンズ
-description: 小学生から高校生まで使える、無料で開かれた学習サイトです。
+description: 公開中の学習コンテンツに、トップページからすぐたどり着ける無料教科書サイトです。
 template: splash # Remove or comment out this line to display the site sidebar on this page.
 hero:
-  tagline: 子どもたちが安心して学べる、ひらかれた教材をそろえていきます。
+  tagline: 小学生・中学生向けの学習コンテンツを、目的に合わせてすぐ見つけられます。
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: 利用ライセンスを見る
-      link: about/license/
+    - text: まずはガイドを見る
+      link: guides/example/
       icon: right-arrow
-    - text: 使い方を確認する
-      link: about/license/
+    - text: 参考ページを見る
+      link: reference/example/
       icon: right-arrow
-      variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## このサイトでできること
+## 公開中のコンテンツ
+
+トップから迷わないように、今読めるページをここにまとめています。
+気になる項目をそのまま選んでください。
 
 <CardGrid stagger>
-	<Card title="教材を使う" icon="open-book">
-		学校でも家でも、必要に応じて印刷や配布をして活用できます。
+	<Card title="まず読む" icon="open-book">
+		学び方の流れをつかむなら [ガイド](guides/example/) から始められます。
 	</Card>
-	<Card title="無料で使う" icon="document">
-		教材は CC BY 4.0 を前提に公開し、使い方をわかりやすく案内します。
-	</Card>
-	<Card title="学びを広げる" icon="pencil">
-		学校でも家でも、必要に応じて印刷や編集をして活用できます。
+	<Card title="知りたいことを調べる" icon="document">
+		用語や考え方を確認したいときは [リファレンス](reference/example/) が便利です。
 	</Card>
 	<Card title="利用ルールを確認する" icon="document">
 		使う前に [利用ライセンス](about/license/) を読むと、必要な表示がすぐわかります。
 	</Card>
 </CardGrid>
+
+## 使い方のヒント
+
+- 学び始めるときは [ガイド](guides/example/) へ
+- 必要な情報をすぐ確認したいときは [リファレンス](reference/example/) へ
+- 利用条件を確認したいときは [利用ライセンス](about/license/) へ
