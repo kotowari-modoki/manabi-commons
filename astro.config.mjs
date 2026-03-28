@@ -1,26 +1,55 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
+import { defineConfig } from "astro/config";
+import starlight from "@astrojs/starlight";
 
-// https://astro.build/config
 export default defineConfig({
-	integrations: [
-		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
-			sidebar: [
-				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
-			],
-		}),
-	],
+  site: "https://kotowari-modoki.github.io/manabi-commons/",
+  integrations: [
+    starlight({
+      title: "まなびコモンズ",
+      description: "小学生・中学生のための無料教科書",
+      defaultLocale: "ja",
+      locales: {
+        ja: { label: "日本語", lang: "ja" },
+        en: { label: "English", lang: "en" },
+      },
+      // logo: {
+      //   src: "./public/logo.svg",
+      // },
+      //
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/kotowari-modoki/manabi-commons",
+        },
+      ],
+      sidebar: [
+        {
+          label: "算数・数学",
+          autogenerate: { directory: "math" },
+        },
+        {
+          label: "理科",
+          autogenerate: { directory: "science" },
+        },
+        {
+          label: "英語",
+          autogenerate: { directory: "english" },
+        },
+        {
+          label: "社会",
+          autogenerate: { directory: "social" },
+        },
+        {
+          label: "国語",
+          autogenerate: { directory: "japanese" },
+        },
+      ],
+      // customCss: ["./src/styles/custom.css"],
+      editLink: {
+        baseUrl: "https://github.com/kotowari-modoki/manabi-commons/edit/main/",
+      },
+    }),
+  ],
 });
