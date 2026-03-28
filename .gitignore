@@ -19,3 +19,7 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# Dolt database files (added by bd init)
+.dolt/
+*.db
