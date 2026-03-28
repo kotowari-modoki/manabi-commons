@@ -44,6 +44,10 @@ export default defineConfig({
           label: "このサイトについて",
           autogenerate: { directory: "about" },
         },
+        {
+          label: "学びのガイド",
+          autogenerate: { directory: "school-guide" },
+        },
       ],
       // customCss: ["./src/styles/custom.css"],
       editLink: {
