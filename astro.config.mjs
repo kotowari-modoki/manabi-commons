@@ -28,20 +28,28 @@ export default defineConfig({
           autogenerate: { directory: "math" },
         },
         {
-          label: "ガイド",
-          autogenerate: { directory: "guides" },
+          label: "国語",
+          autogenerate: { directory: "japanese" },
         },
         {
-          label: "リファレンス",
-          autogenerate: { directory: "reference" },
+          label: "理科",
+          autogenerate: { directory: "science" },
         },
         {
-          label: "このサイトについて",
-          autogenerate: { directory: "about" },
+          label: "社会",
+          autogenerate: { directory: "social" },
+        },
+        {
+          label: "外国語",
+          autogenerate: { directory: "english" },
         },
         {
           label: "学びのガイド",
           autogenerate: { directory: "school-guide" },
+        },
+        {
+          label: "このサイトについて",
+          autogenerate: { directory: "about" },
         },
       ],
       // customCss: ["./src/styles/custom.css"],
