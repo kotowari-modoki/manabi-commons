@@ -1,1 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><path fill-rule="evenodd" d="M81 36 64 0 47 36l-1 2-9-10a6 6 0 0 0-9 9l10 10h-2L0 64l36 17h2L28 91a6 6 0 1 0 9 9l9-10 1 2 17 36 17-36v-2l9 10a6 6 0 1 0 9-9l-9-9 2-1 36-17-36-17-2-1 9-9a6 6 0 1 0-9-9l-9 10v-2Zm-17 2-2 5c-4 8-11 15-19 19l-5 2 5 2c8 4 15 11 19 19l2 5 2-5c4-8 11-15 19-19l5-2-5-2c-8-4-15-11-19-19l-2-5Z" clip-rule="evenodd"/><path d="M118 19a6 6 0 0 0-9-9l-3 3a6 6 0 1 0 9 9l3-3Zm-96 4c-2 2-6 2-9 0l-3-3a6 6 0 1 1 9-9l3 3c3 2 3 6 0 9Zm0 82c-2-2-6-2-9 0l-3 3a6 6 0 1 0 9 9l3-3c3-2 3-6 0-9Zm96 4a6 6 0 0 1-9 9l-3-3a6 6 0 1 1 9-9l3 3Z"/><style>path{fill:#000}@media (prefers-color-scheme:dark){path{fill:#fff}}</style></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">まなびコモンズ favicon</title>
+  <desc id="desc">開いた本ときらめきを描いた学習サイト向けのアイコン</desc>
+  <defs>
+    <linearGradient id="bg" x1="18" y1="14" x2="112" y2="118" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38bdf8" />
+      <stop offset="1" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="page" x1="28" y1="40" x2="100" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#dbeafe" />
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#bg)" />
+  <path
+    d="M64 31c-12 0-24 3-36 9v49c12-6 24-9 36-9c12 0 24 3 36 9V40c-12-6-24-9-36-9Z"
+    fill="#0f172a"
+    opacity="0.14"
+  />
+  <path
+    d="M64 35c-11 0-23 3-35 8v44c11-5 23-8 35-8c4 0 8 0 12 1V37c-4-1-8-2-12-2Z"
+    fill="url(#page)"
+  />
+  <path
+    d="M64 35c11 0 23 3 35 8v44c-11-5-23-8-35-8c-4 0-8 0-12 1V37c4-1 8-2 12-2Z"
+    fill="#f8fbff"
+  />
+  <path
+    d="M64 37v43"
+    fill="none"
+    stroke="#93c5fd"
+    stroke-linecap="round"
+    stroke-width="4"
+  />
+  <path
+    d="M35 54c8-3 16-4 24-4"
+    fill="none"
+    stroke="#93c5fd"
+    stroke-linecap="round"
+    stroke-width="4"
+  />
+  <path
+    d="M35 64c7-2 15-3 24-3"
+    fill="none"
+    stroke="#93c5fd"
+    stroke-linecap="round"
+    stroke-width="4"
+  />
+  <path
+    d="M69 50c9 0 17 1 24 4"
+    fill="none"
+    stroke="#bfdbfe"
+    stroke-linecap="round"
+    stroke-width="4"
+  />
+  <path
+    d="M69 61c9 0 17 1 24 3"
+    fill="none"
+    stroke="#bfdbfe"
+    stroke-linecap="round"
+    stroke-width="4"
+  />
+  <path
+    d="M98 22l3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8Z"
+    fill="#fde047"
+  />
+  <circle cx="88" cy="28" r="3" fill="#fef08a" />
+  <circle cx="103" cy="47" r="2.5" fill="#fef08a" />
+</svg>
