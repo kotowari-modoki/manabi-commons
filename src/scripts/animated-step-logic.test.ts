@@ -19,6 +19,10 @@ describe('nextStep', () => {
   it('does not advance past a single-step sequence', () => {
     expect(nextStep(0, 1)).toBe(0);
   });
+
+  it('returns 0 when total is 0 (degenerate case)', () => {
+    expect(nextStep(0, 0)).toBe(0);
+  });
 });
 
 describe('prevStep', () => {
@@ -46,6 +50,10 @@ describe('isLastStep', () => {
 
   it('returns true for a single-step sequence', () => {
     expect(isLastStep(0, 1)).toBe(true);
+  });
+
+  it('returns true when total is 0 (degenerate case)', () => {
+    expect(isLastStep(0, 0)).toBe(true);
   });
 });
 
