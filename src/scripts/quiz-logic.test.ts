@@ -41,4 +41,15 @@ describe('saveProgress / loadProgress', () => {
     saveProgress('q-math-1');
     expect(loadProgress('q-math-1')).toBe(true);
   });
+
+  it('returns false gracefully when localStorage contains invalid JSON', () => {
+    localStorage.setItem('manabi-quiz-progress', 'INVALID_JSON{{{');
+    expect(loadProgress('q-any')).toBe(false);
+  });
+
+  it('overwrites corrupted localStorage when saving progress', () => {
+    localStorage.setItem('manabi-quiz-progress', 'INVALID_JSON{{{');
+    saveProgress('q-math-1');
+    expect(loadProgress('q-math-1')).toBe(true);
+  });
 });
