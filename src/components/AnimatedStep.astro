@@ -1,0 +1,11 @@
+---
+// ABOUTME: Placeholder for AnimatedStep component (implemented in Task 4).
+// ABOUTME: Accepts title and steps props but renders nothing interactive yet.
+interface Step { label: string; content: string; }
+interface Props { title?: string; steps: Step[]; }
+const { title, steps } = Astro.props;
+---
+<div class="animated-step" data-total={steps.length}>
+  {title && <div>{title}</div>}
+  {steps.map((s, i) => <div class="step-item" data-step={i} aria-hidden={i !== 0 ? 'true' : 'false'}>{s.label}: {s.content}</div>)}
+</div>

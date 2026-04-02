@@ -1,0 +1,30 @@
+---
+title: インタラクティブ機能テスト
+description: Quiz と AnimatedStep のテスト用ページです。
+draft: true
+sidebar:
+  hidden: true
+---
+
+import Quiz from '../../../components/Quiz.astro'
+import AnimatedStep from '../../../components/AnimatedStep.astro'
+
+## Quiz テスト
+
+<Quiz
+  question="3 × 7 はいくつ？"
+  choices={["18", "21", "24", "28"]}
+  answer={1}
+  explanation="3の段は3・6・9・12…と3ずつ増えます"
+/>
+
+## AnimatedStep テスト
+
+<AnimatedStep
+  title="繰り上がりのある足し算"
+  steps={[
+    { label: "① 一の位を計算", content: "8 + 7 = 15。5を書いて1を繰り上げます。" },
+    { label: "② 十の位を計算", content: "3 + 4 = 7。繰り上げた1を足して8。" },
+    { label: "③ 答え", content: "38 + 47 = 85" }
+  ]}
+/>

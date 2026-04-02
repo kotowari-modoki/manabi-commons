@@ -9,7 +9,7 @@ export default defineConfig({
   },
   webServer: {
     command: 'pnpm dev',
-    url: 'http://localhost:4321',
+    url: 'http://localhost:4321/manabi-commons/',
     reuseExistingServer: !process.env.CI,
   },
   projects: [
