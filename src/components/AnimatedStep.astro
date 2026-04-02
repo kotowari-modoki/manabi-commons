@@ -1,6 +1,6 @@
 ---
-// ABOUTME: Placeholder for AnimatedStep component (implemented in Task 4).
-// ABOUTME: Accepts title and steps props but renders nothing interactive yet.
+// ABOUTME: Step-by-step animated explanation component for MDX content pages.
+// ABOUTME: Displays steps with previous/next navigation and a show-all summary button.
 interface Step { label: string; content: string; }
 interface Props { title?: string; steps: Step[]; }
 const { title, steps } = Astro.props;

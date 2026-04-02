@@ -34,6 +34,11 @@ const questionKey = `quiz-${question.replace(/[\s？?]/g, '-').toLowerCase().sli
     padding: 1.25rem;
     margin: 1.5rem 0;
     background: linear-gradient(135deg, color-mix(in srgb, var(--sl-color-accent) 8%, transparent), transparent);
+    --quiz-correct-bg: var(--sl-color-green-low);
+    --quiz-correct-border: var(--sl-color-green);
+    --quiz-correct-text: var(--sl-color-green-high);
+    --quiz-incorrect-bg: var(--sl-color-red-low);
+    --quiz-incorrect-border: var(--sl-color-red);
   }
 
   .quiz-label {
@@ -75,14 +80,14 @@ const questionKey = `quiz-${question.replace(/[\s？?]/g, '-').toLowerCase().sli
   }
 
   .quiz-choice.correct {
-    background: linear-gradient(135deg, #56ab2f, #a8e063);
-    color: #fff;
-    box-shadow: 0 2px 10px rgba(86, 171, 47, 0.4);
+    background: var(--quiz-correct-bg);
+    color: var(--quiz-correct-text);
+    border: 2px solid var(--quiz-correct-border);
   }
 
   .quiz-choice.incorrect {
-    background: #fee;
-    border: 2px solid #e57373;
+    background: var(--quiz-incorrect-bg);
+    border: 2px solid var(--quiz-incorrect-border);
   }
 
   .quiz-choice:disabled {
