@@ -195,6 +195,7 @@ const { title, steps } = Astro.props;
     });
 
     summaryBtn.addEventListener('click', () => {
+      // Show all steps at once — this is a terminal state; navigation is intentionally disabled.
       items.forEach((item) => item.setAttribute('aria-hidden', 'false'));
       summaryBtn.setAttribute('hidden', '');
       prevBtn.disabled = true;
