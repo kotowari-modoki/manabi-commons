@@ -13,6 +13,8 @@ const { question, choices, answer, explanation } = Astro.props;
 const questionKey = `quiz-${question.replace(/[\s？?]/g, '-').toLowerCase().slice(0, 50)}`;
 ---
 
+<!-- data-answer is visible in the DOM. On a fully static site there is no way to hide the
+     answer from a determined inspector, so this is an accepted trade-off for the target age group. -->
 <div class="quiz-container" data-answer={answer} data-key={questionKey}>
   <div class="quiz-label">🎯 チャレンジ！</div>
   <p class="quiz-question">{question}</p>
@@ -24,7 +26,7 @@ const questionKey = `quiz-${question.replace(/[\s？?]/g, '-').toLowerCase().sli
   {explanation && (
     <div class="quiz-explanation" hidden>{explanation}</div>
   )}
-  <div class="quiz-feedback" hidden></div>
+  <div class="quiz-feedback" aria-live="polite" hidden></div>
 </div>
 
 <style>
