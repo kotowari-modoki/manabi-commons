@@ -23,3 +23,10 @@ pnpm-debug.log*
 # Dolt database files (added by bd init)
 .dolt/
 *.db
+
+# Brainstorming session files
+.superpowers/
+
+# Playwright test artifacts
+test-results/
+playwright-report/
