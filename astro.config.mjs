@@ -44,6 +44,10 @@ export default defineConfig({
           autogenerate: { directory: "english" },
         },
         {
+          label: "図工・アート",
+          autogenerate: { directory: "art" },
+        },
+        {
           label: "学びのガイド",
           autogenerate: { directory: "school-guide" },
         },
