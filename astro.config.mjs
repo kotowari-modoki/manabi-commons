@@ -48,6 +48,10 @@ export default defineConfig({
           autogenerate: { directory: "art" },
         },
         {
+          label: "体育",
+          autogenerate: { directory: "physical-education" },
+        },
+        {
           label: "学びのガイド",
           autogenerate: { directory: "school-guide" },
         },
