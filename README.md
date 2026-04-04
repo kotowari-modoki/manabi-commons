@@ -33,6 +33,14 @@ pnpm preview
 pnpm astro -- --help
 ```
 
+## テストの実行
+
+```bash
+pnpm test          # 全テスト実行
+pnpm test:unit     # Vitest でユニットテスト実行
+pnpm test:e2e      # Playwright で E2E テスト実行
+```
+
 ## ドキュメント案内
 
 - [開発ガイド](docs/development.md)
@@ -46,7 +54,10 @@ pnpm astro -- --help
 ├── public/                  # 画像や静的アセット
 ├── src/content/docs/        # Starlight の教材コンテンツ
 ├── src/styles/custom.css    # サイト固有のスタイル
+├── tests/                   # E2E テスト (Playwright)
 ├── astro.config.mjs         # サイト設定とサイドバー
+├── vitest.config.ts         # ユニットテスト設定
+├── playwright.config.ts     # E2E テスト設定
 ├── AGENTS.md                # 開発・運用ルール
 └── docs/                    # 開発者向けドキュメント
 ```
