@@ -22,6 +22,7 @@ export default defineConfig({
           href: "https://github.com/kotowari-modoki/manabi-commons",
         },
       ],
+      customCss: ["./src/styles/custom.css"],
       sidebar: [
         {
           label: "算数・数学",
@@ -60,7 +61,15 @@ export default defineConfig({
           autogenerate: { directory: "about" },
         },
       ],
-      // customCss: ["./src/styles/custom.css"],
+      head: [
+        {
+          tag: "script",
+          attrs: {
+            type: "module",
+            src: "/manabi-commons/page-tts.js",
+          },
+        },
+      ],
       editLink: {
         baseUrl: "https://github.com/kotowari-modoki/manabi-commons/edit/main/",
       },

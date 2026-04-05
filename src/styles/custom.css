@@ -1,0 +1,103 @@
+/* ABOUTME: Starlight 全体に共通する追加スタイルを定義します。 */
+/* ABOUTME: ここでは各ページの音声読み上げコントロールの見た目を整えます。 */
+
+.page-tts-controls {
+  display: grid;
+  gap: 0.75rem;
+  margin-block: 1rem 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.9rem;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(238, 246, 255, 0.96));
+  box-shadow: 0 0.75rem 1.75rem rgba(15, 23, 42, 0.08);
+}
+
+:root[data-theme='dark'] .page-tts-controls {
+  background:
+    linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(30, 41, 59, 0.96));
+  box-shadow: 0 0.75rem 1.75rem rgba(2, 6, 23, 0.32);
+}
+
+.page-tts-controls[data-state='speaking'] {
+  border-color: var(--sl-color-accent-high, #2563eb);
+}
+
+.page-tts-controls[data-state='paused'] {
+  border-color: var(--sl-color-orange-high, #ea580c);
+}
+
+.page-tts-controls__header {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.page-tts-controls__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.page-tts-status {
+  margin: 0;
+  color: var(--sl-color-gray-2, #334155);
+  font-size: 0.95rem;
+}
+
+.page-tts-controls__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.page-tts-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #0f766e);
+  transition:
+    transform 150ms ease,
+    opacity 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.page-tts-button:hover:enabled,
+.page-tts-button:focus-visible:enabled {
+  transform: translateY(-1px);
+  box-shadow: 0 0.4rem 1rem rgba(37, 99, 235, 0.28);
+}
+
+.page-tts-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  box-shadow: none;
+}
+
+.page-tts-button--subtle {
+  color: var(--sl-color-gray-1, #0f172a);
+  background: linear-gradient(135deg, #dbeafe, #e2e8f0);
+}
+
+:root[data-theme='dark'] .page-tts-button--subtle {
+  color: white;
+  background: linear-gradient(135deg, #334155, #1e293b);
+}
+
+@media (max-width: 40rem) {
+  .page-tts-controls {
+    padding: 0.9rem;
+  }
+
+  .page-tts-controls__buttons {
+    flex-direction: column;
+  }
+
+  .page-tts-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
