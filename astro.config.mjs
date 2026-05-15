@@ -11,6 +11,12 @@ export default defineConfig({
     starlight({
       title: "まなびコモンズ",
       description: "小中高生のための無料教科書",
+      locales: {
+        root: {
+          label: "日本語",
+          lang: "ja",
+        },
+      },
       // logo: {
       //   src: "./public/logo.svg",
       // },
