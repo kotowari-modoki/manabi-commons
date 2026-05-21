@@ -56,3 +56,54 @@ sidebar:
 - 参考にした情報源
 
 内容の正確性に自信が持てないときは、断定せず人間レビューを前提にしてください。
+
+## AI支援時の確認チェックリスト
+
+AI支援で教材の下書き、構成整理、リライト、事実確認を行った場合は、公開前に次を確認します。
+
+- 対象学年に語彙・例題・文量が合っているか
+- 学習指導要領との対応を説明できるか
+- 参考情報源を説明できるか
+- AIが作った説明に誤りや飛躍がないか
+- 子どもが誤解しやすい表現がないか
+- 保護者・教師が見ても不自然でないか
+- 例題と解説が一致しているか
+- 不確かな説明を断定していないか
+- 危険、不適切、偏った内容が含まれていないか
+
+## optional metadata
+
+既存記事へ一括追加する必要はありません。
+新規教材や大幅更新教材で、レビュー可能性を高めたい場合に任意で使います。
+
+```yaml
+learning_context:
+  grade: 小学4年
+  subject: 算数
+  unit: わり算の筆算
+  curriculum_ref: "学習指導要領 算数 第4学年 A 数と計算"
+  prerequisite:
+    - 九九
+    - かけ算の筆算
+
+review:
+  source_ref:
+    - "文部科学省 小学校学習指導要領"
+  ai_process:
+    - structure
+    - rewrite
+    - fact_check
+  confidence: medium
+  human_review: required
+  safety_review: required
+  age_level_review: required
+
+content_status:
+  claim_status: tentative
+  related_pages:
+    - /math/elementary-math-overview/
+  update_note: "説明を大きく変えたため、例題と難易度の確認が必要。"
+```
+
+`confidence` は教材の正しさを保証するものではありません。
+AI支援後の編集上の自己評価として扱い、迷う場合は `medium` 以下にします。
