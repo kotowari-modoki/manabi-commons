@@ -45,6 +45,9 @@ pnpm test:e2e      # Playwright で E2E テスト実行
 
 - [開発ガイド](docs/development.md)
 - [コンテンツ作成ガイド](docs/content-authoring.md)
+- [AI支援教材編集ポリシー](docs/ai-assisted-content-policy.md)
+- [出典とレビューのポリシー](docs/source-and-review-policy.md)
+- [教材ページ作成テンプレート](docs/article-template.md)
 - [エージェント向け運用ルール](AGENTS.md)
 
 ## ディレクトリ概要
