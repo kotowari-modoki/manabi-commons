@@ -32,39 +32,39 @@ export default defineConfig({
       sidebar: [
         {
           label: "算数・数学",
-          autogenerate: { directory: "math" },
+          items: [{ autogenerate: { directory: "math" } }],
         },
         {
           label: "国語",
-          autogenerate: { directory: "japanese" },
+          items: [{ autogenerate: { directory: "japanese" } }],
         },
         {
           label: "理科",
-          autogenerate: { directory: "science" },
+          items: [{ autogenerate: { directory: "science" } }],
         },
         {
           label: "社会",
-          autogenerate: { directory: "social" },
+          items: [{ autogenerate: { directory: "social" } }],
         },
         {
           label: "外国語",
-          autogenerate: { directory: "english" },
+          items: [{ autogenerate: { directory: "english" } }],
         },
         {
           label: "図工・アート",
-          autogenerate: { directory: "art" },
+          items: [{ autogenerate: { directory: "art" } }],
         },
         {
           label: "体育",
-          autogenerate: { directory: "physical-education" },
+          items: [{ autogenerate: { directory: "physical-education" } }],
         },
         {
           label: "学びのガイド",
-          autogenerate: { directory: "school-guide" },
+          items: [{ autogenerate: { directory: "school-guide" } }],
         },
         {
           label: "このサイトについて",
-          autogenerate: { directory: "about" },
+          items: [{ autogenerate: { directory: "about" } }],
         },
       ],
       head: [
