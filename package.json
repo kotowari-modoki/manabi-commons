@@ -17,14 +17,14 @@
     "test": "pnpm test:unit && pnpm test:e2e"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.38.2",
-    "astro": "^6.0.1",
+    "@astrojs/starlight": "^0.40.0",
+    "astro": "^6.4.8",
     "sharp": "^0.34.2"
   },
   "devDependencies": {
-    "vitest": "^2.1.0",
+    "@playwright/test": "^1.48.0",
     "@vitest/coverage-v8": "^2.1.0",
     "jsdom": "^25.0.0",
-    "@playwright/test": "^1.48.0"
+    "vitest": "^2.1.0"
   }
 }
