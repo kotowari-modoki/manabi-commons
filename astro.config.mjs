@@ -17,10 +17,6 @@ export default defineConfig({
           lang: "ja",
         },
       },
-      // logo: {
-      //   src: "./public/logo.svg",
-      // },
-      //
       social: [
         {
           icon: "github",

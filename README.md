@@ -35,11 +35,10 @@ pnpm astro -- --help
 
 ## テストの実行
 
-```bash
-pnpm test          # 全テスト実行
-pnpm test:unit     # Vitest でユニットテスト実行
-pnpm test:e2e      # Playwright で E2E テスト実行
-```
+- `pnpm test:unit` — Vitest。`src/scripts/` のロジックと `tests/helpers/` のテスト補助を検証します。
+- `pnpm test:e2e` — Playwright。インタラクティブ機能(Quiz / AnimatedStep / 読み上げ)と、全コンテンツページの表示スモークテスト(`tests/content-smoke.spec.ts`)を実行します。
+- `pnpm test` — unit と E2E を続けて実行します。
+- 記事を追加してもテストコードの追加は不要です。スモークテストが新しいページを自動で検証対象に含めます。
 
 ## ドキュメント案内
 
@@ -57,7 +56,7 @@ pnpm test:e2e      # Playwright で E2E テスト実行
 ├── public/                  # 画像や静的アセット
 ├── src/content/docs/        # Starlight の教材コンテンツ
 ├── src/styles/custom.css    # サイト固有のスタイル
-├── tests/                   # E2E テスト (Playwright)
+├── tests/                   # E2E テストとテスト補助
 ├── astro.config.mjs         # サイト設定とサイドバー
 ├── vitest.config.ts         # ユニットテスト設定
 ├── playwright.config.ts     # E2E テスト設定
