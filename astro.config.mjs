@@ -28,6 +28,9 @@ export default defineConfig({
           href: "https://github.com/kotowari-modoki/manabi-commons",
         },
       ],
+      components: {
+        Head: "./src/components/overrides/Head.astro",
+      },
       customCss: ["./src/styles/custom.css"],
       sidebar: [
         {
@@ -73,13 +76,6 @@ export default defineConfig({
           attrs: {
             name: "google-site-verification",
             content: "ysuEj023oFjddObiBNrkXRESp6QvqewPEAm0d0Ak61c",
-          },
-        },
-        {
-          tag: "script",
-          attrs: {
-            type: "module",
-            src: "/manabi-commons/page-tts.js",
           },
         },
       ],

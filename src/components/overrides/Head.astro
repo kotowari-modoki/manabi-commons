@@ -1,0 +1,10 @@
+---
+// ABOUTME: Starlight の Head をオーバーライドし、ページ読み上げスクリプトを全ページに注入します。
+// ABOUTME: public 直置きだった page-tts を Astro のバンドル対象へ載せ替えるための部品です。
+import Default from '@astrojs/starlight/components/Head.astro';
+---
+
+<Default><slot /></Default>
+<script>
+  import '../../scripts/page-tts-boot.js';
+</script>

@@ -1,5 +1,5 @@
 // ABOUTME: ブラウザー起動時にページ読み上げコントロールを初期化します。
-// ABOUTME: Astro/Starlight の各ページで同じ挙動になるよう公開アセットとして読み込みます。
+// ABOUTME: Astro/Starlight の各ページで同じ挙動になるよう Head override から読み込みます。
 
 import { mountPageTts } from './page-tts-core.js';
 

@@ -1,7 +1,7 @@
 // ABOUTME: page-tts-core.js の DOM 組み立てとボタン連携を確認する結合テストです。
 // ABOUTME: 読み上げ UI の挿入位置と開始・停止・再開の一連の状態変化を検証します。
 import { beforeEach, describe, expect, it } from 'vitest';
-import { mountPageTts } from '../../public/page-tts-core.js';
+import { mountPageTts } from './page-tts-core.js';
 
 function createSpeechHarness() {
   const events = [];
