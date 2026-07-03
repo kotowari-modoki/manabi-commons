@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "manabi-commons",
   "type": "module",
   "version": "0.0.1",
   "description": "小中高生のための無料教科書",
@@ -13,7 +13,7 @@
     "astro": "astro",
     "test:unit": "vitest run",
     "test:unit:watch": "vitest",
-    "test:e2e": "playwright test",
+    "test:e2e": "env -u NO_COLOR playwright test",
     "test": "pnpm test:unit && pnpm test:e2e"
   },
   "dependencies": {

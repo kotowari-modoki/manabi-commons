@@ -20,6 +20,7 @@ AIが commit したら必ず `Co-authored-by` を付ける。
 - GitHub Actions ワークフローの変更
 - 外部URLへのfetch・API呼び出し
 - ライセンス・著作権表記の変更
+- 記事(`src/content/docs/` 配下)ごとの専用テストを追加すること。ページの表示検証は `tests/content-smoke.spec.ts` が全ページを自動で対象にし、frontmatter の構造は `src/content.config.ts` のスキーマと `astro build` が検証する。記事の追加・修正にテストコードの追加は不要。
 
 ## コンテンツ生成時の品質基準
 

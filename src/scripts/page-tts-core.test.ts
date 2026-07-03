@@ -7,7 +7,7 @@ import {
   normalizeText,
   pickJapaneseVoice,
   pickTextRoot,
-} from '../../public/page-tts-core.js';
+} from './page-tts-core.js';
 
 describe('normalizeText', () => {
   it('collapses line breaks and repeated spaces', () => {
