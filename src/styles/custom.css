@@ -724,8 +724,20 @@
 
 .ht-plan-table th:first-child,
 .ht-plan-table td:first-child {
-  width: 55%;
+  width: 34%;
   text-align: start;
+}
+
+/* 順番と開始時間は手書きするため、□の列より広く取ります。
+   残りの三列は見出しが折り返しても読める幅を確保します。 */
+.ht-plan-table th:nth-child(2),
+.ht-plan-table td:nth-child(2) {
+  width: 7%;
+}
+
+.ht-plan-table th:nth-child(3),
+.ht-plan-table td:nth-child(3) {
+  width: 11%;
 }
 
 .ht-plan-table th:not(:first-child),
@@ -2177,8 +2189,14 @@
     padding: 1mm 1.5mm;
   }
 
+  /* 見出しは列幅に合わせて折り返すため、本文より小さくします。 */
+  .ht-plan-table thead th {
+    font-size: 7.5pt;
+    line-height: 1.2;
+  }
+
   .ht-plan-table tbody td {
-    height: 8mm;
+    height: 7mm;
   }
 
   .ht-write-lines span {
