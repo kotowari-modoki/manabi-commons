@@ -36,7 +36,7 @@ content_status:
 
 <div class="rn-print-buttons" aria-label="印刷メニュー">
   <button class="rn-print-button" type="button" onclick="window.print()">説明とノートを一緒に印刷する</button>
-  <button class="rn-print-button rn-print-button--secondary" type="button" onclick="document.body.classList.add('rn-print-sheet-only'); window.addEventListener('afterprint', () => document.body.classList.remove('rn-print-sheet-only'), { once: true }); window.print()">ノートだけ印刷する</button>
+  <button class="rn-print-button rn-print-button--secondary" type="button" onclick="document.body.classList.add('rn-print-sheet-only'); window.addEventListener('afterprint', () => document.body.classList.remove('rn-print-sheet-only'), { once: true }); void document.body.offsetHeight; requestAnimationFrame(() => window.print())">ノートだけ印刷する</button>
 </div>
 
 </div>

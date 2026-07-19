@@ -46,7 +46,7 @@ content_status:
 
 <div class="hb-print-buttons" aria-label="印刷メニュー">
   <button class="hb-print-button" type="button" onclick="window.print()">説明とシートを一緒に印刷する</button>
-  <button class="hb-print-button hb-print-button--secondary" type="button" onclick="document.body.classList.add('hb-print-sheet-only'); window.addEventListener('afterprint', () => document.body.classList.remove('hb-print-sheet-only'), { once: true }); window.print()">シートだけ印刷する</button>
+  <button class="hb-print-button hb-print-button--secondary" type="button" onclick="document.body.classList.add('hb-print-sheet-only'); window.addEventListener('afterprint', () => document.body.classList.remove('hb-print-sheet-only'), { once: true }); void document.body.offsetHeight; requestAnimationFrame(() => window.print())">シートだけ印刷する</button>
 </div>
 
 </div>
