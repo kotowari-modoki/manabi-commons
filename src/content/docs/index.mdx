@@ -8,13 +8,13 @@ hero:
     file: ../../assets/houston.webp
   actions:
     - text: 算数を学ぶ
-      link: math/elementary-math-overview/
+      link: /manabi-commons/math/elementary-math-overview/
       icon: right-arrow
     - text: 国語を学ぶ
-      link: japanese/
+      link: /manabi-commons/japanese/
       icon: right-arrow
     - text: 体育で体を動かす
-      link: physical-education/
+      link: /manabi-commons/physical-education/
       icon: right-arrow
 ---
 
@@ -27,38 +27,39 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 <CardGrid stagger>
 	<Card title="算数" icon="open-book">
-		1年生から6年生までの算数の学びをやさしくまとめました。[小学生の算数で学ぶこと](math/elementary-math-overview/)
+		1年生から6年生までの算数の学びをやさしくまとめました。[小学生の算数で学ぶこと](/manabi-commons/math/elementary-math-overview/)
 	</Card>
 	<Card title="国語" icon="document">
-		小学校と中学校の国語で大切にすることを学年に合わせてまとめました。[小学校の国語で学ぶこと](japanese/) / [中学校の国語で学ぶこと](japanese/junior-high-japanese-overview/)
+		小学校と中学校の国語で大切にすることを学年に合わせてまとめました。[小学校の国語で学ぶこと](/manabi-commons/japanese/) / [中学校の国語で学ぶこと](/manabi-commons/japanese/junior-high-japanese-overview/) / [3年生の漢字 水族館ドリル](/manabi-commons/japanese/grade-3-kanji-aquarium/)
 	</Card>
 	<Card title="理科" icon="document">
-		小学校と中学校の理科で学ぶ内容をまとめています。[小学校理科で学ぶこと](science/) / [中学校理科で学ぶこと](science/junior-high-science-summary/)
+		小学校と中学校の理科で学ぶ内容をまとめています。[小学校理科で学ぶこと](/manabi-commons/science/) / [中学校理科で学ぶこと](/manabi-commons/science/junior-high-science-summary/)
 	</Card>
 	<Card title="社会" icon="document">
-		3年生から6年生までの社会科の学びをまとめました。[小学生の社会って何を学ぶの？](social/)
+		3年生から6年生までの社会科の学びをまとめました。[小学生の社会って何を学ぶの？](/manabi-commons/social/)
 	</Card>
 	<Card title="外国語" icon="document">
-		外国語で学ぶことを学年に合わせてまとめました。[小学校の外国語って何を学ぶの？](english/elementary-foreign-language-summary/) / [中学校の外国語って何を学ぶの？](english/junior-high-foreign-language-summary/)
+		外国語で学ぶことを学年に合わせてまとめました。[小学校の外国語って何を学ぶの？](/manabi-commons/english/elementary-foreign-language-summary/) / [中学校の外国語って何を学ぶの？](/manabi-commons/english/junior-high-foreign-language-summary/)
 	</Card>
 	<Card title="体育" icon="document">
-		体を安全に動かす練習の始め方をまとめました。[体育](physical-education/) / [初めて自転車に乗るれんしゅうのやり方](physical-education/hajimete-no-jitensha-renshu/) / [逆上がりのコツ](physical-education/sakaagari-no-kotsu/)
+		体を安全に動かす練習の始め方をまとめました。[体育](/manabi-commons/physical-education/) / [初めて自転車に乗るれんしゅうのやり方](/manabi-commons/physical-education/hajimete-no-jitensha-renshu/) / [逆上がりのコツ](/manabi-commons/physical-education/sakaagari-no-kotsu/)
 	</Card>
 	<Card title="学びのガイド" icon="document">
-		学校生活や学び方の悩みに役立つページです。[小学校の学びのやくそく](school-guide/shogakko-manabi-no-yakusoku/) / [子どもの時間のつかい方](school-guide/kodomo-no-jikan-tsukaikata/) / [まちがいを言われたときの受け止め方](school-guide/machigai-no-uketorikata/)
+		学校生活や学び方の悩みに役立つページです。[小学校の学びのやくそく](/manabi-commons/school-guide/shogakko-manabi-no-yakusoku/) / [子どもの時間のつかい方](/manabi-commons/school-guide/kodomo-no-jikan-tsukaikata/) / [「何から始める？」を見つける作戦ノート](/manabi-commons/school-guide/how-to-tackle-hard-tasks/) / [まちがいを言われたときの受け止め方](/manabi-commons/school-guide/machigai-no-uketorikata/)
 	</Card>
 	<Card title="利用ルールを確認する" icon="document">
-		使う前に [利用ライセンス](about/license/) を読むと、必要な表示がすぐわかります。
+		使う前に [利用ライセンス](/manabi-commons/about/license/) を読むと、必要な表示がすぐわかります。
 	</Card>
 </CardGrid>
 
 ## 使い方のヒント
 
-- 算数を学びたいときは [小学生の算数で学ぶこと](math/elementary-math-overview/) へ
-- 国語を学びたいときは [小学校の国語で学ぶこと](japanese/) または [中学校の国語で学ぶこと](japanese/junior-high-japanese-overview/) へ
-- 理科を学びたいときは [小学校理科で学ぶこと](science/) や [中学校理科で学ぶこと](science/junior-high-science-summary/) へ
-- 社会を学びたいときは [小学生の社会って何を学ぶの？](social/) へ
-- 外国語を学びたいときは [小学校の外国語って何を学ぶの？](english/elementary-foreign-language-summary/) と [中学校の外国語って何を学ぶの？](english/junior-high-foreign-language-summary/) へ
-- 体育を学びたいときは [体育](physical-education/)、[初めて自転車に乗るれんしゅうのやり方](physical-education/hajimete-no-jitensha-renshu/)、[逆上がりのコツ](physical-education/sakaagari-no-kotsu/) へ
-- 学校生活や学び方のヒントを知りたいときは [小学校の学びのやくそく](school-guide/shogakko-manabi-no-yakusoku/)、[子どもの時間のつかい方](school-guide/kodomo-no-jikan-tsukaikata/)、[まちがいを言われたときの受け止め方](school-guide/machigai-no-uketorikata/) へ
-- 利用条件を確認したいときは [利用ライセンス](about/license/) へ
+- 算数を学びたいときは [小学生の算数で学ぶこと](/manabi-commons/math/elementary-math-overview/) へ
+- 国語を学びたいときは [小学校の国語で学ぶこと](/manabi-commons/japanese/) または [中学校の国語で学ぶこと](/manabi-commons/japanese/junior-high-japanese-overview/) へ
+- 3年生の漢字をゲーム感覚で練習したいときは [3年生の漢字 水族館ドリル](/manabi-commons/japanese/grade-3-kanji-aquarium/) へ
+- 理科を学びたいときは [小学校理科で学ぶこと](/manabi-commons/science/) や [中学校理科で学ぶこと](/manabi-commons/science/junior-high-science-summary/) へ
+- 社会を学びたいときは [小学生の社会って何を学ぶの？](/manabi-commons/social/) へ
+- 外国語を学びたいときは [小学校の外国語って何を学ぶの？](/manabi-commons/english/elementary-foreign-language-summary/) と [中学校の外国語って何を学ぶの？](/manabi-commons/english/junior-high-foreign-language-summary/) へ
+- 体育を学びたいときは [体育](/manabi-commons/physical-education/)、[初めて自転車に乗るれんしゅうのやり方](/manabi-commons/physical-education/hajimete-no-jitensha-renshu/)、[逆上がりのコツ](/manabi-commons/physical-education/sakaagari-no-kotsu/) へ
+- 学校生活や学び方のヒントを知りたいときは [小学校の学びのやくそく](/manabi-commons/school-guide/shogakko-manabi-no-yakusoku/)、[子どもの時間のつかい方](/manabi-commons/school-guide/kodomo-no-jikan-tsukaikata/)、[「何から始める？」を見つける作戦ノート](/manabi-commons/school-guide/how-to-tackle-hard-tasks/)、[まちがいを言われたときの受け止め方](/manabi-commons/school-guide/machigai-no-uketorikata/) へ
+- 利用条件を確認したいときは [利用ライセンス](/manabi-commons/about/license/) へ

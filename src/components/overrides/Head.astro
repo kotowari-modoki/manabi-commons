@@ -1,10 +1,11 @@
 ---
-// ABOUTME: Starlight の Head をオーバーライドし、ページ読み上げスクリプトを全ページに注入します。
-// ABOUTME: public 直置きだった page-tts を Astro のバンドル対象へ載せ替えるための部品です。
+// ABOUTME: Starlight の Head をオーバーライドし、共通の補助スクリプトを全ページに注入します。
+// ABOUTME: 読み上げ機能と印刷教材の動的QRコードをAstroのバンドル対象にします。
 import Default from '@astrojs/starlight/components/Head.astro';
 ---
 
 <Default><slot /></Default>
 <script>
   import '../../scripts/page-tts-boot.js';
+  import '../../scripts/print-qr-boot.js';
 </script>

@@ -101,3 +101,909 @@
     justify-content: center;
   }
 }
+
+/* ===== 3年生漢字 水族館ドリル（km- プレフィックス） ===== */
+
+/* ミッション1回分をカードとしてまとめる */
+.km-mission {
+  border: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 1rem;
+  padding: 1rem 1.25rem 1.25rem;
+  margin-block: 2.5rem;
+}
+
+.km-mission > .sl-heading-wrapper:first-child h2,
+.km-mission > h2:first-child {
+  margin-top: 0;
+}
+
+/* 導入文 */
+.km-intro {
+  border-left: 4px solid var(--sl-color-accent, #2563eb);
+  padding: 0.25rem 0.9rem;
+  margin-block: 1rem;
+}
+
+/* 今日の漢字（5字） */
+.km-drill {
+  display: grid;
+  gap: 0.6rem;
+  margin-block: 1rem;
+}
+
+.km-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.6rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.km-drill > .km-row {
+  margin-block: 0;
+}
+
+.print-page-qr {
+  display: none;
+}
+
+.km-char {
+  font-size: 2.6rem;
+  line-height: 1.1;
+  font-weight: 700;
+  min-width: 3rem;
+  text-align: center;
+}
+
+.km-meta {
+  display: grid;
+  gap: 0.15rem;
+  flex: 1 1 11rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.km-boxes {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.km-box {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2.9rem;
+  block-size: 2.9rem;
+  border: 1.5px solid var(--sl-color-gray-4, #94a3b8);
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+/* マスの十字リーダー（背景印刷に頼らず border で描く） */
+.km-box::before,
+.km-box::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+}
+
+.km-box::before {
+  inset-block: 0;
+  inset-inline-start: 50%;
+  border-inline-start: 1px dashed var(--sl-color-gray-5, #cbd5e1);
+}
+
+.km-box::after {
+  inset-inline: 0;
+  inset-block-start: 50%;
+  border-block-start: 1px dashed var(--sl-color-gray-5, #cbd5e1);
+}
+
+.km-sample {
+  color: var(--sl-color-gray-3, #64748b);
+}
+
+/* 問題リスト */
+.km-q {
+  padding-inline-start: 1.5rem;
+  display: grid;
+  gap: 0.9rem;
+  margin-block: 1rem;
+}
+
+.km-q li {
+  line-height: 2;
+}
+
+/* 答えを書きこむ横線 */
+.km-write {
+  display: inline-block;
+  inline-size: 7.5rem;
+  max-inline-size: 100%;
+  block-size: 2rem;
+  border-block-end: 2px solid var(--sl-color-gray-3, #64748b);
+  vertical-align: bottom;
+  margin-inline: 0.3rem;
+}
+
+.km-write--wide {
+  inline-size: 12rem;
+}
+
+/* 自由記述用のけい線 */
+.km-lines {
+  display: grid;
+  margin-block: 1rem;
+}
+
+.km-lines > span {
+  display: block;
+  block-size: 3rem;
+  border-block-end: 2px solid var(--sl-color-gray-4, #94a3b8);
+}
+
+/* 館長チェック（自己評価） */
+.km-selfcheck {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  border-block-start: 2px dashed var(--sl-color-gray-5, #cbd5e1);
+  padding-block-start: 0.75rem;
+  margin-block-start: 1rem;
+  font-size: 0.95rem;
+}
+
+/* 印刷ボタン（Web専用） */
+.km-print-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.7rem 1.4rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #0f766e);
+}
+
+.km-print-button:hover,
+.km-print-button:focus-visible {
+  opacity: 0.85;
+}
+
+/* ===== むずかしい課題の作戦ノート（ht- プレフィックス） ===== */
+
+.ht-web-tools {
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  padding: 0.9rem 1rem;
+  margin-block: 1rem 2rem;
+}
+
+.ht-web-tools p {
+  margin-block: 0 0.75rem;
+}
+
+.ht-print-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.ht-print-button {
+  border: 2px solid var(--sl-color-accent-high, #1d4ed8);
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--sl-color-black, #fff);
+  background: var(--sl-color-accent-high, #1d4ed8);
+}
+
+.ht-print-button--secondary {
+  color: var(--sl-color-text, #111827);
+  background: transparent;
+}
+
+.ht-print-button:hover,
+.ht-print-button:focus-visible {
+  outline: 3px solid var(--sl-color-accent, #60a5fa);
+  outline-offset: 2px;
+}
+
+.ht-kind-grid,
+.ht-strategy-grid,
+.ht-example-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1rem;
+  margin-block: 1rem 1.5rem;
+}
+
+.ht-kind-card,
+.ht-strategy-card,
+.ht-example-card {
+  min-width: 0;
+  border: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  padding: 0.85rem 1rem;
+}
+
+.ht-kind-grid > .ht-kind-card,
+.ht-strategy-grid > .ht-strategy-card,
+.ht-example-grid > .ht-example-card {
+  margin-block: 0;
+}
+
+.ht-kind-card h3,
+.ht-strategy-card h3,
+.ht-example-card h3 {
+  margin-top: 0;
+}
+
+.ht-kind-card > :last-child,
+.ht-strategy-card > :last-child,
+.ht-example-card > :last-child {
+  margin-bottom: 0;
+}
+
+.ht-job-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-block: 1rem;
+}
+
+.ht-job-list span {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.4rem;
+  padding: 0.35rem 0.65rem;
+  font-weight: 600;
+}
+
+.ht-path {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.65rem;
+  padding: 0;
+  margin-block: 1rem 1.5rem;
+  list-style: none;
+}
+
+.ht-path li {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  min-width: 0;
+  border: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  padding: 0.75rem;
+}
+
+.ht-path li:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  inset-inline-end: -0.65rem;
+  inset-block-start: 50%;
+  z-index: 1;
+  transform: translate(50%, -50%);
+  font-weight: 800;
+  background: var(--sl-color-bg, #fff);
+}
+
+.ht-path-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2rem;
+  block-size: 2rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.ht-path div {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.ht-path strong {
+  line-height: 1.35;
+}
+
+.ht-path div span {
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.ht-choice-box {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1rem;
+  border: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  padding: 1rem;
+  margin-block: 1rem;
+}
+
+.ht-choice-box--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ht-choice-box label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  min-width: 0;
+  margin-block: 0;
+  line-height: 1.5;
+}
+
+.ht-choice-box input,
+.ht-level-table input {
+  flex: 0 0 auto;
+  inline-size: 1.15rem;
+  block-size: 1.15rem;
+  margin: 0.2rem 0 0;
+  accent-color: var(--sl-color-accent-high, #1d4ed8);
+}
+
+.ht-strategy-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ht-strategy-label {
+  display: inline-block;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  margin-block: 0 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.ht-speech-list {
+  padding-inline-start: 1.2rem;
+}
+
+.ht-inline-write {
+  display: inline-block;
+  flex: 1 1 5rem;
+  min-inline-size: 4rem;
+  border-block-end: 1px solid currentColor;
+}
+
+.ht-strategy-sheet {
+  max-width: 52rem;
+  border: 3px solid var(--sl-color-gray-3, #64748b);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-block: 3rem;
+}
+
+.ht-strategy-sheet > .sl-heading-wrapper:first-child,
+.ht-strategy-sheet > h2:first-child {
+  margin-top: 0;
+}
+
+.ht-sheet-lead {
+  border-block-end: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  padding-block-end: 0.8rem;
+}
+
+.ht-sheet-field {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.8rem;
+}
+
+.ht-sheet-field--full {
+  margin-block: 0.8rem;
+}
+
+.ht-sheet-field h3 {
+  margin-block: 0 0.4rem;
+  font-size: 1rem;
+}
+
+.ht-sheet-two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-block: 0.8rem;
+}
+
+.ht-write-lines {
+  display: grid;
+}
+
+.ht-write-lines span {
+  display: block;
+  block-size: 2.4rem;
+  border-block-end: 1px solid var(--sl-color-gray-3, #64748b);
+}
+
+.ht-write-lines--one span {
+  block-size: 2rem;
+}
+
+.ht-sheet-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+}
+
+.ht-sheet-prompt {
+  margin-block: 0.65rem 0;
+}
+
+.ht-sheet-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-block: 1rem 0;
+}
+
+.ht-sheet-footer span {
+  display: inline-block;
+  inline-size: 8rem;
+  border-block-end: 1px solid currentColor;
+}
+
+.ht-level-table {
+  display: grid;
+  max-width: 38rem;
+  border: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  overflow: hidden;
+  margin-block: 1rem;
+}
+
+.ht-level-header,
+.ht-level-table label {
+  display: grid;
+  grid-template-columns: 3rem 3rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.75rem;
+}
+
+.ht-level-header {
+  border-block-end: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  text-align: center;
+}
+
+.ht-level-table label + label {
+  border-block-start: 1px solid var(--sl-color-gray-5, #cbd5e1);
+}
+
+.ht-level-table input {
+  justify-self: center;
+  margin: 0;
+}
+
+.ht-adult-note {
+  border: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  padding: 1rem 1.15rem;
+  margin-block: 2rem;
+}
+
+.ht-adult-note > .sl-heading-wrapper:first-child,
+.ht-adult-note > h2:first-child {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 50rem) {
+  .ht-path,
+  .ht-strategy-grid,
+  .ht-choice-box--three {
+    grid-template-columns: 1fr;
+  }
+
+  .ht-path li {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .ht-path li:not(:last-child)::after {
+    content: '↓';
+    inset-inline-end: 50%;
+    inset-block-start: auto;
+    inset-block-end: -0.65rem;
+    transform: translate(50%, 50%);
+  }
+
+  .ht-kind-grid,
+  .ht-example-grid,
+  .ht-choice-box,
+  .ht-sheet-two-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 30rem) {
+  .ht-print-button {
+    width: 100%;
+  }
+
+  .ht-level-header,
+  .ht-level-table label {
+    grid-template-columns: 2.25rem 2.25rem minmax(0, 1fr);
+    padding-inline: 0.45rem;
+  }
+}
+
+/* ===== 印刷スタイル（A4 たて・1ミッション1ページ） ===== */
+
+@page {
+  size: A4 portrait;
+  margin: 12mm;
+}
+
+@media print {
+  /* サイト用UIを隠す（sidebar 等は Starlight の print:hidden が担当） */
+  header.header,
+  footer,
+  .page-tts-controls,
+  .km-noprint {
+    display: none !important;
+  }
+
+  /* 教材名だけの表紙ページを作らず、すぐミッションを印刷する */
+  main:has(.km-mission) > .content-panel:first-child {
+    display: none;
+  }
+
+  /* ヘッダー分の余白や左右パディングをなくして紙面を広く使う */
+  .main-frame {
+    padding-top: 0 !important;
+    padding-inline-start: 0 !important;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  main:has(.km-mission) .content-panel,
+  main:has(.km-mission) .sl-container {
+    padding: 0 !important;
+    max-width: none;
+  }
+
+  /* 1ミッション = 1ページ */
+  .km-mission {
+    position: relative;
+    box-sizing: border-box;
+    min-height: 260mm;
+    break-before: page;
+    page-break-before: always;
+    border: none;
+    padding: 0;
+    margin-block: 0;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+
+  .print-page-qr {
+    display: grid;
+    gap: 0.5mm;
+    inline-size: 20mm;
+    color: #111;
+    font-size: 6pt;
+    line-height: 1.1;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .print-page-qr svg {
+    display: block;
+    inline-size: 20mm;
+    block-size: 20mm;
+  }
+
+  .km-mission > .print-page-qr {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-end: 0;
+  }
+
+  .km-noprint + .km-mission {
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  .km-mission .sl-heading-wrapper {
+    margin-block: 2mm 1mm;
+  }
+
+  .km-mission h2 {
+    font-size: 17pt;
+    line-height: 1.2;
+  }
+
+  .km-mission h3 {
+    font-size: 11.5pt;
+    line-height: 1.2;
+  }
+
+  .km-mission p,
+  .km-mission blockquote,
+  .km-mission table {
+    margin-block: 1mm;
+  }
+
+  .km-intro {
+    margin-block: 1.5mm;
+    padding: 1mm 2.5mm;
+    font-size: 8.5pt;
+    line-height: 1.35;
+  }
+
+  /* 5字を横一列に並べ、練習マスを保ったまま紙面を節約する */
+  .km-drill {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2mm;
+    margin-block: 1.5mm;
+  }
+
+  .km-row {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas:
+      'char meta'
+      'boxes boxes';
+    align-content: start;
+    gap: 1mm;
+    padding: 1.5mm;
+    border-radius: 2mm;
+  }
+
+  .km-char {
+    grid-area: char;
+    min-width: 0;
+    font-size: 21pt;
+  }
+
+  .km-meta {
+    grid-area: meta;
+    align-self: center;
+    min-width: 0;
+    font-size: 6.5pt;
+    line-height: 1.25;
+  }
+
+  .km-boxes {
+    grid-area: boxes;
+    justify-self: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    inline-size: 19mm;
+    gap: 0.6mm;
+  }
+
+  .km-box {
+    inline-size: 9mm;
+    block-size: 9mm;
+    font-size: 17pt;
+  }
+
+  .km-q {
+    gap: 0.5mm;
+    margin-block: 1mm;
+  }
+
+  .km-q li {
+    line-height: 1.45;
+  }
+
+  .km-write {
+    block-size: 5mm;
+    inline-size: 28mm;
+    margin-inline: 1mm;
+  }
+
+  .km-write--wide {
+    inline-size: 45mm;
+  }
+
+  .km-lines {
+    margin-block: 1mm;
+  }
+
+  .km-lines > span {
+    block-size: 9mm;
+  }
+
+  .km-selfcheck {
+    gap: 1mm 6mm;
+    margin-block-start: 1mm;
+    padding-block-start: 2mm;
+    font-size: 8pt;
+  }
+
+  .km-mission table {
+    font-size: 8pt;
+  }
+
+  .km-mission th,
+  .km-mission td {
+    padding: 1mm 2mm;
+  }
+
+  /* 各問題ブロックの途中で改ページしない */
+  .km-intro,
+  .km-drill,
+  .km-row,
+  .km-q li,
+  .km-lines,
+  .km-selfcheck {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* 枠線・文字を白黒印刷でもはっきりさせる */
+  .km-mission,
+  .km-row,
+  .km-box {
+    border-color: #333;
+  }
+
+  .km-box::before,
+  .km-box::after {
+    border-color: #bbb;
+  }
+
+  .km-write,
+  .km-lines > span {
+    border-color: #333;
+  }
+
+  .km-sample {
+    color: #999;
+  }
+
+  /* むずかしい課題の作戦ノート */
+  .ht-web-tools,
+  .right-sidebar,
+  .pagination-links,
+  .meta {
+    display: none !important;
+  }
+
+  main:has(.ht-strategy-sheet) .content-panel,
+  main:has(.ht-strategy-sheet) .sl-container {
+    max-width: none;
+    padding-inline: 0 !important;
+  }
+
+  main:has(.ht-strategy-sheet) .sl-markdown-content {
+    font-size: 10pt;
+    line-height: 1.45;
+  }
+
+  main:has(.ht-strategy-sheet) .sl-heading-wrapper {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .ht-kind-grid,
+  .ht-strategy-grid,
+  .ht-example-grid,
+  .ht-choice-box,
+  .ht-path,
+  .ht-level-table,
+  .ht-adult-note {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .ht-kind-card,
+  .ht-strategy-card,
+  .ht-example-card,
+  .ht-choice-box,
+  .ht-path li,
+  .ht-strategy-sheet,
+  .ht-sheet-field,
+  .ht-level-table,
+  .ht-adult-note {
+    color: #111;
+    border-color: #444;
+    background: #fff;
+  }
+
+  .ht-path li:not(:last-child)::after {
+    background: #fff;
+  }
+
+  .ht-strategy-sheet {
+    position: relative;
+    box-sizing: border-box;
+    max-width: none;
+    min-height: 260mm;
+    break-before: page;
+    page-break-before: always;
+    break-after: page;
+    page-break-after: always;
+    border-radius: 0;
+    padding: 7mm;
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+
+  .ht-strategy-sheet > .print-page-qr {
+    position: absolute;
+    inset-inline-end: 7mm;
+    inset-block-end: 6mm;
+  }
+
+  .ht-strategy-sheet .sl-heading-wrapper,
+  .ht-strategy-sheet h2,
+  .ht-strategy-sheet h3,
+  .ht-strategy-sheet p {
+    margin-block-start: 0;
+  }
+
+  .ht-strategy-sheet h2 {
+    font-size: 20pt;
+  }
+
+  .ht-sheet-lead {
+    margin-block-end: 3mm;
+    padding-block-end: 2mm;
+  }
+
+  .ht-sheet-field,
+  .ht-sheet-field--full,
+  .ht-sheet-two-columns {
+    margin-block: 2mm;
+  }
+
+  .ht-sheet-field {
+    padding: 2.5mm 3mm;
+  }
+
+  .ht-sheet-field h3 {
+    margin-block-end: 1mm;
+    font-size: 10pt;
+  }
+
+  .ht-write-lines span {
+    block-size: 9mm;
+    border-color: #444;
+  }
+
+  .ht-write-lines--one span {
+    block-size: 7mm;
+  }
+
+  .ht-sheet-prompt {
+    margin-block: 2mm 0;
+  }
+
+  .ht-sheet-footer {
+    margin-block-start: 3mm;
+  }
+
+  .ht-sheet-footer span {
+    border-color: #444;
+  }
+
+  body.ht-print-sheet-only main > .content-panel:first-child,
+  body.ht-print-sheet-only main .sl-markdown-content > :not(.ht-strategy-sheet) {
+    display: none !important;
+  }
+
+  body.ht-print-sheet-only .ht-strategy-sheet {
+    display: block !important;
+    break-before: auto;
+    page-break-before: auto;
+    break-after: auto;
+    page-break-after: auto;
+  }
+}
