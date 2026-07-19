@@ -1747,6 +1747,13 @@
     padding-inline-end: 24mm;
   }
 
+  .hb-record-sheet .sl-heading-wrapper,
+  .hb-record-sheet h2,
+  .hb-record-sheet h3,
+  .hb-record-sheet p {
+    margin-block-start: 0;
+  }
+
   .hb-record-sheet h2 {
     font-size: 15pt;
   }
@@ -1778,7 +1785,7 @@
   }
 
   .hb-cell {
-    height: 13mm;
+    height: 11mm;
   }
 
   .hb-write,
@@ -1787,7 +1794,7 @@
   }
 
   .hb-notes {
-    margin-block-start: 5mm;
+    margin-block-start: 4mm;
   }
 
   .hb-notes-hint {
@@ -1795,7 +1802,7 @@
   }
 
   .hb-notes-lines span {
-    block-size: 11mm;
+    block-size: 9mm;
     border-color: #333;
   }
 
