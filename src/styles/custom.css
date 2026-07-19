@@ -233,6 +233,29 @@
   inline-size: 12rem;
 }
 
+.km-write--short {
+  inline-size: 3.5rem;
+}
+
+.km-clue-map {
+  width: 100%;
+  max-width: 42rem;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-block: 1rem;
+  text-align: center;
+}
+
+.km-clue-map th,
+.km-clue-map td {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  padding: 0.55rem 0.7rem;
+}
+
+.km-clue-map th:first-child {
+  width: 4.5rem;
+}
+
 /* 自由記述用のけい線 */
 .km-lines {
   display: grid;
@@ -747,7 +770,14 @@
   .km-mission > .print-page-qr {
     position: absolute;
     inset-inline-end: 0;
-    inset-block-end: 0;
+    inset-block-start: 0;
+  }
+
+  .km-mission > .sl-heading-wrapper:first-child,
+  .km-mission > h2:first-child,
+  .km-mission > .sl-heading-wrapper:first-child + .km-intro,
+  .km-mission > h2:first-child + .km-intro {
+    padding-inline-end: 24mm;
   }
 
   .km-noprint + .km-mission {
@@ -849,6 +879,10 @@
     inline-size: 45mm;
   }
 
+  .km-write--short {
+    inline-size: 12mm;
+  }
+
   .km-lines {
     margin-block: 1mm;
   }
@@ -877,6 +911,7 @@
   .km-intro,
   .km-drill,
   .km-row,
+  .km-clue-map,
   .km-q li,
   .km-lines,
   .km-selfcheck {
