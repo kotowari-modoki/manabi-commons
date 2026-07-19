@@ -35,7 +35,20 @@ export default defineConfig({
         },
         {
           label: "国語",
-          items: [{ autogenerate: { directory: "japanese" } }],
+          items: [
+            "japanese",
+            "japanese/elementary-kanji-by-grade",
+            {
+              label: "3年生の漢字 水族館ドリル",
+              collapsed: true,
+              items: [
+                { autogenerate: { directory: "japanese/grade-3-kanji-aquarium" } },
+              ],
+            },
+            "japanese/hyakunin-isshu",
+            "japanese/hyakunin-isshu-complete",
+            "japanese/junior-high-japanese-overview",
+          ],
         },
         {
           label: "理科",
