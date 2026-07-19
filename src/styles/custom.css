@@ -857,6 +857,184 @@
   }
 }
 
+/* ===== おうちの方へ：習慣記録シート（hb- プレフィックス） ===== */
+
+.hb-web-tools {
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  padding: 0.9rem 1rem;
+  margin-block: 1rem 2rem;
+}
+
+.hb-web-tools p {
+  margin-block: 0 0.75rem;
+}
+
+.hb-print-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.hb-print-button {
+  border: 2px solid var(--sl-color-accent-high, #1d4ed8);
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--sl-color-black, #fff);
+  background: var(--sl-color-accent-high, #1d4ed8);
+}
+
+.hb-print-button--secondary {
+  color: var(--sl-color-text, #111827);
+  background: transparent;
+}
+
+.hb-print-button:hover,
+.hb-print-button:focus-visible {
+  outline: 3px solid var(--sl-color-accent, #60a5fa);
+  outline-offset: 2px;
+}
+
+.hb-record-sheet {
+  border: 3px solid var(--sl-color-gray-3, #64748b);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-block: 1.5rem 1rem;
+}
+
+.hb-record-sheet > .sl-heading-wrapper:first-child,
+.hb-record-sheet > h2:first-child {
+  margin-top: 0;
+}
+
+.hb-sheet-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  border-block-end: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  padding-block-end: 0.8rem;
+  margin-block-end: 0.8rem;
+}
+
+.hb-sheet-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-size: 0.95rem;
+}
+
+.hb-write {
+  display: inline-block;
+  min-inline-size: 4rem;
+  block-size: 1.4rem;
+  border-block-end: 1px solid currentColor;
+  vertical-align: bottom;
+}
+
+.hb-write--name {
+  min-inline-size: 8rem;
+}
+
+.hb-write--year,
+.hb-write--month {
+  min-inline-size: 3rem;
+}
+
+.hb-write--item {
+  display: block;
+  min-inline-size: 7rem;
+  block-size: 1.4rem;
+  border-block-end: 1px solid currentColor;
+}
+
+.hb-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.6rem;
+  padding: 0.6rem 0.9rem;
+  margin-block: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.hb-scroll-hint {
+  font-size: 0.85rem;
+  color: var(--sl-color-gray-2, #334155);
+  margin-block: 0.4rem 0;
+}
+
+.hb-grid-wrap {
+  overflow-x: auto;
+  margin-block: 1rem;
+}
+
+.hb-grid {
+  width: 100%;
+  min-width: 60rem;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.hb-grid th,
+.hb-grid td {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  text-align: center;
+  padding: 0.3rem;
+}
+
+.hb-grid-item-head,
+.hb-grid-item {
+  width: 9rem;
+  text-align: start;
+}
+
+.hb-cell {
+  min-width: 1.8rem;
+  height: 2.4rem;
+}
+
+.hb-notes {
+  margin-block: 1.5rem 0;
+}
+
+.hb-notes h3 {
+  margin-block: 0 0.3rem;
+  font-size: 1rem;
+}
+
+.hb-notes-hint {
+  margin-block: 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--sl-color-gray-2, #334155);
+}
+
+.hb-notes-lines {
+  display: grid;
+  gap: 0;
+}
+
+.hb-notes-lines span {
+  display: block;
+  block-size: 2rem;
+  border-block-end: 1px solid var(--sl-color-gray-3, #64748b);
+}
+
+@media screen and (max-width: 40rem) {
+  .hb-print-button {
+    width: 100%;
+  }
+
+  .hb-record-sheet {
+    padding: 0.9rem;
+  }
+}
+
 /* ===== 印刷スタイル（A4 たて・1ミッション1ページ） ===== */
 
 @page {
@@ -1372,5 +1550,113 @@
   body.ht-print-sheet-only .ht-strategy-sheet + .ht-strategy-sheet {
     break-before: page;
     page-break-before: always;
+  }
+
+  /* おうちの方へ：習慣記録シート */
+  .hb-web-tools {
+    display: none !important;
+  }
+
+  main:has(.hb-record-sheet) .content-panel,
+  main:has(.hb-record-sheet) .sl-container {
+    max-width: none;
+    padding-inline: 0 !important;
+  }
+
+  .hb-record-sheet {
+    position: relative;
+    box-sizing: border-box;
+    max-width: none;
+    break-before: page;
+    page-break-before: always;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 9pt;
+    line-height: 1.3;
+  }
+
+  .hb-record-sheet > .print-page-qr {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-start: 0;
+  }
+
+  .hb-record-sheet > .sl-heading-wrapper:first-child,
+  .hb-record-sheet > h2:first-child,
+  .hb-sheet-head {
+    padding-inline-end: 24mm;
+  }
+
+  .hb-record-sheet h2 {
+    font-size: 15pt;
+  }
+
+  .hb-legend {
+    font-size: 8pt;
+    padding: 1.5mm 2.5mm;
+    margin-block: 1.5mm;
+  }
+
+  .hb-grid-wrap {
+    overflow: visible;
+  }
+
+  .hb-grid {
+    min-width: 0;
+    font-size: 7pt;
+  }
+
+  .hb-grid th,
+  .hb-grid td {
+    padding: 0.8mm;
+    border-color: #333;
+  }
+
+  .hb-grid-item-head,
+  .hb-grid-item {
+    width: 32mm;
+  }
+
+  .hb-cell {
+    height: 8mm;
+  }
+
+  .hb-write,
+  .hb-write--item {
+    border-color: #333;
+  }
+
+  .hb-notes {
+    margin-block-start: 2mm;
+  }
+
+  .hb-notes-hint {
+    font-size: 7pt;
+  }
+
+  .hb-notes-lines span {
+    block-size: 6mm;
+    border-color: #333;
+  }
+
+  .hb-record-sheet,
+  .hb-grid,
+  .hb-legend,
+  .hb-notes-lines {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  body.hb-print-sheet-only main > .content-panel:first-child,
+  body.hb-print-sheet-only main .sl-markdown-content > :not(.hb-record-sheet) {
+    display: none !important;
+  }
+
+  body.hb-print-sheet-only .hb-record-sheet {
+    display: block !important;
+    break-before: auto;
+    page-break-before: auto;
   }
 }
