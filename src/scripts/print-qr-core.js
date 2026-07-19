@@ -217,7 +217,9 @@ export function makeQrSvg(documentObj, text) {
 }
 
 export function mountPrintQr(documentObj = document, windowObj = window) {
-  const targets = documentObj.querySelectorAll('.km-mission, .ht-strategy-sheet');
+  const targets = documentObj.querySelectorAll(
+    '.km-mission, .ht-strategy-sheet, .hb-record-sheet, .rn-notebook-page',
+  );
   if (targets.length === 0) return 0;
 
   const url = new URL(windowObj.location.href);

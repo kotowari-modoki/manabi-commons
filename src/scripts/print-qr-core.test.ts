@@ -31,6 +31,20 @@ describe('print QR code', () => {
     expect(links.every((link) => link.querySelector('svg') !== null)).toBe(true);
   });
 
+  it('also mounts QR links onto the parent-guide worksheet containers', () => {
+    document.body.innerHTML = `
+      <main>
+        <section class="hb-record-sheet"></section>
+        <section class="rn-notebook-page"></section>
+      </main>
+    `;
+    const windowObj = { location: { href: 'https://example.com/parent-guide/habit-tracking-sheet/' } } as Window;
+
+    expect(mountPrintQr(document, windowObj)).toBe(2);
+    const links = [...document.querySelectorAll<HTMLAnchorElement>('.print-page-qr')];
+    expect(links).toHaveLength(2);
+  });
+
   it('rejects URLs that do not fit the supported QR size', () => {
     expect(() => makeQrMatrix(`https://example.com/${'a'.repeat(120)}`)).toThrow(RangeError);
   });
