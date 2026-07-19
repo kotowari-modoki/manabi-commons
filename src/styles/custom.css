@@ -1035,6 +1035,164 @@
   }
 }
 
+/* ===== おうちの方へ：読書記録ノート（rn- プレフィックス） ===== */
+
+.rn-web-tools {
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  padding: 0.9rem 1rem;
+  margin-block: 1rem 2rem;
+}
+
+.rn-web-tools p {
+  margin-block: 0 0.75rem;
+}
+
+.rn-print-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.rn-print-button {
+  border: 2px solid var(--sl-color-accent-high, #1d4ed8);
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--sl-color-black, #fff);
+  background: var(--sl-color-accent-high, #1d4ed8);
+}
+
+.rn-print-button--secondary {
+  color: var(--sl-color-text, #111827);
+  background: transparent;
+}
+
+.rn-print-button:hover,
+.rn-print-button:focus-visible {
+  outline: 3px solid var(--sl-color-accent, #60a5fa);
+  outline-offset: 2px;
+}
+
+.rn-notebook-page {
+  max-width: 44rem;
+  border: 3px solid var(--sl-color-gray-3, #64748b);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-block: 1.5rem 1rem;
+}
+
+.rn-notebook-page > .sl-heading-wrapper:first-child,
+.rn-notebook-page > h2:first-child {
+  margin-top: 0;
+}
+
+.rn-entry {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.8rem;
+  padding: 1rem;
+  margin-block: 1rem;
+}
+
+.rn-entry-head {
+  display: grid;
+  gap: 0.5rem;
+  margin-block-end: 0.8rem;
+}
+
+.rn-entry-head p {
+  margin-block: 0;
+}
+
+.rn-inline-write {
+  display: inline-block;
+  min-inline-size: 6rem;
+  border-block-end: 1px solid currentColor;
+  vertical-align: bottom;
+}
+
+.rn-inline-write--wide {
+  min-inline-size: 12rem;
+}
+
+.rn-field {
+  margin-block: 0.8rem;
+}
+
+.rn-field h4 {
+  margin-block: 0 0.35rem;
+  font-size: 0.95rem;
+}
+
+.rn-write-lines {
+  display: grid;
+}
+
+.rn-write-lines span {
+  display: block;
+  block-size: 2rem;
+  border-block-end: 1px solid var(--sl-color-gray-3, #64748b);
+}
+
+.rn-write-lines--one span {
+  block-size: 1.6rem;
+}
+
+.rn-two-columns {
+  display: grid;
+  grid-template-columns: minmax(8rem, 10rem) minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: start;
+}
+
+.rn-draw-box {
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+  border: 1.5px solid var(--sl-color-gray-4, #94a3b8);
+}
+
+.rn-hint {
+  margin-block: 0.5rem 0;
+  font-size: 0.85rem;
+  color: var(--sl-color-gray-2, #334155);
+}
+
+.rn-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.rn-checks label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-block: 0;
+}
+
+.rn-checks input {
+  inline-size: 1.1rem;
+  block-size: 1.1rem;
+  margin: 0;
+  accent-color: var(--sl-color-accent-high, #1d4ed8);
+}
+
+@media screen and (max-width: 40rem) {
+  .rn-print-button {
+    width: 100%;
+  }
+
+  .rn-two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .rn-notebook-page {
+    padding: 0.9rem;
+  }
+}
+
 /* ===== 印刷スタイル（A4 たて・1ミッション1ページ） ===== */
 
 @page {
@@ -1655,6 +1813,100 @@
   }
 
   body.hb-print-sheet-only .hb-record-sheet {
+    display: block !important;
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  /* おうちの方へ：読書記録ノート */
+  .rn-web-tools {
+    display: none !important;
+  }
+
+  main:has(.rn-notebook-page) .content-panel,
+  main:has(.rn-notebook-page) .sl-container {
+    max-width: none;
+    padding-inline: 0 !important;
+  }
+
+  .rn-notebook-page {
+    position: relative;
+    box-sizing: border-box;
+    max-width: none;
+    min-height: 260mm;
+    break-before: page;
+    page-break-before: always;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+
+  .rn-notebook-page > .print-page-qr {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-start: 0;
+  }
+
+  .rn-notebook-page > .sl-heading-wrapper:first-child,
+  .rn-notebook-page > h2:first-child {
+    padding-inline-end: 24mm;
+  }
+
+  .rn-notebook-page h2 {
+    font-size: 16pt;
+  }
+
+  .rn-entry {
+    border-color: #444;
+    padding: 3mm 4mm;
+    margin-block: 3mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .rn-inline-write {
+    border-color: #444;
+  }
+
+  .rn-field {
+    margin-block: 2mm;
+  }
+
+  .rn-field h4 {
+    font-size: 8.5pt;
+  }
+
+  .rn-write-lines span {
+    block-size: 6mm;
+    border-color: #444;
+  }
+
+  .rn-write-lines--one span {
+    block-size: 5mm;
+  }
+
+  .rn-draw-box {
+    border-color: #444;
+  }
+
+  .rn-hint {
+    font-size: 7pt;
+  }
+
+  .rn-checks {
+    font-size: 8pt;
+    gap: 1mm 4mm;
+  }
+
+  body.rn-print-sheet-only main > .content-panel:first-child,
+  body.rn-print-sheet-only main .sl-markdown-content > :not(.rn-notebook-page) {
+    display: none !important;
+  }
+
+  body.rn-print-sheet-only .rn-notebook-page {
     display: block !important;
     break-before: auto;
     page-break-before: auto;
