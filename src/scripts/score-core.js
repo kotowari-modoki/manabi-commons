@@ -190,7 +190,8 @@ export function makeScoreSvg(score, options = {}) {
             body += `<circle cx="${x + 11}" cy="${y - 0.5}" r="1.9" fill="currentColor" />`;
           }
           if (showSolfa && note.solfa) {
-            body += `<text x="${x}" y="${staffTop + STAFF_HEIGHT + 20}" font-size="11" text-anchor="middle" fill="currentColor">${escapeText(note.solfa)}</text>`;
+            // 下第一線のドと重ならない高さに置きます。
+            body += `<text x="${x}" y="${staffTop + STAFF_HEIGHT + 27}" font-size="11" text-anchor="middle" fill="currentColor">${escapeText(note.solfa)}</text>`;
           }
           if (showFingering && note.finger) {
             body += `<text x="${x}" y="${staffTop - 9}" font-size="11" text-anchor="middle" fill="currentColor">${escapeText(note.finger)}</text>`;
@@ -209,8 +210,10 @@ export function makeScoreSvg(score, options = {}) {
         body += `<line x1="${barX}" y1="${staffTop}" x2="${barX}" y2="${staffTop + STAFF_HEIGHT}" stroke="currentColor" stroke-width="1.4" />`;
       }
 
-      if (measure.number) {
-        body += `<text x="${startX - 8}" y="${staffTop - 24}" font-size="10" fill="currentColor">${escapeText(measure.number)}</text>`;
+      // 小節番号は各段の先頭だけに出します。
+      // 全小節に出すと、指番号と数字が二段に並んで読み分けにくくなります。
+      if (measure.number && measureIndex === 0) {
+        body += `<text x="${startX - 8}" y="${staffTop - 26}" font-size="10" fill="currentColor">${escapeText(measure.number)}</text>`;
       }
       x += NOTE_GAP / 2;
     });

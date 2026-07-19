@@ -1616,6 +1616,13 @@
   min-inline-size: 0;
 }
 
+/* テーマは兄弟要素にだけ上余白を付けるため、1つ目だけが上にずれる。
+   グリッドの子は余白を打ち消し、間隔は gap だけで決めます。 */
+.zu-frame-grid > .zu-frame,
+.zu-swatch-grid > .zu-swatch {
+  margin-block: 0;
+}
+
 /* 幅を列から決め、高さを aspect-ratio で出します。
    inline-size を省くと、高さが先に決まったときに幅が列からはみ出します。 */
 .zu-frame-box {
