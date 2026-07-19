@@ -1446,6 +1446,248 @@
   }
 }
 
+/* ===== 図工：試して選ぶ活動シート（zu- プレフィックス） ===== */
+
+.zu-web-tools {
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  padding: 0.9rem 1rem;
+  margin-block: 1rem 2rem;
+}
+
+.zu-web-tools p {
+  margin-block: 0 0.75rem;
+}
+
+.zu-print-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.zu-print-button {
+  border: 2px solid var(--sl-color-accent-high, #1d4ed8);
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--sl-color-black, #fff);
+  background: var(--sl-color-accent-high, #1d4ed8);
+}
+
+.zu-print-button--secondary {
+  color: var(--sl-color-text, #111827);
+  background: transparent;
+}
+
+.zu-print-button:hover,
+.zu-print-button:focus-visible {
+  outline: 3px solid var(--sl-color-accent, #60a5fa);
+  outline-offset: 2px;
+}
+
+.zu-sheet {
+  max-width: 52rem;
+  border: 3px solid var(--sl-color-gray-3, #64748b);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-block: 2rem;
+}
+
+.zu-sheet--landscape {
+  max-width: none;
+}
+
+.zu-sheet > .sl-heading-wrapper:first-child,
+.zu-sheet > h2:first-child {
+  margin-top: 0;
+}
+
+.zu-sheet-lead {
+  border-block-end: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  padding-block-end: 0.8rem;
+  margin-block-end: 0.8rem;
+}
+
+.zu-sheet-hint {
+  margin-block: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.zu-sheet-field {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.8rem;
+}
+
+.zu-sheet-field--full {
+  margin-block: 0.8rem;
+}
+
+.zu-sheet-field h3 {
+  margin-block: 0 0.4rem;
+  font-size: 1rem;
+}
+
+.zu-sheet-two-columns,
+.zu-sheet-three-columns {
+  display: grid;
+  gap: 0.8rem;
+  margin-block: 0.8rem;
+}
+
+.zu-sheet-two-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.zu-sheet-three-columns {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.zu-sheet-two-columns > .zu-sheet-field,
+.zu-sheet-three-columns > .zu-sheet-field {
+  margin-block: 0;
+}
+
+.zu-write-lines {
+  display: grid;
+}
+
+.zu-write-lines span {
+  display: block;
+  block-size: 2.2rem;
+  border-block-end: 1px solid var(--sl-color-gray-3, #64748b);
+}
+
+.zu-write-lines--one span {
+  block-size: 2rem;
+}
+
+.zu-sheet-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.4rem;
+  font-size: 0.95rem;
+}
+
+.zu-sheet-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-block: 1rem 0;
+}
+
+.zu-sheet-footer span {
+  display: inline-block;
+  inline-size: 8rem;
+  border-block-end: 1px solid currentColor;
+}
+
+.zu-adult-note {
+  border: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  padding: 1rem 1.15rem;
+  margin-block: 2rem;
+}
+
+.zu-adult-note > .sl-heading-wrapper:first-child,
+.zu-adult-note > h2:first-child {
+  margin-top: 0;
+}
+
+/* 観察・構図：小さな試しわく */
+.zu-frame-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-block: 1rem;
+}
+
+.zu-frame {
+  display: grid;
+  gap: 0.4rem;
+  border: 1.5px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.5rem;
+  padding: 0.55rem;
+}
+
+.zu-frame-box {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+}
+
+.zu-frame-label {
+  margin: 0;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* 色をつくる実験：大きく塗れるスウォッチ */
+.zu-swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin-block: 1rem;
+}
+
+.zu-swatch {
+  display: grid;
+  gap: 0.5rem;
+  border: 1.5px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.5rem;
+  padding: 0.65rem;
+}
+
+.zu-swatch-area {
+  min-block-size: 7rem;
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+}
+
+.zu-swatch-label {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.zu-swatch-hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--sl-color-gray-2, #334155);
+}
+
+/* 材料実験ノート：素材の表 */
+.zu-materials-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: 1rem;
+  font-size: 0.92rem;
+}
+
+.zu-materials-table th,
+.zu-materials-table td {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  padding: 0.4rem 0.6rem;
+  text-align: start;
+}
+
+@media screen and (max-width: 40rem) {
+  .zu-print-button {
+    width: 100%;
+  }
+
+  .zu-sheet {
+    padding: 0.9rem;
+  }
+
+  .zu-sheet-two-columns,
+  .zu-sheet-three-columns,
+  .zu-frame-grid,
+  .zu-swatch-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== 印刷スタイル（A4 たて・1ミッション1ページ） ===== */
 
 @page {
@@ -2285,5 +2527,182 @@
     display: block !important;
     break-before: auto;
     page-break-before: auto;
+  }
+
+  /* 図工：試して選ぶ活動シート */
+  .zu-web-tools {
+    display: none !important;
+  }
+
+  main:has(.zu-sheet) .content-panel,
+  main:has(.zu-sheet) .sl-container {
+    max-width: none;
+    padding-inline: 0 !important;
+  }
+
+  .zu-sheet {
+    position: relative;
+    box-sizing: border-box;
+    max-width: none;
+    min-height: 260mm;
+    break-before: page;
+    page-break-before: always;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+
+  .zu-sheet--landscape {
+    min-height: 0;
+  }
+
+  .zu-sheet > .sl-heading-wrapper:first-child,
+  .zu-sheet > h2:first-child,
+  .zu-sheet > .zu-sheet-lead {
+    padding-inline-end: 0;
+  }
+
+  .zu-sheet .sl-heading-wrapper,
+  .zu-sheet h2,
+  .zu-sheet h3,
+  .zu-sheet p {
+    margin-block-start: 0;
+  }
+
+  .zu-sheet h2 {
+    font-size: 18pt;
+  }
+
+  .zu-sheet-lead {
+    margin-block-end: 3mm;
+    padding-block-end: 2mm;
+  }
+
+  .zu-sheet-field,
+  .zu-sheet-field--full,
+  .zu-sheet-two-columns,
+  .zu-sheet-three-columns {
+    margin-block: 2mm;
+  }
+
+  .zu-sheet-two-columns > .zu-sheet-field,
+  .zu-sheet-three-columns > .zu-sheet-field {
+    margin-block: 0;
+  }
+
+  .zu-sheet-field {
+    padding: 2.5mm 3mm;
+  }
+
+  .zu-sheet-field h3 {
+    margin-block-end: 1mm;
+    font-size: 10pt;
+  }
+
+  .zu-sheet-hint {
+    margin-block: 1mm;
+    font-size: 8.5pt;
+  }
+
+  .zu-write-lines span {
+    block-size: 8mm;
+    border-color: #444;
+  }
+
+  .zu-write-lines--one span {
+    block-size: 6mm;
+  }
+
+  .zu-sheet-checks {
+    font-size: 9pt;
+    gap: 1mm 5mm;
+  }
+
+  .zu-sheet-footer {
+    margin-block-start: 3mm;
+  }
+
+  .zu-sheet-footer span {
+    border-color: #444;
+  }
+
+  .zu-frame-grid {
+    gap: 3mm;
+    margin-block: 2mm;
+  }
+
+  .zu-frame {
+    border-color: #444;
+    padding: 1.5mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .zu-frame-box {
+    border-color: #444;
+  }
+
+  .zu-frame-label {
+    font-size: 7.5pt;
+  }
+
+  .zu-swatch-grid {
+    gap: 4mm;
+    margin-block: 2mm;
+  }
+
+  .zu-swatch {
+    border-color: #444;
+    padding: 1.5mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .zu-swatch-area {
+    border-color: #444;
+    min-block-size: 34mm;
+  }
+
+  .zu-swatch-label,
+  .zu-swatch-hint {
+    font-size: 7.5pt;
+  }
+
+  .zu-materials-table {
+    font-size: 8pt;
+  }
+
+  .zu-materials-table th,
+  .zu-materials-table td {
+    padding: 1mm 1.5mm;
+    border-color: #444;
+  }
+
+  .zu-adult-note,
+  .zu-sheet-field,
+  .zu-frame,
+  .zu-swatch {
+    color: #111;
+    border-color: #444;
+    background: #fff;
+  }
+
+  body.zu-print-sheet-only main > .content-panel:first-child,
+  body.zu-print-sheet-only main .sl-markdown-content > :not(.zu-sheet) {
+    display: none !important;
+  }
+
+  body.zu-print-sheet-only .zu-sheet {
+    display: block !important;
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  body.zu-print-sheet-only .zu-sheet + .zu-sheet {
+    break-before: page;
+    page-break-before: always;
   }
 }
