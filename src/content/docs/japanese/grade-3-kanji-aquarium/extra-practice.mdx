@@ -26,7 +26,7 @@ content_status:
   claim_status: tentative
   related_pages:
     - /japanese/grade-3-kanji-aquarium/
-  update_note: "エリア1〜8のどこでも使える発展課題と、間違えた漢字を10字まで省スペースで練習できる印刷用テンプレートを追加。"
+  update_note: "エリア1〜8のどこでも使える発展課題と、間違えた漢字を10字まで省スペースで練習できる印刷用テンプレートを追加。練習帳は、正しい字と見て書いた字を左側で隠し、右側に残した読みとひらがなのことばを手がかりに書く配置へ変更。"
 ---
 
 <div class="km-noprint">
@@ -93,22 +93,22 @@ content_status:
 
 <div class="km-intro">
 
-間違えた漢字だけを練習しよう。①答えをたしかめる → ②見て書く → ③かくして書く → ④つぎの日に書く
+間違えた漢字だけを練習しよう。左の「正しい字」と「見て書く」を紙でかくし、右の読みと、ひらがなで書いたことばを見て書きます。
 
 </div>
 
 <div class="km-sheet-meta"><span>名前：</span><span>日づけ：　　月　　日</span><span>エリア・ミッション：　　　　　</span></div>
 
 <div class="km-review-table">
-  <div class="km-review-head"><span></span><span>間違えたことば</span><span>正しい字</span><span>読み</span><span>この字を使うことば</span><span>見て</span><span>かくして</span><span>つぎの日</span></div>
+  <div class="km-review-cover-guide"><span>ここを紙でかくす</span><span>ここは見てよい</span></div>
+  <div class="km-review-head"><span></span><span>正しい字</span><span>見て書く</span><span>読み<br />（ひらがな）</span><span>この字を使うことば<br />（ひらがな）</span><span>かくして</span><span>つぎの日</span></div>
   {Array.from({ length: 10 }, (_, index) => (
     <div class="km-review-row">
       <span class="km-review-number">{index + 1}</span>
-      <i class="km-review-line"></i>
       <b class="km-review-box"></b>
-      <i class="km-review-line"></i>
-      <i class="km-review-line"></i>
       <b class="km-review-box"></b>
+      <i class="km-review-line km-review-prompt"></i>
+      <i class="km-review-line"></i>
       <b class="km-review-box"></b>
       <b class="km-review-box"></b>
     </div>
