@@ -722,14 +722,14 @@
   padding: 0.35rem 0.45rem;
 }
 
+/* 全列に幅を指定して、余りが「やること」へ回るようにします。
+   一列でも指定を欠くと、余白が印の列へ分配されて記入欄が狭くなります。 */
 .ht-plan-table th:first-child,
 .ht-plan-table td:first-child {
-  width: 34%;
+  width: 44%;
   text-align: start;
 }
 
-/* 順番と開始時間は手書きするため、□の列より広く取ります。
-   残りの三列は見出しが折り返しても読める幅を確保します。 */
 .ht-plan-table th:nth-child(2),
 .ht-plan-table td:nth-child(2) {
   width: 7%;
@@ -738,6 +738,11 @@
 .ht-plan-table th:nth-child(3),
 .ht-plan-table td:nth-child(3) {
   width: 11%;
+}
+
+.ht-plan-table th:nth-child(n + 4),
+.ht-plan-table td:nth-child(n + 4) {
+  width: 12.6%;
 }
 
 .ht-plan-table th:not(:first-child),
@@ -2189,10 +2194,11 @@
     padding: 1mm 1.5mm;
   }
 
-  /* 見出しは列幅に合わせて折り返すため、本文より小さくします。 */
+  /* 見出しは一行に収める。折り返すと表の行が高くなり、用紙からはみ出す。 */
   .ht-plan-table thead th {
-    font-size: 7.5pt;
+    font-size: 7pt;
     line-height: 1.2;
+    white-space: nowrap;
   }
 
   .ht-plan-table tbody td {
