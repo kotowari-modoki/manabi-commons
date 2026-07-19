@@ -30,6 +30,10 @@ export default defineConfig({
       customCss: ["./src/styles/custom.css"],
       sidebar: [
         {
+          label: "学びのガイド",
+          items: [{ autogenerate: { directory: "school-guide" } }],
+        },
+        {
           label: "算数・数学",
           items: [{ autogenerate: { directory: "math" } }],
         },
@@ -71,8 +75,8 @@ export default defineConfig({
           items: [{ autogenerate: { directory: "physical-education" } }],
         },
         {
-          label: "学びのガイド",
-          items: [{ autogenerate: { directory: "school-guide" } }],
+          label: "おうちの方へ",
+          items: [{ autogenerate: { directory: "parent-guide" } }],
         },
         {
           label: "このサイトについて",
