@@ -1196,6 +1196,45 @@
 
 /* ===== 音楽：五線譜と練習シート（mu- プレフィックス） ===== */
 
+.mu-web-tools {
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  padding: 0.9rem 1rem;
+  margin-block: 1rem 2rem;
+}
+
+.mu-web-tools p {
+  margin-block: 0 0.75rem;
+}
+
+.mu-print-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.mu-print-button {
+  border: 2px solid var(--sl-color-accent-high, #1d4ed8);
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--sl-color-black, #fff);
+  background: var(--sl-color-accent-high, #1d4ed8);
+}
+
+.mu-print-button--secondary {
+  color: var(--sl-color-text, #111827);
+  background: transparent;
+}
+
+.mu-print-button:hover,
+.mu-print-button:focus-visible {
+  outline: 3px solid var(--sl-color-accent, #60a5fa);
+  outline-offset: 2px;
+}
+
 .mu-score {
   margin-block: 1.5rem;
   padding: 0.9rem 1rem;
@@ -1274,6 +1313,47 @@
   margin-block-start: 0.6rem;
   font-size: 0.92rem;
   color: var(--sl-color-gray-2, #334155);
+}
+
+/* 書き込み用の鍵盤図（白黒・印刷用） */
+.mu-keyboard {
+  position: relative;
+  display: flex;
+  block-size: 7rem;
+  border: 2px solid #111;
+  border-radius: 0.3rem;
+  margin-block: 1rem;
+  background: #fff;
+}
+
+.mu-keyboard-white {
+  flex: 1 1 0;
+  border-inline-end: 1px solid #111;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-block-end: 0.4rem;
+}
+
+.mu-keyboard-white:last-child {
+  border-inline-end: none;
+}
+
+.mu-keyboard-black {
+  position: absolute;
+  inset-block-start: 0;
+  block-size: 60%;
+  inline-size: 8%;
+  background: #111;
+  border-radius: 0 0 0.2rem 0.2rem;
+}
+
+.mu-keyboard-label {
+  inline-size: 1.6rem;
+  block-size: 1.4rem;
+  border: 1px solid #64748b;
+  border-radius: 0.2rem;
+  background: #fff;
 }
 
 /* 書き込み用の空の五線譜と鍵盤図 */
@@ -1359,6 +1439,10 @@
 
   .mu-score-button {
     flex: 1 1 auto;
+  }
+
+  .mu-print-button {
+    width: 100%;
   }
 }
 
@@ -2111,6 +2195,10 @@
   }
 
   /* 音楽：五線譜と練習シート */
+  .mu-web-tools {
+    display: none !important;
+  }
+
   .mu-score-controls {
     display: none !important;
   }
@@ -2141,6 +2229,12 @@
 
   .mu-blank-staff > span {
     block-size: 16mm;
+  }
+
+  .mu-keyboard {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    block-size: 28mm;
   }
 
   .mu-practice-sheet {
