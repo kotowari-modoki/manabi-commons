@@ -233,6 +233,29 @@
   inline-size: 12rem;
 }
 
+.km-write--short {
+  inline-size: 3.5rem;
+}
+
+.km-clue-map {
+  width: 100%;
+  max-width: 42rem;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-block: 1rem;
+  text-align: center;
+}
+
+.km-clue-map th,
+.km-clue-map td {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  padding: 0.55rem 0.7rem;
+}
+
+.km-clue-map th:first-child {
+  width: 4.5rem;
+}
+
 /* 自由記述用のけい線 */
 .km-lines {
   display: grid;
@@ -271,6 +294,136 @@
 .km-print-button:hover,
 .km-print-button:focus-visible {
   opacity: 0.85;
+}
+
+/* 発展課題・まちがい漢字練習帳 */
+.km-sheet-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  border-block-end: 1px solid var(--sl-color-gray-4, #94a3b8);
+  padding-block: 0.35rem 0.6rem;
+  margin-block: 0.5rem 1rem;
+}
+
+.km-recall-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.km-recall-grid > span,
+.km-word-builder > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.km-recall-grid b,
+.km-recall-grid i,
+.km-word-builder b,
+.km-review-box {
+  display: block;
+  box-sizing: border-box;
+  border: 1.5px solid var(--sl-color-gray-3, #64748b);
+  background-image:
+    linear-gradient(to right, transparent calc(50% - 0.5px), var(--sl-color-gray-6, #e2e8f0) 50%, transparent calc(50% + 0.5px)),
+    linear-gradient(to bottom, transparent calc(50% - 0.5px), var(--sl-color-gray-6, #e2e8f0) 50%, transparent calc(50% + 0.5px));
+}
+
+.km-recall-grid b,
+.km-word-builder b {
+  inline-size: 2.8rem;
+  block-size: 2.8rem;
+}
+
+.km-recall-grid i {
+  inline-size: 1.8rem;
+  block-size: 1.8rem;
+  border-style: dashed;
+}
+
+.km-word-builder {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem 1rem;
+}
+
+.km-word-builder i,
+.km-explain-kanji i,
+.km-review-line {
+  display: block;
+  min-width: 2rem;
+  block-size: 1.5rem;
+  border-block-end: 2px solid var(--sl-color-gray-4, #94a3b8);
+}
+
+.km-explain-kanji {
+  display: grid;
+  grid-template-columns: auto minmax(8rem, 1fr) minmax(12rem, 2fr);
+  align-items: end;
+  gap: 0.75rem 1rem;
+}
+
+.km-explain-kanji > span {
+  display: flex;
+  align-items: end;
+  gap: 0.4rem;
+}
+
+.km-explain-kanji b {
+  display: inline-block;
+  inline-size: 3rem;
+  block-size: 3rem;
+  border: 1.5px solid var(--sl-color-gray-3, #64748b);
+}
+
+.km-lines--compact > span {
+  block-size: 2.25rem;
+}
+
+.km-review-steps {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.4rem;
+  padding: 0.55rem 0.75rem;
+  margin-block: 0.5rem;
+}
+
+.km-review-table {
+  overflow-x: auto;
+}
+
+.km-review-head,
+.km-review-row {
+  display: grid;
+  grid-template-columns: 2rem minmax(7rem, 1.4fr) 4.5rem minmax(5rem, 0.8fr) minmax(8rem, 1.3fr) repeat(3, 4.5rem);
+  gap: 0.5rem;
+  align-items: center;
+  min-width: 42rem;
+}
+
+.km-review-head {
+  padding-block: 0.4rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.km-review-row {
+  border-block-start: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  padding-block: 0.45rem;
+}
+
+.km-review-number {
+  font-weight: 700;
+  text-align: center;
+}
+
+.km-review-box {
+  justify-self: center;
+  inline-size: 3.25rem;
+  block-size: 3.25rem;
 }
 
 /* ===== むずかしい課題の作戦ノート（ht- プレフィックス） ===== */
@@ -496,6 +649,11 @@
   padding-block-end: 0.8rem;
 }
 
+.ht-sheet-hint {
+  margin-block: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+}
+
 .ht-sheet-field {
   border: 1px solid var(--sl-color-gray-4, #94a3b8);
   border-radius: 0.5rem;
@@ -516,6 +674,39 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.8rem;
   margin-block: 0.8rem;
+}
+
+.ht-sheet-two-columns > .ht-sheet-field {
+  margin-block: 0;
+}
+
+.ht-plan-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-block: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.ht-plan-table th,
+.ht-plan-table td {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  padding: 0.35rem 0.45rem;
+}
+
+.ht-plan-table th:first-child,
+.ht-plan-table td:first-child {
+  width: 55%;
+  text-align: start;
+}
+
+.ht-plan-table th:not(:first-child),
+.ht-plan-table td:not(:first-child) {
+  text-align: center;
+}
+
+.ht-plan-table tbody td {
+  height: 2rem;
 }
 
 .ht-write-lines {
@@ -709,7 +900,14 @@
   .km-mission > .print-page-qr {
     position: absolute;
     inset-inline-end: 0;
-    inset-block-end: 0;
+    inset-block-start: 0;
+  }
+
+  .km-mission > .sl-heading-wrapper:first-child,
+  .km-mission > h2:first-child,
+  .km-mission > .sl-heading-wrapper:first-child + .km-intro,
+  .km-mission > h2:first-child + .km-intro {
+    padding-inline-end: 24mm;
   }
 
   .km-noprint + .km-mission {
@@ -811,6 +1009,10 @@
     inline-size: 45mm;
   }
 
+  .km-write--short {
+    inline-size: 12mm;
+  }
+
   .km-lines {
     margin-block: 1mm;
   }
@@ -839,6 +1041,7 @@
   .km-intro,
   .km-drill,
   .km-row,
+  .km-clue-map,
   .km-q li,
   .km-lines,
   .km-selfcheck {
@@ -865,6 +1068,87 @@
 
   .km-sample {
     color: #999;
+  }
+
+  .km-extra-sheet .km-sheet-meta {
+    gap: 2mm 8mm;
+    padding-block: 1mm 2mm;
+    margin-block: 1mm 2mm;
+    font-size: 8pt;
+  }
+
+  .km-extra-sheet .km-recall-grid {
+    gap: 1mm 2mm;
+    margin-block: 1mm;
+  }
+
+  .km-extra-sheet .km-recall-grid b {
+    inline-size: 11mm;
+    block-size: 11mm;
+  }
+
+  .km-extra-sheet .km-recall-grid i {
+    inline-size: 7mm;
+    block-size: 7mm;
+  }
+
+  .km-extra-sheet .km-word-builder {
+    gap: 1.5mm 6mm;
+    margin-block: 1mm;
+  }
+
+  .km-extra-sheet .km-word-builder b {
+    inline-size: 9mm;
+    block-size: 9mm;
+  }
+
+  .km-extra-sheet .km-word-builder i,
+  .km-extra-sheet .km-explain-kanji i,
+  .km-extra-sheet .km-review-line {
+    block-size: 5mm;
+  }
+
+  .km-extra-sheet .km-lines--compact > span {
+    block-size: 8mm;
+  }
+
+  .km-review-sheet .km-review-table {
+    overflow: visible;
+  }
+
+  .km-review-sheet .km-review-head,
+  .km-review-sheet .km-review-row {
+    grid-template-columns: 5mm 31mm 15mm 20mm minmax(32mm, 1fr) repeat(3, 15mm);
+    gap: 1.5mm;
+    min-width: 0;
+  }
+
+  .km-review-sheet .km-review-head {
+    padding-block: 1mm;
+    font-size: 6.5pt;
+  }
+
+  .km-review-sheet .km-review-row {
+    min-height: 15mm;
+    padding-block: 0.5mm;
+  }
+
+  .km-review-sheet .km-review-number {
+    font-size: 9pt;
+  }
+
+  .km-review-sheet .km-review-box {
+    inline-size: 12mm;
+    block-size: 12mm;
+  }
+
+  .km-review-row,
+  .km-review-head,
+  .km-recall-grid,
+  .km-word-builder,
+  .km-explain-kanji {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   /* むずかしい課題の作戦ノート */
@@ -909,6 +1193,8 @@
   .ht-path li,
   .ht-strategy-sheet,
   .ht-sheet-field,
+  .ht-plan-table th,
+  .ht-plan-table td,
   .ht-level-table,
   .ht-adult-note {
     color: #111;
@@ -939,7 +1225,13 @@
   .ht-strategy-sheet > .print-page-qr {
     position: absolute;
     inset-inline-end: 7mm;
-    inset-block-end: 6mm;
+    inset-block-start: 7mm;
+  }
+
+  .ht-strategy-sheet > .sl-heading-wrapper:first-child,
+  .ht-strategy-sheet > h2:first-child,
+  .ht-strategy-sheet > .ht-sheet-lead {
+    padding-inline-end: 24mm;
   }
 
   .ht-strategy-sheet .sl-heading-wrapper,
@@ -964,6 +1256,10 @@
     margin-block: 2mm;
   }
 
+  .ht-sheet-two-columns > .ht-sheet-field {
+    margin-block: 0;
+  }
+
   .ht-sheet-field {
     padding: 2.5mm 3mm;
   }
@@ -973,6 +1269,25 @@
     font-size: 10pt;
   }
 
+  .ht-sheet-hint {
+    margin-block: 1mm;
+    font-size: 8.5pt;
+  }
+
+  .ht-plan-table {
+    margin-block: 1mm 0;
+    font-size: 8.5pt;
+  }
+
+  .ht-plan-table th,
+  .ht-plan-table td {
+    padding: 1mm 1.5mm;
+  }
+
+  .ht-plan-table tbody td {
+    height: 8mm;
+  }
+
   .ht-write-lines span {
     block-size: 9mm;
     border-color: #444;
@@ -980,6 +1295,19 @@
 
   .ht-write-lines--one span {
     block-size: 7mm;
+  }
+
+  .ht-task-field--topic {
+    padding-block: 1.5mm;
+  }
+
+  .ht-task-field--topic .ht-write-lines--one span {
+    block-size: 4mm;
+  }
+
+  .ht-task-field--thinking .ht-write-lines span,
+  .ht-task-field--time .ht-write-lines--one span {
+    block-size: 14mm;
   }
 
   .ht-sheet-prompt {
@@ -1005,5 +1333,10 @@
     page-break-before: auto;
     break-after: auto;
     page-break-after: auto;
+  }
+
+  body.ht-print-sheet-only .ht-strategy-sheet + .ht-strategy-sheet {
+    break-before: page;
+    page-break-before: always;
   }
 }

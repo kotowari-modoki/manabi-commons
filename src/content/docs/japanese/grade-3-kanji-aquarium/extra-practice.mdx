@@ -1,0 +1,131 @@
+---
+title: エリア館長チャレンジ・まちがい漢字練習帳
+description: 水族館ドリルのエリア1〜8で使える発展課題と、間違えた漢字を10字練習できる省スペースの印刷用テンプレートです。
+sidebar:
+  order: 10
+  label: 全エリア共通 発展・練習帳
+learning_context:
+  grade: 小学3年
+  subject: 国語
+  unit: 3年生の漢字
+  curriculum_ref: "小学校学習指導要領 国語 第3学年 学年別漢字配当表"
+  prerequisite:
+    - 水族館ドリルのいずれかのエリア
+review:
+  source_ref:
+    - "文部科学省 小学校学習指導要領（平成29年告示） 国語 第3学年及び第4学年〔知識及び技能〕"
+    - "まなびコモンズ 3年生の漢字 水族館ドリル エリア1〜8"
+  ai_process:
+    - structure
+    - synthesize
+    - fact_check
+  confidence: medium
+  human_review: required
+  age_level_review: required
+content_status:
+  claim_status: tentative
+  related_pages:
+    - /japanese/grade-3-kanji-aquarium/
+  update_note: "エリア1〜8のどこでも使える発展課題と、間違えた漢字を10字まで省スペースで練習できる印刷用テンプレートを追加。"
+---
+
+<div class="km-noprint">
+
+どのエリアでも、5つのミッションを終えたあとに使える2まいの追加シートです。
+
+- **エリア館長チャレンジ**：そのエリアの25字を思い出し、ことばや文の中で使います。
+- **まちがい漢字練習帳**：間違えた漢字を10字まで選び、見ないで書けるかたしかめます。
+
+<button class="km-print-button" type="button" onclick="window.print()">2まいを<ruby>印刷<rt>いんさつ</rt></ruby>する</button>
+
+（A4たてで、1シートが1まいになります。1まいだけ必要なときは、印刷画面でページを選んでください。）
+
+</div>
+
+<section class="km-mission km-extra-sheet">
+
+## エリア館長チャレンジ　1〜8共通
+
+<div class="km-intro">
+
+終わったエリアのページをいったん閉じて、習った漢字を思い出そう。
+全部書けなくてもだいじょうぶ。あとでページを見てたしかめよう。
+
+</div>
+
+<div class="km-sheet-meta"><span>名前：</span><span>エリア：　　　</span><span>日づけ：　　月　　日</span><span>時間：　　　分</span></div>
+
+### 1　25字を思い出そう
+
+そのエリアで習った漢字を、覚えているだけ書きましょう。あとで見つけた書き忘れは、下の小さなますに書き足します。
+
+<div class="km-recall-grid">
+  {Array.from({ length: 25 }, (_, index) => <span><b></b><i></i></span>)}
+</div>
+
+### 2　ことばを作ろう
+
+思い出した漢字から6字えらび、その漢字を使うことばを書きましょう。
+
+<div class="km-word-builder">
+  {Array.from({ length: 6 }, (_, index) => <span><b></b><i></i></span>)}
+</div>
+
+### 3　漢字を一字、説明しよう
+
+一字えらび、読みと、どんなことばで使うかを説明しましょう。
+
+<div class="km-explain-kanji"><span>えらんだ漢字 <b></b></span><span>読み <i></i></span><span>説明 <i></i></span></div>
+
+### 4　館長からのお知らせ
+
+そのエリアで習った漢字を3字以上使って、水族館のお知らせを書きましょう。使った漢字に○をつけます。
+
+<div class="km-lines km-lines--compact"><span></span><span></span></div>
+
+<div class="km-selfcheck"><span>思い出した字：　　／25字</span><span>ことばにできた（　）</span><span>説明できた（　）</span><span>文の中で使えた（　）</span></div>
+
+</section>
+
+<section class="km-mission km-extra-sheet km-review-sheet">
+
+## まちがい漢字練習帳
+
+<div class="km-intro">
+
+間違えた漢字だけを練習しよう。①答えをたしかめる → ②見て書く → ③かくして書く → ④つぎの日に書く
+
+</div>
+
+<div class="km-sheet-meta"><span>名前：</span><span>日づけ：　　月　　日</span><span>エリア・ミッション：　　　　　</span></div>
+
+<div class="km-review-table">
+  <div class="km-review-head"><span></span><span>間違えたことば</span><span>正しい字</span><span>読み</span><span>この字を使うことば</span><span>見て</span><span>かくして</span><span>つぎの日</span></div>
+  {Array.from({ length: 10 }, (_, index) => (
+    <div class="km-review-row">
+      <span class="km-review-number">{index + 1}</span>
+      <i class="km-review-line"></i>
+      <b class="km-review-box"></b>
+      <i class="km-review-line"></i>
+      <i class="km-review-line"></i>
+      <b class="km-review-box"></b>
+      <b class="km-review-box"></b>
+      <b class="km-review-box"></b>
+    </div>
+  ))}
+</div>
+
+<div class="km-selfcheck"><span>正しく書けた字に○をつけよう。</span><span>もう一度やる日：　　月　　日</span></div>
+
+</section>
+
+<div class="km-noprint">
+
+## 館長チャレンジのたしかめ方
+
+終わったエリアのページをもう一度開き、「きょうの漢字」とくらべます。
+ことばや文は、漢字が正しく使われ、意味が通っていれば正解です。
+
+[水族館ドリルの使い方](../)へもどる
+
+</div>
