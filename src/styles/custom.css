@@ -1142,14 +1142,15 @@
 
 .rn-two-columns {
   display: grid;
-  grid-template-columns: minmax(8rem, 10rem) minmax(0, 1fr);
+  grid-template-columns: minmax(5rem, 6rem) minmax(0, 1fr);
   gap: 0.8rem;
   align-items: start;
 }
 
 .rn-draw-box {
   box-sizing: border-box;
-  aspect-ratio: 1 / 1;
+  inline-size: 4.5rem;
+  block-size: 4.5rem;
   border: 1.5px solid var(--sl-color-gray-4, #94a3b8);
 }
 
@@ -1868,10 +1869,14 @@
 
   .rn-entry {
     border-color: #444;
-    padding: 3mm 4mm;
-    margin-block: 3mm;
+    padding: 1.5mm 3mm;
+    margin-block: 1.5mm;
     break-inside: avoid;
     page-break-inside: avoid;
+  }
+
+  .rn-entry-head {
+    margin-block-end: 1mm;
   }
 
   .rn-inline-write {
@@ -1879,23 +1884,25 @@
   }
 
   .rn-field {
-    margin-block: 2mm;
+    margin-block: 0.7mm;
   }
 
   .rn-field h4 {
-    font-size: 8.5pt;
+    font-size: 8pt;
   }
 
   .rn-write-lines span {
-    block-size: 6mm;
+    block-size: 4.5mm;
     border-color: #444;
   }
 
   .rn-write-lines--one span {
-    block-size: 5mm;
+    block-size: 4.5mm;
   }
 
   .rn-draw-box {
+    inline-size: 18mm;
+    block-size: 18mm;
     border-color: #444;
   }
 
@@ -1904,8 +1911,8 @@
   }
 
   .rn-checks {
-    font-size: 8pt;
-    gap: 1mm 4mm;
+    font-size: 7.5pt;
+    gap: 0.8mm 3mm;
   }
 
   body.rn-print-sheet-only main > .content-panel:first-child,
