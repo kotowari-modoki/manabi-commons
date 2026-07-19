@@ -1210,6 +1210,22 @@
     display: none !important;
   }
 
+  /* 印刷時の高さは内容だけで決める。
+     Starlight のレイアウト枠は画面高に合わせた高さを持ち、Firefox は
+     それを印刷にも反映するため、内容が1枚に収まっていても空白のページが
+     1枚余分に出力される。 */
+  html,
+  body,
+  .page,
+  .main-frame,
+  main,
+  .content-panel,
+  .sl-container,
+  .sl-markdown-content {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
   /* 教材名だけの表紙ページを作らず、すぐミッションを印刷する */
   main:has(.km-mission) > .content-panel:first-child {
     display: none;

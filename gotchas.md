@@ -12,3 +12,5 @@
 - 印刷用QRは教材ごとに置き場所を変えず、右上を基本にする。先頭見出しと導入文にはQRぶんの右余白を確保し、全ページの画像で重なりを確認する。
 - シリーズ教材の追加シートは、特定の最初の単元だけに固定せず、全単元で再利用できる形を先に検討する。反復用紙は見出しの繰り返しと余白を減らし、1枚あたりの練習量も印刷コストとして確認する。
 - 「隠して書く」練習では、隠す答えを左側へまとめ、手がかりとなる読みとひらがなのことばを右側に残す。何を隠すか、どこまで隠すかを用紙上で明示する。
+- 印刷ページ数の確認は Chrome だけで済ませない。Starlight のレイアウト枠は画面高に合わせた高さを持ち、Firefox はそれを印刷にも反映するため、内容が1枚に収まっていても空白のページが余分に出る。`@media print` で `html, body, .page, .main-frame, main, .content-panel, .sl-container, .sl-markdown-content` の高さを `auto` に戻す。
+- 印刷の検証に Playwright の `emulateMedia({ media: 'print' })` を使うと、印刷用CSSは適用されるがページ分割はされないため、ページ数の不具合を見逃す。Firefox は `firefoxUserPrefs` の `print.always_print_silent` と `Mozilla Save to PDF` で実際の印刷結果をPDFとして取得できる。
