@@ -1778,7 +1778,7 @@
   }
 
   .hb-cell {
-    height: 8mm;
+    height: 13mm;
   }
 
   .hb-write,
@@ -1787,7 +1787,7 @@
   }
 
   .hb-notes {
-    margin-block-start: 2mm;
+    margin-block-start: 5mm;
   }
 
   .hb-notes-hint {
@@ -1795,7 +1795,7 @@
   }
 
   .hb-notes-lines span {
-    block-size: 6mm;
+    block-size: 11mm;
     border-color: #333;
   }
 
