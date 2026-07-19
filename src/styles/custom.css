@@ -496,6 +496,11 @@
   padding-block-end: 0.8rem;
 }
 
+.ht-sheet-hint {
+  margin-block: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+}
+
 .ht-sheet-field {
   border: 1px solid var(--sl-color-gray-4, #94a3b8);
   border-radius: 0.5rem;
@@ -516,6 +521,39 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.8rem;
   margin-block: 0.8rem;
+}
+
+.ht-sheet-two-columns > .ht-sheet-field {
+  margin-block: 0;
+}
+
+.ht-plan-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-block: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.ht-plan-table th,
+.ht-plan-table td {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  padding: 0.35rem 0.45rem;
+}
+
+.ht-plan-table th:first-child,
+.ht-plan-table td:first-child {
+  width: 55%;
+  text-align: start;
+}
+
+.ht-plan-table th:not(:first-child),
+.ht-plan-table td:not(:first-child) {
+  text-align: center;
+}
+
+.ht-plan-table tbody td {
+  height: 2rem;
 }
 
 .ht-write-lines {
@@ -909,6 +947,8 @@
   .ht-path li,
   .ht-strategy-sheet,
   .ht-sheet-field,
+  .ht-plan-table th,
+  .ht-plan-table td,
   .ht-level-table,
   .ht-adult-note {
     color: #111;
@@ -939,7 +979,13 @@
   .ht-strategy-sheet > .print-page-qr {
     position: absolute;
     inset-inline-end: 7mm;
-    inset-block-end: 6mm;
+    inset-block-start: 7mm;
+  }
+
+  .ht-strategy-sheet > .sl-heading-wrapper:first-child,
+  .ht-strategy-sheet > h2:first-child,
+  .ht-strategy-sheet > .ht-sheet-lead {
+    padding-inline-end: 24mm;
   }
 
   .ht-strategy-sheet .sl-heading-wrapper,
@@ -964,6 +1010,10 @@
     margin-block: 2mm;
   }
 
+  .ht-sheet-two-columns > .ht-sheet-field {
+    margin-block: 0;
+  }
+
   .ht-sheet-field {
     padding: 2.5mm 3mm;
   }
@@ -973,6 +1023,25 @@
     font-size: 10pt;
   }
 
+  .ht-sheet-hint {
+    margin-block: 1mm;
+    font-size: 8.5pt;
+  }
+
+  .ht-plan-table {
+    margin-block: 1mm 0;
+    font-size: 8.5pt;
+  }
+
+  .ht-plan-table th,
+  .ht-plan-table td {
+    padding: 1mm 1.5mm;
+  }
+
+  .ht-plan-table tbody td {
+    height: 8mm;
+  }
+
   .ht-write-lines span {
     block-size: 9mm;
     border-color: #444;
@@ -980,6 +1049,19 @@
 
   .ht-write-lines--one span {
     block-size: 7mm;
+  }
+
+  .ht-task-field--topic {
+    padding-block: 1.5mm;
+  }
+
+  .ht-task-field--topic .ht-write-lines--one span {
+    block-size: 4mm;
+  }
+
+  .ht-task-field--thinking .ht-write-lines span,
+  .ht-task-field--time .ht-write-lines--one span {
+    block-size: 14mm;
   }
 
   .ht-sheet-prompt {
@@ -1005,5 +1087,10 @@
     page-break-before: auto;
     break-after: auto;
     page-break-after: auto;
+  }
+
+  body.ht-print-sheet-only .ht-strategy-sheet + .ht-strategy-sheet {
+    break-before: page;
+    page-break-before: always;
   }
 }
