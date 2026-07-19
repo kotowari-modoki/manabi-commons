@@ -395,13 +395,29 @@
   overflow-x: auto;
 }
 
+.km-review-cover-guide,
 .km-review-head,
 .km-review-row {
   display: grid;
-  grid-template-columns: 2rem minmax(7rem, 1.4fr) 4.5rem minmax(5rem, 0.8fr) minmax(8rem, 1.3fr) repeat(3, 4.5rem);
+  grid-template-columns: 2rem 4.5rem 4.5rem minmax(5rem, 0.8fr) minmax(10rem, 1.5fr) repeat(2, 4.5rem);
   gap: 0.5rem;
   align-items: center;
   min-width: 42rem;
+}
+
+.km-review-cover-guide {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.km-review-cover-guide > span:first-child {
+  grid-column: 1 / 4;
+  border-inline-end: 2px dashed var(--sl-color-gray-3, #64748b);
+}
+
+.km-review-cover-guide > span:last-child {
+  grid-column: 4 / -1;
 }
 
 .km-review-head {
@@ -413,6 +429,18 @@
 .km-review-row {
   border-block-start: 1px solid var(--sl-color-gray-5, #cbd5e1);
   padding-block: 0.45rem;
+}
+
+.km-review-table .km-review-head > *,
+.km-review-table .km-review-row > * {
+  align-self: center;
+  margin-block: 0;
+}
+
+.km-review-head > :nth-child(4),
+.km-review-prompt {
+  border-inline-start: 2px dashed var(--sl-color-gray-3, #64748b);
+  padding-inline-start: 0.5rem;
 }
 
 .km-review-number {
@@ -1116,11 +1144,16 @@
     overflow: visible;
   }
 
+  .km-review-sheet .km-review-cover-guide,
   .km-review-sheet .km-review-head,
   .km-review-sheet .km-review-row {
-    grid-template-columns: 5mm 31mm 15mm 20mm minmax(32mm, 1fr) repeat(3, 15mm);
+    grid-template-columns: 5mm 15mm 15mm 24mm minmax(48mm, 1fr) repeat(2, 15mm);
     gap: 1.5mm;
     min-width: 0;
+  }
+
+  .km-review-sheet .km-review-cover-guide {
+    font-size: 6.5pt;
   }
 
   .km-review-sheet .km-review-head {
@@ -1129,8 +1162,8 @@
   }
 
   .km-review-sheet .km-review-row {
-    min-height: 15mm;
-    padding-block: 0.5mm;
+    min-height: 14mm;
+    padding-block: 0.25mm;
   }
 
   .km-review-sheet .km-review-number {
@@ -1143,6 +1176,7 @@
   }
 
   .km-review-row,
+  .km-review-cover-guide,
   .km-review-head,
   .km-recall-grid,
   .km-word-builder,
