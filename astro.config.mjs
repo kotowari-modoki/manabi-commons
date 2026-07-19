@@ -67,6 +67,10 @@ export default defineConfig({
           items: [{ autogenerate: { directory: "english" } }],
         },
         {
+          label: "音楽",
+          items: [{ autogenerate: { directory: "music" } }],
+        },
+        {
           label: "図工・アート",
           items: [{ autogenerate: { directory: "art" } }],
         },

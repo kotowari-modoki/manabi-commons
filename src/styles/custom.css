@@ -1194,6 +1194,174 @@
   }
 }
 
+/* ===== 音楽：五線譜と練習シート（mu- プレフィックス） ===== */
+
+.mu-score {
+  margin-block: 1.5rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+}
+
+.mu-score-sheet {
+  overflow-x: auto;
+}
+
+.mu-score-sheet svg {
+  display: block;
+  min-width: 20rem;
+  max-width: 100%;
+  height: auto;
+  color: var(--sl-color-text, #111827);
+}
+
+.mu-score.is-playing {
+  border-color: var(--sl-color-accent-high, #1d4ed8);
+}
+
+.mu-score-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.9rem;
+  margin-block-start: 0.8rem;
+}
+
+.mu-score-button {
+  border: 2px solid var(--sl-color-accent-high, #1d4ed8);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--sl-color-black, #fff);
+  background: var(--sl-color-accent-high, #1d4ed8);
+}
+
+.mu-score-button--subtle {
+  color: var(--sl-color-text, #111827);
+  background: transparent;
+}
+
+.mu-score-button:hover,
+.mu-score-button:focus-visible {
+  outline: 3px solid var(--sl-color-accent, #60a5fa);
+  outline-offset: 2px;
+}
+
+.mu-score-tempo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.mu-score-tempo select {
+  font: inherit;
+  padding: 0.3rem 0.4rem;
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.4rem;
+  background: transparent;
+  color: inherit;
+}
+
+.mu-score-status {
+  font-size: 0.9rem;
+  color: var(--sl-color-gray-2, #334155);
+}
+
+.mu-score-caption {
+  margin-block-start: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--sl-color-gray-2, #334155);
+}
+
+/* 書き込み用の空の五線譜と鍵盤図 */
+.mu-blank-staff {
+  display: grid;
+  gap: 1.1rem;
+  margin-block: 1rem;
+}
+
+.mu-blank-staff > span {
+  display: block;
+  block-size: 3.4rem;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--sl-color-gray-3, #64748b) 0,
+    var(--sl-color-gray-3, #64748b) 1px,
+    transparent 1px,
+    transparent 0.85rem
+  );
+}
+
+.mu-practice-sheet {
+  max-width: 52rem;
+  border: 3px solid var(--sl-color-gray-3, #64748b);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-block: 2rem;
+}
+
+.mu-practice-sheet > .sl-heading-wrapper:first-child,
+.mu-practice-sheet > h2:first-child {
+  margin-top: 0;
+}
+
+.mu-field {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.8rem;
+  margin-block: 0.8rem;
+}
+
+.mu-field h3 {
+  margin-block: 0 0.4rem;
+  font-size: 1rem;
+}
+
+.mu-two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-block: 0.8rem;
+}
+
+.mu-two-columns > .mu-field {
+  margin-block: 0;
+}
+
+.mu-write-lines {
+  display: grid;
+}
+
+.mu-write-lines span {
+  display: block;
+  block-size: 2.1rem;
+  border-block-end: 1px solid var(--sl-color-gray-3, #64748b);
+}
+
+.mu-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.4rem;
+  font-size: 0.95rem;
+}
+
+@media screen and (max-width: 40rem) {
+  .mu-score {
+    padding: 0.7rem;
+  }
+
+  .mu-two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .mu-score-button {
+    flex: 1 1 auto;
+  }
+}
+
 /* ===== 印刷スタイル（A4 たて・1ミッション1ページ） ===== */
 
 @page {
@@ -1937,6 +2105,89 @@
   }
 
   body.rn-print-sheet-only .rn-notebook-page {
+    display: block !important;
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  /* 音楽：五線譜と練習シート */
+  .mu-score-controls {
+    display: none !important;
+  }
+
+  .mu-score {
+    border: none;
+    padding: 0;
+    margin-block: 4mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .mu-score-sheet {
+    overflow: visible;
+  }
+
+  .mu-score-sheet svg {
+    min-width: 0;
+    width: 100%;
+    /* 白黒印刷でも線と符頭がはっきり出るようにします。 */
+    color: #111;
+  }
+
+  .mu-score-caption {
+    color: #333;
+    font-size: 9pt;
+  }
+
+  .mu-blank-staff > span {
+    block-size: 16mm;
+  }
+
+  .mu-practice-sheet {
+    box-sizing: border-box;
+    max-width: none;
+    break-before: page;
+    page-break-before: always;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+
+  .mu-practice-sheet,
+  .mu-field,
+  .mu-write-lines span {
+    border-color: #444;
+  }
+
+  .mu-field {
+    padding: 2.5mm 3mm;
+    margin-block: 2.5mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .mu-field h3 {
+    font-size: 10pt;
+  }
+
+  .mu-write-lines span {
+    block-size: 8mm;
+  }
+
+  .mu-checks {
+    font-size: 9pt;
+    gap: 1.5mm 6mm;
+  }
+
+  body.mu-print-sheet-only main > .content-panel:first-child,
+  body.mu-print-sheet-only main .sl-markdown-content > :not(.mu-practice-sheet) {
+    display: none !important;
+  }
+
+  body.mu-print-sheet-only .mu-practice-sheet {
     display: block !important;
     break-before: auto;
     page-break-before: auto;
