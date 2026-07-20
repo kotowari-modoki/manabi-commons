@@ -2611,7 +2611,7 @@
     position: relative;
     box-sizing: border-box;
     max-width: none;
-    min-height: 260mm;
+    min-height: 268mm;
     break-before: page;
     page-break-before: always;
     border: none;
@@ -2721,9 +2721,11 @@
     page-break-inside: avoid;
   }
 
-  /* 描くわくは紙面のあまりを使って大きくします。 */
+  /* 描くわくは紙面のあまりを使って大きくします。
+     比率ではなく高さで指定し、列数が変わっても紙面の使い方を保ちます。 */
   .zu-frame-box {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: auto;
+    min-block-size: 68mm;
     border-color: #444;
   }
 
@@ -2744,7 +2746,7 @@
 
   .zu-swatch-area {
     border-color: #444;
-    min-block-size: 34mm;
+    min-block-size: 66mm;
   }
 
   .zu-idea-sketch {
