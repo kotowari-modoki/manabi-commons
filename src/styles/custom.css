@@ -726,23 +726,23 @@
    一列でも指定を欠くと、余白が印の列へ分配されて記入欄が狭くなります。 */
 .ht-plan-table th:first-child,
 .ht-plan-table td:first-child {
-  width: 44%;
+  width: 38%;
   text-align: start;
 }
 
 .ht-plan-table th:nth-child(2),
 .ht-plan-table td:nth-child(2) {
-  width: 7%;
+  width: 6%;
 }
 
 .ht-plan-table th:nth-child(3),
 .ht-plan-table td:nth-child(3) {
-  width: 11%;
+  width: 10%;
 }
 
 .ht-plan-table th:nth-child(n + 4),
 .ht-plan-table td:nth-child(n + 4) {
-  width: 12.6%;
+  width: 11.5%;
 }
 
 .ht-plan-table th:not(:first-child),
