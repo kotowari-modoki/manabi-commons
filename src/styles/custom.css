@@ -2276,7 +2276,9 @@
   }
 
   /* おうちの方へ：習慣記録シート */
-  .hb-web-tools {
+  /* 画面用の案内は紙に出さない。紙の上で「横にスクロール」は意味を持たない。 */
+  .hb-web-tools,
+  .hb-scroll-hint {
     display: none !important;
   }
 
@@ -2350,7 +2352,7 @@
   }
 
   .hb-cell {
-    height: 11mm;
+    height: 16mm;
   }
 
   .hb-write,
@@ -2367,7 +2369,7 @@
   }
 
   .hb-notes-lines span {
-    block-size: 9mm;
+    block-size: 11mm;
     border-color: #333;
   }
 
