@@ -2633,6 +2633,18 @@
     position: absolute;
     inset-inline-end: 0;
     inset-block-start: 0;
+    inline-size: 17mm;
+  }
+
+  .zu-sheet > .print-page-qr svg {
+    inline-size: 17mm;
+    block-size: 17mm;
+  }
+
+  /* 見出しが低いシートでは、QRが最初の記入欄に重なる。
+     たて向きのシートだけ、見出しの下に場所を空ける。 */
+  .zu-sheet:not(.zu-sheet--landscape) > .zu-sheet-lead {
+    margin-block-end: 6mm;
   }
 
   .zu-sheet > .sl-heading-wrapper:first-child,
