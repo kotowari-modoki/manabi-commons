@@ -28,7 +28,7 @@ content_status:
   related_pages:
     - /school-guide/kodomo-no-jikan-tsukaikata/
     - /school-guide/shogakko-manabi-no-yakusoku/
-  update_note: "複数の課題を整理して一つ選び、取り組む時間と終了後の行動を決める印刷用作戦ボードを追加。既存の作戦シートは、選んだ一課題を小さく分ける役割が分かる構成へ更新し、『子どもの時間のつかい方』との使い分けを追記。"
+  update_note: "二枚のシートで同じ内容を書かせていたため、役割を分け直した。作戦ボードから『最初の一歩』と『その時間で、どこまでやる？』を削除し、どちらも作戦シート側の役割とした。作戦ボードは『どれを・いつやるか』、作戦シートは『何から手をつけるか』を担う。重なるのは課題名だけとし、作戦シートの1に書き写す旨を明記。あわせて作戦ボードのやることリストを、今日／あとての二択から、順番・開始時間の記入欄と、やれたらやる／今日はやらない／いっしょに相談の三つの印へ変更。始める時間に30分と60分を追加し、一日の計画が合っていたかを見る『今日をふりかえる』欄を新設した（項目は5→6）。以前の版で作戦ボードに最初の一歩を書いていた場合、その欄は作戦シートへ移っている。"
 ---
 
 {/* ABOUTME: 小学校高学年の子どもが、考えることの多い課題を小さく分けて進めるための教材です。 */}
@@ -285,22 +285,22 @@ content_status:
 
 ## 今日の作戦ボード
 
-<p id="ht-planning-sheet-title" class="ht-sheet-lead">やることを全部書いて分けたら、今やる一つと時間を決めます。</p>
+<p id="ht-planning-sheet-title" class="ht-sheet-lead">やることを全部書いて分けたら、今やる一つと、始める時刻を決めます。何から手をつけるかは、次のシートで考えます。</p>
 
 <div class="ht-sheet-field ht-sheet-field--full">
   <h3>1　やることを全部書いて、分ける</h3>
-  <p class="ht-sheet-hint">一つの行に一つ書き、どこに置くか□に印を付けます。</p>
+  <p class="ht-sheet-hint">一つの行に一つ書きます。今日やるものには、やる順番を数字で書き、始める時間も決められそうなら書きます。今日やらないものは、右の□に印を付けます。</p>
   <table class="ht-plan-table">
     <thead>
-      <tr><th scope="col">やること</th><th scope="col">今日</th><th scope="col">あとで</th><th scope="col">いっしょに・相談</th></tr>
+      <tr><th scope="col">やること</th><th scope="col">順番</th><th scope="col">開始時間</th><th scope="col">やれたら</th><th scope="col">今日はやらない</th><th scope="col">いっしょに相談</th><th scope="col">できた</th></tr>
     </thead>
     <tbody>
-      <tr><td></td><td>□</td><td>□</td><td>□</td></tr>
-      <tr><td></td><td>□</td><td>□</td><td>□</td></tr>
-      <tr><td></td><td>□</td><td>□</td><td>□</td></tr>
-      <tr><td></td><td>□</td><td>□</td><td>□</td></tr>
-      <tr><td></td><td>□</td><td>□</td><td>□</td></tr>
-      <tr><td></td><td>□</td><td>□</td><td>□</td></tr>
+      <tr><td></td><td></td><td></td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+      <tr><td></td><td></td><td></td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+      <tr><td></td><td></td><td></td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+      <tr><td></td><td></td><td></td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+      <tr><td></td><td></td><td></td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
+      <tr><td></td><td></td><td></td><td>□</td><td>□</td><td>□</td><td>□</td></tr>
     </tbody>
   </table>
 </div>
@@ -311,50 +311,55 @@ content_status:
   <p class="ht-sheet-hint">□ 今日まで　□ 今なら助けてもらえる　□ いちばん始めやすい</p>
 </div>
 
-<div class="ht-sheet-two-columns">
-  <div class="ht-sheet-field">
-    <h3>3　最初の一歩</h3>
-    <div class="ht-write-lines ht-write-lines--one" aria-label="最初の一歩の記入欄"><span></span></div>
-  </div>
-  <div class="ht-sheet-field">
-    <h3>4　始める時刻と時間</h3>
-    <p class="ht-sheet-checks">始める：　　 時　　 分</p>
-    <p class="ht-sheet-checks">□ 5分　□ 10分　□ 15分</p>
-  </div>
+<div class="ht-sheet-field ht-sheet-field--full">
+  <h3>3　1つ目を始める時刻と、やる時間</h3>
+  <p class="ht-sheet-hint">上の「2　今やる一つ」に書いたものです。ほかのものは、表の「開始時間」に書きます。</p>
+  <p class="ht-sheet-checks">始める：　　 時　　 分</p>
+  <p class="ht-sheet-checks">□ 5分　□ 10分　□ 15分　□ 30分　□ 60分　□ ほかの時間：<i class="ht-inline-write" aria-hidden="true"></i></p>
 </div>
 
 <div class="ht-sheet-field ht-sheet-field--full">
-  <h3>5　その時間で、どこまでやる？</h3>
-  <div class="ht-write-lines ht-write-lines--one" aria-label="時間内に取り組む量の記入欄"><span></span></div>
-</div>
-
-<div class="ht-sheet-field ht-sheet-field--full">
-  <h3>6　集中しやすくする準備</h3>
+  <h3>4　集中しやすくする準備</h3>
   <div class="ht-sheet-checks" role="group" aria-label="集中しやすくする準備を選ぶ欄">
     <span>□ 今使う物だけ出す</span>
     <span>□ タイマーを用意</span>
     <span>□ 水・トイレをすませる</span>
     <span>□ 少し体を動かす</span>
-    <span>□ 最初だけいっしょに始める</span>
+    <span>□ 終わったあとのごほうびを決める</span>
+    <span>□ ほかの方法：<i class="ht-inline-write" aria-hidden="true"></i></span>
   </div>
 </div>
 
 <div class="ht-sheet-field ht-sheet-field--full">
-  <h3>7　タイマーが鳴ったら</h3>
+  <h3>5　タイマーが鳴ったら</h3>
   <div class="ht-sheet-checks" role="group" aria-label="タイマーが鳴った後の行動を選ぶ欄">
     <span>□ 今日はここまで</span>
     <span>□ 5分休んで、もう1回</span>
     <span>□ 次の課題へ</span>
     <span>□ 次にやることをメモ</span>
     <span>□ 助けをたのむ</span>
+    <span>□ ほかの行動：<i class="ht-inline-write" aria-hidden="true"></i></span>
   </div>
+</div>
+
+<div class="ht-sheet-field ht-sheet-field--full">
+  <h3>6　今日をふりかえる</h3>
+  <div class="ht-sheet-checks" role="group" aria-label="時間の見当をふりかえる欄">
+    <span>時間の見当は…</span>
+    <span>□ ちょうどよかった</span>
+    <span>□ 早く終わった</span>
+    <span>□ 時間がかかった</span>
+  </div>
+  <p class="ht-sheet-prompt">明日にまわすこと、気づいたこと（数を数える欄ではありません）</p>
+  <div class="ht-write-lines ht-write-lines--one" aria-label="明日にまわすこと、気づいたことの記入欄"><span></span></div>
 </div>
 
 <p class="ht-sheet-footer">日づけ：<span></span>　名前：<span></span></p>
 
 </section>
 
-作戦ボードで選んだものが大きくて手が止まりそうなときは、次のシートでもっと小さくします。
+作戦ボードは「どれを、いつやるか」を決める一枚です。
+選んだものが大きくて手が止まりそうなときは、次のシートで「何から手をつけるか」まで小さくします。
 
 <section class="ht-strategy-sheet ht-task-sheet" aria-labelledby="ht-task-sheet-title">
 
@@ -364,22 +369,23 @@ content_status:
 
 <div class="ht-sheet-field ht-sheet-field--full ht-task-field--topic">
   <h3>1　今日取り組むこと</h3>
+  <p class="ht-sheet-hint">作戦ボードを使ったときは、「2 今やる一つ」をそのまま書き写します。</p>
   <div class="ht-write-lines ht-write-lines--one" aria-label="今日取り組むことの記入欄"><span></span></div>
 </div>
 
 <div class="ht-sheet-field ht-sheet-field--full">
   <h3>2　何ができたら終わり？</h3>
-  <div class="ht-write-lines ht-write-lines--one" aria-label="ゴールの記入欄"><span></span></div>
+  <div class="ht-write-lines" aria-label="ゴールの記入欄"><span></span><span></span></div>
 </div>
 
 <div class="ht-sheet-two-columns">
   <div class="ht-sheet-field ht-task-field--thinking">
     <h3>3　今、分かっていること</h3>
-    <div class="ht-write-lines" aria-label="分かっていることの記入欄"><span></span><span></span></div>
+    <div class="ht-write-lines" aria-label="分かっていることの記入欄"><span></span><span></span><span></span></div>
   </div>
   <div class="ht-sheet-field ht-task-field--thinking">
     <h3>4　最初の一歩</h3>
-    <div class="ht-write-lines" aria-label="最初の一歩の記入欄"><span></span><span></span></div>
+    <div class="ht-write-lines" aria-label="最初の一歩の記入欄"><span></span><span></span><span></span></div>
   </div>
 </div>
 
@@ -402,11 +408,11 @@ content_status:
 <div class="ht-sheet-two-columns">
   <div class="ht-sheet-field">
     <h3>7　今日分かったこと</h3>
-    <div class="ht-write-lines" aria-label="今日分かったことの記入欄"><span></span><span></span></div>
+    <div class="ht-write-lines" aria-label="今日分かったことの記入欄"><span></span><span></span><span></span></div>
   </div>
   <div class="ht-sheet-field">
     <h3>8　次にやること</h3>
-    <div class="ht-write-lines" aria-label="次にやることの記入欄"><span></span><span></span></div>
+    <div class="ht-write-lines" aria-label="次にやることの記入欄"><span></span><span></span><span></span></div>
   </div>
 </div>
 

@@ -1,0 +1,166 @@
+---
+title: できた日を見つける 1か月記録シート
+description: 家庭でのちいさな取り組みを、○△いの印でゆるやかに残す、A4横向き・1か月分の印刷用記録シートです。
+sidebar:
+  order: 1
+learning_context:
+  grade: 幼稚園〜小学校中学年
+  subject: 家庭学習・生活習慣
+  unit: 家庭でのちいさな取り組みの記録
+review:
+  source_ref:
+    - "一般的な家庭学習支援・行動形成支援に関する考え方"
+  ai_process:
+    - structure
+    - rewrite
+    - critique
+  confidence: medium
+  human_review: required
+  safety_review: required
+  age_level_review: required
+content_status:
+  claim_status: tentative
+  related_pages:
+    - /parent-guide/reading-log-notebook/
+    - /school-guide/kodomo-no-jikan-tsukaikata/
+  update_note: "初版。習慣記録シートを新規作成。"
+---
+
+{/* ABOUTME: 幼稚園〜小学校中学年の子どもと保護者が、家庭でのちいさな取り組みを一緒に見つけて残すための印刷シートです。 */}
+{/* ABOUTME: 採点や達成率を強調せず、○△いの3つの印と空らんだけで、ゆるやかに1か月を記録します。 */}
+
+<style>
+{`
+  @page {
+    size: A4 landscape;
+    margin: 10mm;
+  }
+`}
+</style>
+
+毎日の「できた」を見つけて、ゆるやかに残すための、A4横1枚の記録シートです。
+
+<div class="hb-web-tools">
+
+<p>印刷して、お子さんと一緒に使ってください。採点するための表ではありません。</p>
+
+<div class="hb-print-buttons" aria-label="印刷メニュー">
+  <button class="hb-print-button" type="button" onclick="window.print()">説明とシートを一緒に印刷する</button>
+  <button class="hb-print-button hb-print-button--secondary" type="button" onclick="document.body.classList.add('hb-print-sheet-only'); window.addEventListener('afterprint', () => document.body.classList.remove('hb-print-sheet-only'), { once: true }); void document.body.offsetHeight; requestAnimationFrame(() => window.print())">シートだけ印刷する</button>
+</div>
+
+</div>
+
+## このシートでできること
+
+- 毎日の取り組みを、○（できた）△（少しできた）い（家族といっしょにできた）の3つの印で残せます
+- 空らんは「休んだ」「記録しなかった」という意味で、失敗の印ではありません
+- 「20分勉強する」のような量ではなく、「絵本をひらく」のような始めるための小さな行動を記録できます
+- 月末に、家庭に合ったやり方を短くメモできる欄があります
+
+以下は、印刷して使うシートです。
+
+<section class="hb-record-sheet" aria-labelledby="hb-sheet-title">
+
+## <span id="hb-sheet-title">できた日を見つける 1か月記録シート</span>
+
+<div class="hb-sheet-head">
+<span class="hb-sheet-meta"><span>名前：<i class="hb-write hb-write--name"></i></span><span><i class="hb-write hb-write--year"></i>年 <i class="hb-write hb-write--month"></i>月</span></span>
+</div>
+
+<p class="hb-legend" aria-label="記録のしかた">
+<span>○　できた</span>
+<span>△　すこしできた</span>
+<span>い　かぞくといっしょにできた</span>
+<span>空らん　休んだ・記録しなかった</span>
+</p>
+
+<p class="hb-scroll-hint">画面ではば全体を確認しにくいときは、表を横にスクロールできます。実際の記入は、印刷してからご利用ください。</p>
+
+<div class="hb-grid-wrap">
+<table class="hb-grid">
+<thead>
+<tr>
+<th scope="col" class="hb-grid-item-head">やりたいこと</th>
+{Array.from({ length: 31 }).map((_, index) => <th scope="col">{index + 1}</th>)}
+</tr>
+</thead>
+<tbody>
+{Array.from({ length: 5 }).map((_, row) => (
+<tr>
+<td class="hb-grid-item"><span class="hb-write hb-write--item"></span></td>
+{Array.from({ length: 31 }).map((_, day) => <td class="hb-cell"></td>)}
+</tr>
+))}
+</tbody>
+</table>
+</div>
+
+<div class="hb-notes">
+
+### 今月見つけたこと
+
+<p class="hb-notes-hint">例：朝より夕方のほうが取り組みやすかった／親と一緒なら始められた／毎日ではなく週3回くらいがちょうどよかった</p>
+
+<div class="hb-notes-lines"><span></span><span></span><span></span></div>
+
+</div>
+
+</section>
+
+## 使い方 3ステップ
+
+1. 「やりたいこと」の欄に、5つまで書きます。結果ではなく、始めるための小さな行動にすると続けやすくなります。
+2. 1日の終わりや気づいたタイミングで、○△いのどれかを書きます。できなかった日は空らんのままで大丈夫です。
+3. 月末に「今月見つけたこと」を、お子さんと話しながら短くメモします。
+
+## 年齢に合わせた使い方
+
+### 幼稚園・年少〜年中
+
+保護者が印をつけながら、「今日はこれ、できたね」と声をかける使い方が中心です。お子さんが絵を描き足しても構いません。
+
+### 幼稚園・年長〜小学校低学年
+
+お子さんが自分で印をつけられます。うまく書けなくても、印の場所が合っていれば十分です。
+
+### 小学校中学年
+
+取り組む項目を、お子さんと一緒に選ぶところから始めると、続けやすくなります。振り返りの欄も、お子さん自身の言葉で埋めてみてください。
+
+## うまくいかないとき
+
+- 空らんの日が続いても、そこで終わりにする必要はありません。次の日からまた印をつければ大丈夫です。
+- 5項目すべてを埋めようとしなくて構いません。1つか2つから始めても十分です。
+- 毎日ではなく、週に3回くらいのペースが合う家庭もあります。ペースは家庭ごとに調整してください。
+
+## 保護者の方へ
+
+このシートの役目は、採点することではありません。始めやすい環境を一緒につくり、できたことに気づき、続けやすい時間ややり方を一緒に見つけることです。空らんの日があっても、それは失敗の記録ではなく、次の日からまた始められる余白です。
+
+## 記入例
+
+| やりたいこと | 1日 | 2日 | 3日 | 4日 | 5日 |
+|---|---|---|---|---|---|
+| 絵本をひらく | ○ | ○ | △ | い |  |
+| 音読を1回する | ○ |  | ○ | ○ | ○ |
+| 明日の持ち物を見る | ○ | ○ | ○ |  | ○ |
+
+今月見つけたこと（例）：朝より夕方のほうが取り組みやすかった。
+
+## 印刷するときの注意
+
+- A4横向き、白黒印刷で使えます。
+- 「シートだけ印刷する」ボタンを使うと、説明を省いてシートだけを1枚印刷できます。
+- 印刷後、家庭で使う項目や記録の頻度に合わせて調整してください。
+
+## このページについて
+
+- 対象：幼稚園〜小学校中学年の子どもと保護者
+- 参考にした情報：一般的な家庭学習支援・行動形成支援に関する考え方
+- この教材はAIの支援を受けて作成しており、公開前に内容・安全性・学年相応性の人間レビューが必要です。
+
+## 関連ページ
+
+- [本との出会いを残す 読書記録ノート](/manabi-commons/parent-guide/reading-log-notebook/)
+- [子どもの時間のつかい方](/manabi-commons/school-guide/kodomo-no-jikan-tsukaikata/)

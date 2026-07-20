@@ -31,6 +31,33 @@ describe('print QR code', () => {
     expect(links.every((link) => link.querySelector('svg') !== null)).toBe(true);
   });
 
+  it('also mounts QR links onto the parent-guide worksheet containers', () => {
+    document.body.innerHTML = `
+      <main>
+        <section class="hb-record-sheet"></section>
+        <section class="rn-notebook-page"></section>
+      </main>
+    `;
+    const windowObj = { location: { href: 'https://example.com/parent-guide/habit-tracking-sheet/' } } as Window;
+
+    expect(mountPrintQr(document, windowObj)).toBe(2);
+    const links = [...document.querySelectorAll<HTMLAnchorElement>('.print-page-qr')];
+    expect(links).toHaveLength(2);
+  });
+
+  it('also mounts QR links onto the 図工 and 音楽 print sheets', () => {
+    document.body.innerHTML = `
+      <main>
+        <section class="zu-sheet"></section>
+        <section class="mu-practice-sheet"></section>
+      </main>
+    `;
+    const windowObj = { location: { href: 'https://example.com/art/kouzu-wo-tamesu/' } } as Window;
+
+    expect(mountPrintQr(document, windowObj)).toBe(2);
+    expect(document.querySelectorAll('.print-page-qr')).toHaveLength(2);
+  });
+
   it('rejects URLs that do not fit the supported QR size', () => {
     expect(() => makeQrMatrix(`https://example.com/${'a'.repeat(120)}`)).toThrow(RangeError);
   });

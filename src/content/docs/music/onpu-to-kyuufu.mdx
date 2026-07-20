@@ -1,0 +1,137 @@
+---
+title: 音符と休符の長さ
+description: 四分音符・八分音符・二分音符・付点二分音符・全音符と、四分休符が表す長さの違いを学びます。
+sidebar:
+  order: 3
+learning_context:
+  grade: 小学5〜6年
+  subject: 音楽
+  unit: 楽譜の読み方（音符と休符の長さ）
+  curriculum_ref: "小学校学習指導要領 音楽 第5学年及び第6学年 A表現(1)歌唱・(2)器楽、〔共通事項〕"
+  prerequisite:
+    - 五線譜と音の高さの読み方
+review:
+  source_ref:
+    - "文部科学省 小学校学習指導要領（平成29年告示）解説 音楽編"
+  ai_process:
+    - structure
+    - rewrite
+    - fact_check
+  confidence: medium
+  human_review: required
+  safety_review: required
+  age_level_review: required
+content_status:
+  claim_status: tentative
+  related_pages:
+    - /manabi-commons/music/gosenfu-to-oto-no-takasa/
+    - /manabi-commons/music/hyoushi-to-shousetsu/
+  update_note: "初版。音符と休符の長さの比べ方を扱うページを新規作成。"
+---
+
+{/* ABOUTME: 小学5〜6年生向けに、音符と休符が表す長さの違いを扱う教材です。 */}
+{/* ABOUTME: 手拍子で読む練習と、小節を完成させる練習問題を印刷用に用意しています。 */}
+
+import Score from '../../../components/Score.astro';
+
+対象は、小学5〜6年生です。
+
+音符は、音の高さだけでなく「どれくらいの長さ音を伸ばすか」も表しています。
+このページでは、よく使う音符と休符の長さを、手拍子で確かめながら学びます。
+
+## 音符の形と長さ
+
+音符は、形によって長さが変わります。基準になるのは「四分音符」です。
+
+- **全音符**：丸い玉だけで、棒がありません。四分音符4つ分の長さです
+- **二分音符**：丸い玉に棒が1本ついています。四分音符2つ分の長さです
+- **付点二分音符**：二分音符の右に小さい点が付きます。二分音符の半分の長さが足された、四分音符3つ分の長さです
+- **四分音符**：丸い玉に棒が1本ついた、塗りつぶされた玉です。長さの基準になります
+- **八分音符**：四分音符に旗が1本付いた形です。四分音符の半分の長さです
+
+次の楽譜で、同じ高さの音がどのように長さを変えて並んでいるかを見てみましょう。
+
+<Score id="onpu-no-nagasa" caption="全音符・二分音符・四分音符・八分音符の長さの比べ方。" />
+
+音を聴ける環境であれば、1小節目の音がいちばん長く伸び、4小節目の音が短く区切られていることを確かめてみてください。
+
+## 手拍子で長さを感じる
+
+音を聴けなくても、手拍子で長さを比べることができます。
+
+四分音符を「1回の手拍子」だとすると、次のように手拍子の数が変わります。
+
+- 全音符：手拍子4回分、手を伸ばしたまま待つ
+- 二分音符：手拍子2回分
+- 付点二分音符：手拍子3回分
+- 四分音符：手拍子1回分
+- 八分音符：手拍子半分、2つで手拍子1回分になる
+
+「タン」を四分音符、「タタ」を八分音符2つ分として、声に出しながら手をたたく練習も役立ちます。
+
+## 付点二分音符と休符
+
+音符だけでなく、「音を出さない長さ」を表す記号もあります。これを休符と呼びます。
+
+よく使うのは「四分休符」です。四分音符と同じ長さだけ、音を出さずに待つことを表します。
+
+次の楽譜には、付点二分音符と、休符が使われています。
+
+<Score id="tenten-onpu" caption="付点二分音符と休符の入った楽譜。" />
+
+休符のところでは、手をたたかずに、心の中で拍を数えながら待ちます。
+「音がない場所にも長さがある」というのが、休符の大事な考え方です。
+
+<div class="mu-web-tools">
+
+<p>ここから下は、印刷して書き込むための練習問題です。</p>
+
+<div class="mu-print-buttons" aria-label="印刷メニュー">
+  <button class="mu-print-button" type="button" onclick="window.print()">説明と練習問題を印刷する</button>
+  <button class="mu-print-button mu-print-button--secondary" type="button" onclick="document.body.classList.add('mu-print-sheet-only'); window.addEventListener('afterprint', () => document.body.classList.remove('mu-print-sheet-only'), { once: true }); void document.body.offsetHeight; requestAnimationFrame(() => window.print())">練習問題だけ印刷する</button>
+</div>
+
+</div>
+
+<section class="mu-practice-sheet" aria-labelledby="mu-onpu-sheet-title">
+
+## <span id="mu-onpu-sheet-title">音符と休符の練習問題</span>
+
+<div class="mu-field">
+  <h3>問題1　手拍子で読んでみよう</h3>
+  <p>次のリズムを、声に出しながら手拍子で読みましょう。「タン」は四分音符、「タタ」は八分音符2つ分、「ウン」は四分休符です。</p>
+  <p>タン　タン　タタ　タン　／　タン　ウン　タン　ウン</p>
+</div>
+
+<div class="mu-field">
+  <h3>問題2　拍を数えよう</h3>
+  <p>次の音符・休符の下に、数える拍の数を書きましょう。（例：四分音符→1）</p>
+  <div class="mu-two-columns">
+    <div class="mu-field">
+      <p>全音符：<span class="mu-write-lines mu-write-lines--one"><span></span></span></p>
+      <p>二分音符：<span class="mu-write-lines mu-write-lines--one"><span></span></span></p>
+    </div>
+    <div class="mu-field">
+      <p>付点二分音符：<span class="mu-write-lines mu-write-lines--one"><span></span></span></p>
+      <p>四分休符：<span class="mu-write-lines mu-write-lines--one"><span></span></span></p>
+    </div>
+  </div>
+</div>
+
+<div class="mu-field">
+  <h3>問題3　小節を完成させよう</h3>
+  <p>4分の4拍子の1小節は、四分音符4つ分の長さになります。次の空らんに、合計が四分音符4つ分になるように、音符や休符の名前を書き込みましょう。</p>
+  <div class="mu-write-lines">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <p class="mu-checks">□ 二分音符＋二分音符　□ 四分音符×4　□ 付点二分音符＋四分音符　□ 自分で考えた組み合わせ</p>
+</div>
+
+</section>
+
+## 関連ページ
+
+- [五線譜と音の高さ](/manabi-commons/music/gosenfu-to-oto-no-takasa/)
+- [拍子と小節](/manabi-commons/music/hyoushi-to-shousetsu/)

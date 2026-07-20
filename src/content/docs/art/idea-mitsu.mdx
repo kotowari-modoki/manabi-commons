@@ -1,0 +1,187 @@
+---
+title: アイデアを3つ出す
+description: 図工の作品づくりで、最初に思いついた案をそのまま完成させず、3つの案を比べてから選ぶための印刷用シートです。
+sidebar:
+  order: 4
+learning_context:
+  grade: 小学5〜6年
+  subject: 図工
+  unit: 発想・構想の過程
+  curriculum_ref: "小学校学習指導要領 図画工作 第5学年及び第6学年 A表現(1) 発想や構想の能力"
+  prerequisite:
+    - 自分でテーマを決めて作品をつくった経験
+review:
+  source_ref:
+    - "文部科学省 小学校学習指導要領（平成29年告示）解説 図画工作編"
+  ai_process:
+    - structure
+    - synthesize
+    - rewrite
+    - critique
+  confidence: medium
+  human_review: required
+  safety_review: required
+  age_level_review: required
+content_status:
+  claim_status: tentative
+  related_pages:
+    - /art/kouzu-wo-tamesu/
+    - /art/sakuhin-furikaeri/
+  update_note: "初版。アイデアを3つ出して比べるA4横の印刷用シートを新規作成。"
+---
+
+{/* ABOUTME: 小学校高学年の子どもが、最初の思いつきをすぐ完成案にせず、3つの案を比べて選ぶための教材です。 */}
+{/* ABOUTME: Webで読める説明と、A4横1枚で使えるアイデア比較シートをまとめています。 */}
+
+<style>
+{`
+  @page {
+    size: A4 landscape;
+    margin: 10mm;
+  }
+`}
+</style>
+
+# アイデアを3つ出す
+
+対象は、小学5〜6年生を中心とした小学校高学年です。
+
+<div class="zu-web-tools">
+
+<p>印刷して、鉛筆で書きこみながら使います。</p>
+
+<div class="zu-print-buttons" aria-label="印刷メニュー">
+  <button class="zu-print-button" type="button" onclick="window.print()">説明とシートを一緒に印刷する</button>
+  <button class="zu-print-button zu-print-button--secondary" type="button" onclick="document.body.classList.add('zu-print-sheet-only'); window.addEventListener('afterprint', () => document.body.classList.remove('zu-print-sheet-only'), { once: true }); void document.body.offsetHeight; requestAnimationFrame(() => window.print())">シートだけ印刷する</button>
+</div>
+
+</div>
+
+## この活動で試すこと
+
+図工の作品をつくるとき、最初に浮かんだ案をそのまま完成させることがよくあります。
+それでうまくいくこともありますが、他の案と比べていないので、「本当はもっと合う形があったかもしれない」ことに気づけません。
+
+この活動では、案を1つではなく3つ出します。
+そして、それぞれの良いところを見てから、今回つくる案を自分で選びます。
+選ばれなかった案も、失敗ではありません。比べるための材料です。
+
+## 用意するもの
+
+- このページのシート（印刷したもの）
+- 鉛筆・消しゴム
+- あれば色鉛筆（案のイメージを軽く色で残したいとき）
+
+## 所要時間の目安
+
+20〜35分くらいが目安です。あくまで目安なので、もっと時間をかけてじっくり考えても、短い時間で区切って続きを後日にしてもかまいません。
+
+## 進め方
+
+1. シートの一番上に、「つくりたいもの・伝えたいこと」を書きます。まだぼんやりしていても大丈夫です。
+2. 案1・案2・案3を、それぞれ別の方向で考えます。形を変える、色を変える、大きさを変える、視点を変えるなど、わざと違う案にしてみます。上の四角には絵をかいても、言葉で書いてもかまいません。
+3. それぞれの案の「良いところ」を書きます。うまくいきそうな理由でも、単に気に入っている理由でもかまいません。
+4. 3つを見比べて、今回つくる案を1つ選びます。
+5. 選んだ理由を書きます。
+6. 選ばなかった案の中に、使いたい部分があれば「組み合わせたい部分」に書きます。1つの案だけでなく、2つの案の良いところを合わせて作品にしてもかまいません。
+
+## 印刷用シート
+
+<section class="zu-sheet zu-sheet--landscape" aria-labelledby="zu-idea-sheet-title">
+
+## <span id="zu-idea-sheet-title">アイデアを3つ出すシート</span>
+
+<p class="zu-sheet-lead">最初の案をそのまま完成案にせず、3つを比べてから選びます。</p>
+
+<div class="zu-sheet-field zu-sheet-field--full">
+  <h3>つくりたいもの・伝えたいこと</h3>
+  <div class="zu-write-lines--one" aria-label="つくりたいもの・伝えたいことの記入欄"><span></span></div>
+</div>
+
+<div class="zu-sheet-three-columns">
+  <div class="zu-sheet-field">
+    <h3>案1</h3>
+    <div class="zu-idea-sketch" aria-label="案1を描く欄"></div>
+    <div class="zu-write-lines" aria-label="案1の記入欄"><span></span><span></span><span></span></div>
+    <p class="zu-sheet-hint">良いところ</p>
+    <div class="zu-write-lines--one" aria-label="案1の良いところの記入欄"><span></span></div>
+  </div>
+  <div class="zu-sheet-field">
+    <h3>案2</h3>
+    <div class="zu-idea-sketch" aria-label="案2を描く欄"></div>
+    <div class="zu-write-lines" aria-label="案2の記入欄"><span></span><span></span><span></span></div>
+    <p class="zu-sheet-hint">良いところ</p>
+    <div class="zu-write-lines--one" aria-label="案2の良いところの記入欄"><span></span></div>
+  </div>
+  <div class="zu-sheet-field">
+    <h3>案3</h3>
+    <div class="zu-idea-sketch" aria-label="案3を描く欄"></div>
+    <div class="zu-write-lines" aria-label="案3の記入欄"><span></span><span></span><span></span></div>
+    <p class="zu-sheet-hint">良いところ</p>
+    <div class="zu-write-lines--one" aria-label="案3の良いところの記入欄"><span></span></div>
+  </div>
+</div>
+
+<div class="zu-sheet-two-columns">
+  <div class="zu-sheet-field">
+    <h3>今回選ぶ案</h3>
+    <div class="zu-write-lines--one" aria-label="今回選ぶ案の記入欄"><span></span></div>
+  </div>
+  <div class="zu-sheet-field">
+    <h3>選んだ理由</h3>
+    <div class="zu-write-lines--one" aria-label="選んだ理由の記入欄"><span></span></div>
+  </div>
+</div>
+
+<div class="zu-sheet-field zu-sheet-field--full">
+  <h3>組み合わせたい部分</h3>
+  <p class="zu-sheet-hint">選ばなかった案の中に、使いたい部分があれば書きます。なければ空らんで大丈夫です。</p>
+  <div class="zu-write-lines--one" aria-label="組み合わせたい部分の記入欄"><span></span></div>
+</div>
+
+<p class="zu-sheet-footer">日づけ：<span></span>　名前：<span></span></p>
+
+</section>
+
+## 途中で困ったとき
+
+- 案が1つしか浮かばないときは、今の案の「形」「色」「大きさ」「見る向き」のどれか1つだけをわざと変えてみると、次の案が出やすくなります。
+- 3つとも似た案になってしまったときは、それでも一度書き出してから、どこが同じでどこが違うかを見比べてみます。
+- 「良いところ」が思いつかないときは、「気に入っている」「面白そう」「簡単に試せそう」のような軽い理由でもかまいません。
+
+## 振り返り
+
+- 3つの案を比べてみて、選ぶ前と選んだ後で、作品のイメージは変わりましたか。
+- 選ばなかった案にも、良いところはありましたか。
+- 次に案を出すとき、今回とは違うやり方を試すとしたら何ですか。
+
+## 保護者・教師向けの短い補足
+
+このシートは、案を早く仕上げるためのものではなく、比べてから選ぶ経験をつくるためのものです。
+
+<div class="zu-adult-note" aria-labelledby="zu-idea-adult-title">
+
+<h3 id="zu-idea-adult-title">声かけの例</h3>
+
+次のような聞き方は、子どもが自分の案を説明する助けになります。
+
+- どこから始めたの？
+- どんな方法を試したの？
+- 途中で変えたところはある？
+- どの方法が一番面白かった？
+
+一方で、次のような聞き方は、選んだ案を否定していると受け取られやすいため、避けることをおすすめします。
+
+- もっときれいにしたら？
+- 見本と違わない？
+- これは何？
+
+3つの案は、どれも「正解の候補」であって「不正解の候補」ではありません。
+選ばれなかった案について、良し悪しを評価する必要はありません。
+
+</div>
+
+## 関連する次の活動
+
+- [構図を試す](/manabi-commons/art/kouzu-wo-tamesu/) — 選んだ案を、いくつかの置き方・切り取り方で試します
+- [作品振り返りシート](/manabi-commons/art/sakuhin-furikaeri/) — 完成後に、案が途中でどう変わったかを振り返ります

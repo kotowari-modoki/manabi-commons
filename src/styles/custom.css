@@ -722,10 +722,27 @@
   padding: 0.35rem 0.45rem;
 }
 
+/* 全列に幅を指定して、余りが「やること」へ回るようにします。
+   一列でも指定を欠くと、余白が印の列へ分配されて記入欄が狭くなります。 */
 .ht-plan-table th:first-child,
 .ht-plan-table td:first-child {
-  width: 55%;
+  width: 38%;
   text-align: start;
+}
+
+.ht-plan-table th:nth-child(2),
+.ht-plan-table td:nth-child(2) {
+  width: 6%;
+}
+
+.ht-plan-table th:nth-child(3),
+.ht-plan-table td:nth-child(3) {
+  width: 10%;
+}
+
+.ht-plan-table th:nth-child(n + 4),
+.ht-plan-table td:nth-child(n + 4) {
+  width: 11.5%;
 }
 
 .ht-plan-table th:not(:first-child),
@@ -857,6 +874,856 @@
   }
 }
 
+/* ===== おうちの方へ：習慣記録シート（hb- プレフィックス） ===== */
+
+.hb-web-tools {
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  padding: 0.9rem 1rem;
+  margin-block: 1rem 2rem;
+}
+
+.hb-web-tools p {
+  margin-block: 0 0.75rem;
+}
+
+.hb-print-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.hb-print-button {
+  border: 2px solid var(--sl-color-accent-high, #1d4ed8);
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--sl-color-black, #fff);
+  background: var(--sl-color-accent-high, #1d4ed8);
+}
+
+.hb-print-button--secondary {
+  color: var(--sl-color-text, #111827);
+  background: transparent;
+}
+
+.hb-print-button:hover,
+.hb-print-button:focus-visible {
+  outline: 3px solid var(--sl-color-accent, #60a5fa);
+  outline-offset: 2px;
+}
+
+.hb-record-sheet {
+  border: 3px solid var(--sl-color-gray-3, #64748b);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-block: 1.5rem 1rem;
+}
+
+.hb-record-sheet > .sl-heading-wrapper:first-child,
+.hb-record-sheet > h2:first-child {
+  margin-top: 0;
+}
+
+.hb-sheet-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  border-block-end: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  padding-block-end: 0.8rem;
+  margin-block-end: 0.8rem;
+}
+
+.hb-sheet-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-size: 0.95rem;
+}
+
+.hb-write {
+  display: inline-block;
+  min-inline-size: 4rem;
+  block-size: 1.4rem;
+  border-block-end: 1px solid currentColor;
+  vertical-align: bottom;
+}
+
+.hb-write--name {
+  min-inline-size: 8rem;
+}
+
+.hb-write--year,
+.hb-write--month {
+  min-inline-size: 3rem;
+}
+
+.hb-write--item {
+  display: block;
+  min-inline-size: 7rem;
+  block-size: 1.4rem;
+  border-block-end: 1px solid currentColor;
+}
+
+.hb-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.6rem;
+  padding: 0.6rem 0.9rem;
+  margin-block: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.hb-scroll-hint {
+  font-size: 0.85rem;
+  color: var(--sl-color-gray-2, #334155);
+  margin-block: 0.4rem 0;
+}
+
+.hb-grid-wrap {
+  overflow-x: auto;
+  margin-block: 1rem;
+}
+
+.hb-grid {
+  width: 100%;
+  min-width: 60rem;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.hb-grid th,
+.hb-grid td {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  text-align: center;
+  padding: 0.3rem;
+}
+
+.hb-grid-item-head,
+.hb-grid-item {
+  width: 9rem;
+  text-align: start;
+}
+
+.hb-cell {
+  min-width: 1.8rem;
+  height: 2.4rem;
+}
+
+.hb-notes {
+  margin-block: 1.5rem 0;
+}
+
+.hb-notes h3 {
+  margin-block: 0 0.3rem;
+  font-size: 1rem;
+}
+
+.hb-notes-hint {
+  margin-block: 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--sl-color-gray-2, #334155);
+}
+
+.hb-notes-lines {
+  display: grid;
+  gap: 0;
+}
+
+.hb-notes-lines span {
+  display: block;
+  block-size: 2rem;
+  border-block-end: 1px solid var(--sl-color-gray-3, #64748b);
+}
+
+@media screen and (max-width: 40rem) {
+  .hb-print-button {
+    width: 100%;
+  }
+
+  .hb-record-sheet {
+    padding: 0.9rem;
+  }
+}
+
+/* ===== おうちの方へ：読書記録ノート（rn- プレフィックス） ===== */
+
+.rn-web-tools {
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  padding: 0.9rem 1rem;
+  margin-block: 1rem 2rem;
+}
+
+.rn-web-tools p {
+  margin-block: 0 0.75rem;
+}
+
+.rn-print-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.rn-print-button {
+  border: 2px solid var(--sl-color-accent-high, #1d4ed8);
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--sl-color-black, #fff);
+  background: var(--sl-color-accent-high, #1d4ed8);
+}
+
+.rn-print-button--secondary {
+  color: var(--sl-color-text, #111827);
+  background: transparent;
+}
+
+.rn-print-button:hover,
+.rn-print-button:focus-visible {
+  outline: 3px solid var(--sl-color-accent, #60a5fa);
+  outline-offset: 2px;
+}
+
+.rn-notebook-page {
+  max-width: 44rem;
+  border: 3px solid var(--sl-color-gray-3, #64748b);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-block: 1.5rem 1rem;
+}
+
+.rn-notebook-page > .sl-heading-wrapper:first-child,
+.rn-notebook-page > h2:first-child {
+  margin-top: 0;
+}
+
+.rn-entry {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.8rem;
+  padding: 1rem;
+  margin-block: 1rem;
+}
+
+.rn-entry-head {
+  display: grid;
+  gap: 0.5rem;
+  margin-block-end: 0.8rem;
+}
+
+.rn-entry-head p {
+  margin-block: 0;
+}
+
+.rn-inline-write {
+  display: inline-block;
+  min-inline-size: 6rem;
+  border-block-end: 1px solid currentColor;
+  vertical-align: bottom;
+}
+
+.rn-inline-write--wide {
+  min-inline-size: 12rem;
+}
+
+.rn-field {
+  margin-block: 0.8rem;
+}
+
+.rn-field h4 {
+  margin-block: 0 0.35rem;
+  font-size: 0.95rem;
+}
+
+.rn-write-lines {
+  display: grid;
+}
+
+.rn-write-lines span {
+  display: block;
+  block-size: 2rem;
+  border-block-end: 1px solid var(--sl-color-gray-3, #64748b);
+}
+
+.rn-write-lines--one span {
+  block-size: 1.6rem;
+}
+
+.rn-two-columns {
+  display: grid;
+  grid-template-columns: minmax(5rem, 6rem) minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: start;
+}
+
+.rn-draw-box {
+  box-sizing: border-box;
+  inline-size: 4.5rem;
+  block-size: 4.5rem;
+  border: 1.5px solid var(--sl-color-gray-4, #94a3b8);
+}
+
+.rn-hint {
+  margin-block: 0.5rem 0;
+  font-size: 0.85rem;
+  color: var(--sl-color-gray-2, #334155);
+}
+
+.rn-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.rn-checks label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-block: 0;
+}
+
+.rn-checks input {
+  inline-size: 1.1rem;
+  block-size: 1.1rem;
+  margin: 0;
+  accent-color: var(--sl-color-accent-high, #1d4ed8);
+}
+
+@media screen and (max-width: 40rem) {
+  .rn-print-button {
+    width: 100%;
+  }
+
+  .rn-two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .rn-notebook-page {
+    padding: 0.9rem;
+  }
+}
+
+/* ===== 音楽：五線譜と練習シート（mu- プレフィックス） ===== */
+
+.mu-web-tools {
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  padding: 0.9rem 1rem;
+  margin-block: 1rem 2rem;
+}
+
+.mu-web-tools p {
+  margin-block: 0 0.75rem;
+}
+
+.mu-print-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.mu-print-button {
+  border: 2px solid var(--sl-color-accent-high, #1d4ed8);
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--sl-color-black, #fff);
+  background: var(--sl-color-accent-high, #1d4ed8);
+}
+
+.mu-print-button--secondary {
+  color: var(--sl-color-text, #111827);
+  background: transparent;
+}
+
+.mu-print-button:hover,
+.mu-print-button:focus-visible {
+  outline: 3px solid var(--sl-color-accent, #60a5fa);
+  outline-offset: 2px;
+}
+
+.mu-score {
+  margin-block: 1.5rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+}
+
+.mu-score-sheet {
+  overflow-x: auto;
+}
+
+.mu-score-sheet svg {
+  display: block;
+  min-width: 20rem;
+  max-width: 100%;
+  height: auto;
+  color: var(--sl-color-text, #111827);
+}
+
+.mu-score.is-playing {
+  border-color: var(--sl-color-accent-high, #1d4ed8);
+}
+
+.mu-score-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.9rem;
+  margin-block-start: 0.8rem;
+}
+
+.mu-score-button {
+  border: 2px solid var(--sl-color-accent-high, #1d4ed8);
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--sl-color-black, #fff);
+  background: var(--sl-color-accent-high, #1d4ed8);
+}
+
+.mu-score-button--subtle {
+  color: var(--sl-color-text, #111827);
+  background: transparent;
+}
+
+.mu-score-button:hover,
+.mu-score-button:focus-visible {
+  outline: 3px solid var(--sl-color-accent, #60a5fa);
+  outline-offset: 2px;
+}
+
+.mu-score-tempo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.mu-score-tempo select {
+  font: inherit;
+  padding: 0.3rem 0.4rem;
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.4rem;
+  background: transparent;
+  color: inherit;
+}
+
+.mu-score-status {
+  font-size: 0.9rem;
+  color: var(--sl-color-gray-2, #334155);
+}
+
+.mu-score-caption {
+  margin-block-start: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--sl-color-gray-2, #334155);
+}
+
+/* 書き込み用の鍵盤図（白黒・印刷用） */
+.mu-keyboard {
+  position: relative;
+  display: flex;
+  block-size: 7rem;
+  border: 2px solid #111;
+  border-radius: 0.3rem;
+  margin-block: 1rem;
+  background: #fff;
+}
+
+.mu-keyboard-white {
+  flex: 1 1 0;
+  border-inline-end: 1px solid #111;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-block-end: 0.4rem;
+}
+
+.mu-keyboard-white:last-child {
+  border-inline-end: none;
+}
+
+.mu-keyboard-black {
+  position: absolute;
+  inset-block-start: 0;
+  block-size: 60%;
+  inline-size: 8%;
+  background: #111;
+  border-radius: 0 0 0.2rem 0.2rem;
+}
+
+.mu-keyboard-label {
+  inline-size: 1.6rem;
+  block-size: 1.4rem;
+  border: 1px solid #64748b;
+  border-radius: 0.2rem;
+  background: #fff;
+}
+
+/* 書き込み用の空の五線譜と鍵盤図 */
+.mu-blank-staff {
+  display: grid;
+  gap: 1.1rem;
+  margin-block: 1rem;
+}
+
+.mu-blank-staff > span {
+  display: block;
+  block-size: 3.4rem;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--sl-color-gray-3, #64748b) 0,
+    var(--sl-color-gray-3, #64748b) 1px,
+    transparent 1px,
+    transparent 0.85rem
+  );
+}
+
+.mu-practice-sheet {
+  max-width: 52rem;
+  border: 3px solid var(--sl-color-gray-3, #64748b);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-block: 2rem;
+}
+
+.mu-practice-sheet > .sl-heading-wrapper:first-child,
+.mu-practice-sheet > h2:first-child {
+  margin-top: 0;
+}
+
+.mu-field {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.8rem;
+  margin-block: 0.8rem;
+}
+
+.mu-field h3 {
+  margin-block: 0 0.4rem;
+  font-size: 1rem;
+}
+
+.mu-two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-block: 0.8rem;
+}
+
+.mu-two-columns > .mu-field {
+  margin-block: 0;
+}
+
+.mu-write-lines {
+  display: grid;
+}
+
+.mu-write-lines span {
+  display: block;
+  block-size: 2.1rem;
+  border-block-end: 1px solid var(--sl-color-gray-3, #64748b);
+}
+
+.mu-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.4rem;
+  font-size: 0.95rem;
+}
+
+@media screen and (max-width: 40rem) {
+  .mu-score {
+    padding: 0.7rem;
+  }
+
+  .mu-two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .mu-score-button {
+    flex: 1 1 auto;
+  }
+
+  .mu-print-button {
+    width: 100%;
+  }
+}
+
+/* ===== 図工：試して選ぶ活動シート（zu- プレフィックス） ===== */
+
+.zu-web-tools {
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  padding: 0.9rem 1rem;
+  margin-block: 1rem 2rem;
+}
+
+.zu-web-tools p {
+  margin-block: 0 0.75rem;
+}
+
+.zu-print-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.zu-print-button {
+  border: 2px solid var(--sl-color-accent-high, #1d4ed8);
+  border-radius: 999px;
+  padding: 0.65rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--sl-color-black, #fff);
+  background: var(--sl-color-accent-high, #1d4ed8);
+}
+
+.zu-print-button--secondary {
+  color: var(--sl-color-text, #111827);
+  background: transparent;
+}
+
+.zu-print-button:hover,
+.zu-print-button:focus-visible {
+  outline: 3px solid var(--sl-color-accent, #60a5fa);
+  outline-offset: 2px;
+}
+
+.zu-sheet {
+  max-width: 52rem;
+  border: 3px solid var(--sl-color-gray-3, #64748b);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  margin-block: 2rem;
+}
+
+.zu-sheet--landscape {
+  max-width: none;
+}
+
+.zu-sheet > .sl-heading-wrapper:first-child,
+.zu-sheet > h2:first-child {
+  margin-top: 0;
+}
+
+.zu-sheet-lead {
+  border-block-end: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  padding-block-end: 0.8rem;
+  margin-block-end: 0.8rem;
+}
+
+.zu-sheet-hint {
+  margin-block: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.zu-sheet-field {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.8rem;
+}
+
+.zu-sheet-field--full {
+  margin-block: 0.8rem;
+}
+
+.zu-sheet-field h3 {
+  margin-block: 0 0.4rem;
+  font-size: 1rem;
+}
+
+.zu-sheet-two-columns,
+.zu-sheet-three-columns {
+  display: grid;
+  gap: 0.8rem;
+  margin-block: 0.8rem;
+}
+
+.zu-sheet-two-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.zu-sheet-three-columns {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.zu-sheet-two-columns > .zu-sheet-field,
+.zu-sheet-three-columns > .zu-sheet-field {
+  margin-block: 0;
+}
+
+/* --one は単独で使われることがあるため、両方で罫線が出るようにします。 */
+.zu-write-lines,
+.zu-write-lines--one {
+  display: grid;
+}
+
+.zu-write-lines span,
+.zu-write-lines--one span {
+  display: block;
+  block-size: 2.2rem;
+  border-block-end: 1px solid var(--sl-color-gray-3, #64748b);
+}
+
+.zu-write-lines--one span {
+  block-size: 2rem;
+}
+
+.zu-sheet-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.4rem;
+  font-size: 0.95rem;
+}
+
+.zu-sheet-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-block: 1rem 0;
+}
+
+.zu-sheet-footer span {
+  display: inline-block;
+  inline-size: 8rem;
+  border-block-end: 1px solid currentColor;
+}
+
+.zu-adult-note {
+  border: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.8rem;
+  padding: 1rem 1.15rem;
+  margin-block: 2rem;
+}
+
+.zu-adult-note > .sl-heading-wrapper:first-child,
+.zu-adult-note > h2:first-child {
+  margin-top: 0;
+}
+
+/* 観察・構図：小さな試しわく
+   わくは二重に囲まず、描く四角と見出しだけにします。 */
+.zu-frame-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem 0.8rem;
+  margin-block: 1rem;
+}
+
+.zu-frame {
+  display: grid;
+  /* 行を引きのばさない。のばすと下の枠が高さから幅を決めてしまう。 */
+  align-content: start;
+  gap: 0.25rem;
+  min-inline-size: 0;
+}
+
+/* テーマは兄弟要素にだけ上余白を付けるため、1つ目だけが上にずれる。
+   グリッドの子は余白を打ち消し、間隔は gap だけで決めます。 */
+.zu-frame-grid > .zu-frame,
+.zu-swatch-grid > .zu-swatch {
+  margin-block: 0;
+}
+
+/* 幅を列から決め、高さを aspect-ratio で出します。
+   inline-size を省くと、高さが先に決まったときに幅が列からはみ出します。 */
+.zu-frame-box {
+  inline-size: 100%;
+  min-inline-size: 0;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+}
+
+.zu-frame-label {
+  margin: 0;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* アイデアシート：案ごとの下がき欄。文字だけでなく絵でも出せるようにします。 */
+.zu-idea-sketch {
+  min-block-size: 6rem;
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  margin-block-end: 0.5rem;
+}
+
+/* 色をつくる実験：大きく塗れるスウォッチ */
+.zu-swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin-block: 1rem;
+}
+
+.zu-swatch {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.zu-swatch-area {
+  min-block-size: 7rem;
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+}
+
+.zu-swatch-label {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.zu-swatch-hint {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--sl-color-gray-2, #334155);
+}
+
+/* 材料実験ノート：素材の表 */
+.zu-materials-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: 1rem;
+  font-size: 0.92rem;
+}
+
+.zu-materials-table th,
+.zu-materials-table td {
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  padding: 0.4rem 0.6rem;
+  text-align: start;
+}
+
+@media screen and (max-width: 40rem) {
+  .zu-print-button {
+    width: 100%;
+  }
+
+  .zu-sheet {
+    padding: 0.9rem;
+  }
+
+  .zu-sheet-two-columns,
+  .zu-sheet-three-columns,
+  .zu-frame-grid,
+  .zu-swatch-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== 印刷スタイル（A4 たて・1ミッション1ページ） ===== */
 
 @page {
@@ -871,6 +1738,33 @@
   .page-tts-controls,
   .km-noprint {
     display: none !important;
+  }
+
+  /* 印刷時の高さは内容だけで決める。
+     Starlight のレイアウト枠は画面高に合わせた高さを持ち、Firefox は
+     それを印刷にも反映するため、内容が1枚に収まっていても空白のページが
+     1枚余分に出力される。 */
+  html,
+  body,
+  .page,
+  .main-frame,
+  main,
+  .content-panel,
+  .sl-container,
+  .sl-markdown-content {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  /* 本文コンテナの上下余白は印刷では残さない。
+     画面用の余白がそのまま残ると、用紙に収まる高さのシートでも
+     次のページへあふれる。 */
+  .sl-markdown-content {
+    margin-block-start: 0 !important;
+  }
+
+  .content-panel {
+    padding-block: 0 !important;
   }
 
   /* 教材名だけの表紙ページを作らず、すぐミッションを印刷する */
@@ -1318,8 +2212,15 @@
     padding: 1mm 1.5mm;
   }
 
+  /* 見出しは一行に収める。折り返すと表の行が高くなり、用紙からはみ出す。 */
+  .ht-plan-table thead th {
+    font-size: 7pt;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
   .ht-plan-table tbody td {
-    height: 8mm;
+    height: 7mm;
   }
 
   .ht-write-lines span {
@@ -1370,6 +2271,540 @@
   }
 
   body.ht-print-sheet-only .ht-strategy-sheet + .ht-strategy-sheet {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* おうちの方へ：習慣記録シート */
+  /* 画面用の案内は紙に出さない。紙の上で「横にスクロール」は意味を持たない。 */
+  .hb-web-tools,
+  .hb-scroll-hint {
+    display: none !important;
+  }
+
+  main:has(.hb-record-sheet) .content-panel,
+  main:has(.hb-record-sheet) .sl-container {
+    max-width: none;
+    padding-inline: 0 !important;
+  }
+
+  .hb-record-sheet {
+    position: relative;
+    box-sizing: border-box;
+    max-width: none;
+    break-before: page;
+    page-break-before: always;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 9pt;
+    line-height: 1.3;
+  }
+
+  .hb-record-sheet > .print-page-qr {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-start: 0;
+  }
+
+  .hb-record-sheet > .sl-heading-wrapper:first-child,
+  .hb-record-sheet > h2:first-child,
+  .hb-sheet-head {
+    padding-inline-end: 24mm;
+  }
+
+  .hb-record-sheet .sl-heading-wrapper,
+  .hb-record-sheet h2,
+  .hb-record-sheet h3,
+  .hb-record-sheet p {
+    margin-block-start: 0;
+  }
+
+  .hb-record-sheet h2 {
+    font-size: 15pt;
+  }
+
+  .hb-legend {
+    font-size: 8pt;
+    padding: 1.5mm 2.5mm;
+    margin-block: 1.5mm;
+  }
+
+  .hb-grid-wrap {
+    overflow: visible;
+  }
+
+  .hb-grid {
+    min-width: 0;
+    font-size: 7pt;
+  }
+
+  .hb-grid th,
+  .hb-grid td {
+    padding: 0.8mm;
+    border-color: #333;
+  }
+
+  .hb-grid-item-head,
+  .hb-grid-item {
+    width: 32mm;
+  }
+
+  .hb-cell {
+    height: 16mm;
+  }
+
+  .hb-write,
+  .hb-write--item {
+    border-color: #333;
+  }
+
+  .hb-notes {
+    margin-block-start: 4mm;
+  }
+
+  .hb-notes-hint {
+    font-size: 7pt;
+  }
+
+  .hb-notes-lines span {
+    block-size: 11mm;
+    border-color: #333;
+  }
+
+  .hb-record-sheet,
+  .hb-grid,
+  .hb-legend,
+  .hb-notes-lines {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  body.hb-print-sheet-only main > .content-panel:first-child,
+  body.hb-print-sheet-only main .sl-markdown-content > :not(.hb-record-sheet) {
+    display: none !important;
+  }
+
+  body.hb-print-sheet-only .hb-record-sheet {
+    display: block !important;
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  /* おうちの方へ：読書記録ノート */
+  .rn-web-tools {
+    display: none !important;
+  }
+
+  main:has(.rn-notebook-page) .content-panel,
+  main:has(.rn-notebook-page) .sl-container {
+    max-width: none;
+    padding-inline: 0 !important;
+  }
+
+  .rn-notebook-page {
+    position: relative;
+    box-sizing: border-box;
+    max-width: none;
+    min-height: 260mm;
+    break-before: page;
+    page-break-before: always;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+
+  .rn-notebook-page > .print-page-qr {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-start: 0;
+  }
+
+  .rn-notebook-page > .sl-heading-wrapper:first-child,
+  .rn-notebook-page > h2:first-child {
+    padding-inline-end: 24mm;
+  }
+
+  .rn-notebook-page h2 {
+    font-size: 16pt;
+  }
+
+  .rn-entry {
+    border-color: #444;
+    padding: 1.5mm 3mm;
+    margin-block: 1.5mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .rn-entry-head {
+    margin-block-end: 1mm;
+  }
+
+  .rn-inline-write {
+    border-color: #444;
+  }
+
+  .rn-field {
+    margin-block: 0.7mm;
+  }
+
+  .rn-field h4 {
+    font-size: 8pt;
+  }
+
+  .rn-write-lines span {
+    block-size: 4.5mm;
+    border-color: #444;
+  }
+
+  .rn-write-lines--one span {
+    block-size: 4.5mm;
+  }
+
+  .rn-draw-box {
+    inline-size: 18mm;
+    block-size: 18mm;
+    border-color: #444;
+  }
+
+  .rn-hint {
+    font-size: 7pt;
+  }
+
+  .rn-checks {
+    font-size: 7.5pt;
+    gap: 0.8mm 3mm;
+  }
+
+  body.rn-print-sheet-only main > .content-panel:first-child,
+  body.rn-print-sheet-only main .sl-markdown-content > :not(.rn-notebook-page) {
+    display: none !important;
+  }
+
+  body.rn-print-sheet-only .rn-notebook-page {
+    display: block !important;
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  /* 音楽：五線譜と練習シート */
+  .mu-web-tools {
+    display: none !important;
+  }
+
+  .mu-score-controls {
+    display: none !important;
+  }
+
+  .mu-score {
+    border: none;
+    padding: 0;
+    margin-block: 4mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .mu-score-sheet {
+    overflow: visible;
+  }
+
+  .mu-score-sheet svg {
+    min-width: 0;
+    width: 100%;
+    /* 白黒印刷でも線と符頭がはっきり出るようにします。 */
+    color: #111;
+  }
+
+  .mu-score-caption {
+    color: #333;
+    font-size: 9pt;
+  }
+
+  .mu-blank-staff > span {
+    block-size: 16mm;
+  }
+
+  .mu-keyboard {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    block-size: 28mm;
+  }
+
+  .mu-practice-sheet {
+    position: relative;
+    box-sizing: border-box;
+    max-width: none;
+    break-before: page;
+    page-break-before: always;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+
+  /* 印刷用QRは右上に固定し、見出しと導入文に右余白を確保します。 */
+  .mu-practice-sheet > .print-page-qr {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-start: 0;
+  }
+
+  .mu-practice-sheet > .sl-heading-wrapper:first-child,
+  .mu-practice-sheet > h2:first-child {
+    padding-inline-end: 24mm;
+  }
+
+  .mu-practice-sheet,
+  .mu-field,
+  .mu-write-lines span {
+    border-color: #444;
+  }
+
+  .mu-field {
+    padding: 2.5mm 3mm;
+    margin-block: 2.5mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .mu-field h3 {
+    font-size: 10pt;
+  }
+
+  .mu-write-lines span {
+    block-size: 8mm;
+  }
+
+  .mu-checks {
+    font-size: 9pt;
+    gap: 1.5mm 6mm;
+  }
+
+  body.mu-print-sheet-only main > .content-panel:first-child,
+  body.mu-print-sheet-only main .sl-markdown-content > :not(.mu-practice-sheet) {
+    display: none !important;
+  }
+
+  body.mu-print-sheet-only .mu-practice-sheet {
+    display: block !important;
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  /* 図工：試して選ぶ活動シート */
+  .zu-web-tools {
+    display: none !important;
+  }
+
+  main:has(.zu-sheet) .content-panel,
+  main:has(.zu-sheet) .sl-container {
+    max-width: none;
+    padding-inline: 0 !important;
+  }
+
+  .zu-sheet {
+    position: relative;
+    box-sizing: border-box;
+    max-width: none;
+    min-height: 268mm;
+    break-before: page;
+    page-break-before: always;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+
+  .zu-sheet--landscape {
+    min-height: 0;
+  }
+
+  /* 印刷用QRは右上に固定し、見出しと導入文に右余白を確保します。 */
+  .zu-sheet > .print-page-qr {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-start: 0;
+    inline-size: 17mm;
+  }
+
+  .zu-sheet > .print-page-qr svg {
+    inline-size: 17mm;
+    block-size: 17mm;
+  }
+
+  /* 見出しが低いシートでは、QRが最初の記入欄に重なる。
+     たて向きのシートだけ、見出しの下に場所を空ける。 */
+  .zu-sheet:not(.zu-sheet--landscape) > .zu-sheet-lead {
+    margin-block-end: 6mm;
+  }
+
+  .zu-sheet > .sl-heading-wrapper:first-child,
+  .zu-sheet > h2:first-child,
+  .zu-sheet > .zu-sheet-lead {
+    padding-inline-end: 24mm;
+  }
+
+  .zu-sheet > .sl-heading-wrapper:first-child,
+  .zu-sheet > h2:first-child,
+  .zu-sheet > .zu-sheet-lead {
+    padding-inline-end: 0;
+  }
+
+  .zu-sheet .sl-heading-wrapper,
+  .zu-sheet h2,
+  .zu-sheet h3,
+  .zu-sheet p {
+    margin-block-start: 0;
+  }
+
+  .zu-sheet h2 {
+    font-size: 18pt;
+  }
+
+  .zu-sheet-lead {
+    margin-block-end: 3mm;
+    padding-block-end: 2mm;
+  }
+
+  .zu-sheet-field,
+  .zu-sheet-field--full,
+  .zu-sheet-two-columns,
+  .zu-sheet-three-columns {
+    margin-block: 2mm;
+  }
+
+  .zu-sheet-two-columns > .zu-sheet-field,
+  .zu-sheet-three-columns > .zu-sheet-field {
+    margin-block: 0;
+  }
+
+  .zu-sheet-field {
+    padding: 2.5mm 3mm;
+  }
+
+  .zu-sheet-field h3 {
+    margin-block-end: 1mm;
+    font-size: 10pt;
+  }
+
+  .zu-sheet-hint {
+    margin-block: 1mm;
+    font-size: 8.5pt;
+  }
+
+  .zu-write-lines span,
+  .zu-write-lines--one span {
+    block-size: 8mm;
+    border-color: #444;
+  }
+
+  .zu-write-lines--one span {
+    block-size: 6mm;
+  }
+
+  .zu-sheet-checks {
+    font-size: 9pt;
+    gap: 1mm 5mm;
+  }
+
+  .zu-sheet-footer {
+    margin-block-start: 3mm;
+  }
+
+  .zu-sheet-footer span {
+    border-color: #444;
+  }
+
+  .zu-frame-grid {
+    gap: 2.5mm 3mm;
+    margin-block: 2mm;
+  }
+
+  .zu-frame {
+    gap: 0.8mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* 描くわくは紙面のあまりを使って大きくします。
+     比率ではなく高さで指定し、列数が変わっても紙面の使い方を保ちます。 */
+  .zu-frame-box {
+    aspect-ratio: auto;
+    min-block-size: 68mm;
+    border-color: #444;
+  }
+
+  .zu-frame-label {
+    font-size: 7.5pt;
+  }
+
+  .zu-swatch-grid {
+    gap: 4mm;
+    margin-block: 2mm;
+  }
+
+  .zu-swatch {
+    gap: 1mm;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .zu-swatch-area {
+    border-color: #444;
+    min-block-size: 66mm;
+  }
+
+  .zu-idea-sketch {
+    border-color: #444;
+    min-block-size: 32mm;
+    margin-block-end: 2mm;
+  }
+
+  .zu-swatch-label,
+  .zu-swatch-hint {
+    font-size: 7.5pt;
+  }
+
+  .zu-materials-table {
+    font-size: 8pt;
+  }
+
+  .zu-materials-table th,
+  .zu-materials-table td {
+    padding: 1mm 1.5mm;
+    border-color: #444;
+  }
+
+  .zu-adult-note,
+  .zu-sheet-field,
+  .zu-frame,
+  .zu-swatch {
+    color: #111;
+    border-color: #444;
+    background: #fff;
+  }
+
+  body.zu-print-sheet-only main > .content-panel:first-child,
+  body.zu-print-sheet-only main .sl-markdown-content > :not(.zu-sheet) {
+    display: none !important;
+  }
+
+  body.zu-print-sheet-only .zu-sheet {
+    display: block !important;
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  body.zu-print-sheet-only .zu-sheet + .zu-sheet {
     break-before: page;
     page-break-before: always;
   }

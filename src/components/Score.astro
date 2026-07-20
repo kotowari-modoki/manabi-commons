@@ -1,0 +1,55 @@
+---
+// ABOUTME: 楽譜データをビルド時にSVGへ変換して表示する五線譜コンポーネントです。
+// ABOUTME: 再生ボタンはJavaScriptが動くときだけ表示し、印刷時と無効時は楽譜だけが残ります。
+import { makeScoreSvg } from '../scripts/score-core.js';
+import { SCORES } from '../scripts/score-data.js';
+
+interface Props {
+  id: string;
+  solfa?: boolean;
+  fingering?: boolean;
+  perLine?: number;
+  tempo?: number;
+  caption?: string;
+}
+
+const { id, solfa = false, fingering = false, perLine = 4, tempo = 80, caption } = Astro.props;
+
+const score = SCORES[id];
+if (!score) {
+  throw new Error(
+    `楽譜データ「${id}」がありません。src/scripts/score-data.js を確認してください。`,
+  );
+}
+
+// ビルド時に描画するため、JavaScriptが無効でも楽譜は読めます。
+const svg = makeScoreSvg(score, {
+  showSolfa: solfa,
+  showFingering: fingering,
+  measuresPerLine: perLine,
+});
+---
+
+<figure class="mu-score" data-score-id={id} data-tempo={tempo}>
+  <div class="mu-score-sheet" set:html={svg} />
+
+  <div class="mu-score-controls" hidden>
+    <button class="mu-score-button" type="button" data-score-play>
+      ▶ 聴く
+    </button>
+    <button class="mu-score-button mu-score-button--subtle" type="button" data-score-stop>
+      ■ 止める
+    </button>
+    <label class="mu-score-tempo">
+      はやさ
+      <select data-score-tempo>
+        <option value="0.5">とてもゆっくり</option>
+        <option value="0.75">ゆっくり</option>
+        <option value="1" selected>ふつう</option>
+      </select>
+    </label>
+    <span class="mu-score-status" data-score-status aria-live="polite"></span>
+  </div>
+
+  {caption && <figcaption class="mu-score-caption">{caption}</figcaption>}
+</figure>

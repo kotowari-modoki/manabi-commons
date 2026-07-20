@@ -1,0 +1,178 @@
+---
+title: 楽譜の練習方法
+description: 難しい部分を見つけて区切りながら練習を進める8つのステップと、市販の楽譜にも使える印刷用の練習作戦シートを紹介します。
+sidebar:
+  order: 5
+learning_context:
+  grade: 小学5〜6年
+  subject: 音楽
+  unit: 楽譜の練習方法
+  curriculum_ref: "小学校学習指導要領 音楽 第5学年及び第6学年 A表現(2)器楽、総則 見通しと振り返り"
+  prerequisite:
+    - 五線譜と音の高さの読み方
+    - 音符と休符の長さ
+    - 拍子と小節
+review:
+  source_ref:
+    - "文部科学省 小学校学習指導要領（平成29年告示）解説 音楽編"
+    - "器楽練習における部分練習・段階的練習に関する一般的な教育実践"
+  ai_process:
+    - structure
+    - rewrite
+    - synthesize
+    - critique
+  confidence: medium
+  human_review: required
+  safety_review: required
+  age_level_review: required
+content_status:
+  claim_status: tentative
+  related_pages:
+    - /manabi-commons/music/hyoushi-to-shousetsu/
+    - /manabi-commons/music/onpu-to-kyuufu/
+  update_note: "初版。楽譜の練習方法と、市販の楽譜にも使える練習作戦シートを新規作成。"
+---
+
+{/* ABOUTME: 小学5〜6年生向けに、楽譜を自分で練習するときの進め方を扱う教材です。 */}
+{/* ABOUTME: 「最初から最後まで通して弾く」以外の練習方法と、印刷用の練習作戦シートを紹介しています。 */}
+
+import Score from '../../../components/Score.astro';
+
+<div class="mu-web-tools">
+
+<p>対象は、小学5〜6年生です。練習作戦シートは、学校や習い事で使っている市販の楽譜にも使えます。</p>
+
+<div class="mu-print-buttons" aria-label="印刷メニュー">
+  <button class="mu-print-button" type="button" onclick="window.print()">説明と作戦シートを印刷する</button>
+  <button class="mu-print-button mu-print-button--secondary" type="button" onclick="document.body.classList.add('mu-print-sheet-only'); window.addEventListener('afterprint', () => document.body.classList.remove('mu-print-sheet-only'), { once: true }); void document.body.offsetHeight; requestAnimationFrame(() => window.print())">作戦シートだけ印刷する</button>
+</div>
+
+</div>
+
+## 「最初から最後まで」だけが練習ではない
+
+新しい曲を練習するとき、最初から最後まで通して弾こうとしてしまうことがあります。
+
+けれど、途中で間違えるたびに最初へ戻っていると、得意な部分ばかり繰り返し、苦手な部分にはなかなかたどり着けません。
+弾ける部分と弾けない部分が混ざったまま、時間だけが過ぎてしまうこともあります。
+
+苦手な部分だけを見つけて、そこだけ区切って練習するほうが、同じ時間でも上達しやすくなります。
+
+## 楽譜を練習する8つのステップ
+
+次の順番で進めると、通して弾く前に、難しい部分をあらかじめ小さくしておくことができます。
+
+<ol class="ht-path" aria-label="楽譜を練習する8つのステップ">
+  <li>
+    <span class="ht-path-number" aria-hidden="true">1</span>
+    <div><strong>1曲全体を聴く</strong><span>どんな曲か、全体の感じをつかみます</span></div>
+  </li>
+  <li>
+    <span class="ht-path-number" aria-hidden="true">2</span>
+    <div><strong>難しそうな部分を見つける</strong><span>楽譜を見て、音符が多い所や、初めて見る記号がある所を探します</span></div>
+  </li>
+  <li>
+    <span class="ht-path-number" aria-hidden="true">3</span>
+    <div><strong>一小節か二小節に区切る</strong><span>見つけた部分を、小節線を目印に小さく区切ります</span></div>
+  </li>
+  <li>
+    <span class="ht-path-number" aria-hidden="true">4</span>
+    <div><strong>リズムだけ手でたたく</strong><span>音の高さは考えず、長さだけを手拍子で確かめます</span></div>
+  </li>
+  <li>
+    <span class="ht-path-number" aria-hidden="true">5</span>
+    <div><strong>音符を読む</strong><span>区切った部分の音符を、声に出すか指で追って読みます</span></div>
+  </li>
+  <li>
+    <span class="ht-path-number" aria-hidden="true">6</span>
+    <div><strong>鍵盤の位置を確認する</strong><span>楽器がある場合は、音を出さずに指の位置だけ確かめます</span></div>
+  </li>
+  <li>
+    <span class="ht-path-number" aria-hidden="true">7</span>
+    <div><strong>ゆっくり弾く</strong><span>区切った部分を、ふだんより遅い速さで弾いてみます</span></div>
+  </li>
+  <li>
+    <span class="ht-path-number" aria-hidden="true">8</span>
+    <div><strong>前後の小節とつなぐ</strong><span>区切った部分が弾けたら、その前後の小節とつなげて弾きます</span></div>
+  </li>
+</ol>
+
+次の楽譜は、2小節に区切って練習する例です。
+
+<Score id="kugitte-renshuu" caption="2小節に区切って練習する例。まず1小節ずつ確かめてから、つなげます。" />
+
+## 「何度も通して弾く」の代わりにできること
+
+うまく弾けない部分があるとき、最初から何度も通して弾き直すだけが方法ではありません。
+次のような方法も試してみましょう。
+
+- 苦手な部分だけを取り出して、そこだけ繰り返す
+- 音符だけを声に出して読み、リズムと高さを別々に確かめる
+- 片手ずつ弾いて、それぞれの動きを確かめてから両手に戻す
+- ふだんより遅い速さで、まちがえない速さから少しずつ上げる
+- 難しい部分の前の小節から弾き始めて、つなぎ目を確かめる
+
+同じ時間を使うなら、苦手な部分に時間を多く使うほうが上達につながります。
+
+## 練習作戦シートの使い方
+
+下の練習作戦シートは、今取り組んでいる曲や小節に合わせて、毎回書き込んで使います。
+学校の教科書だけでなく、習い事や自分で選んだ市販の楽譜にも使えます。
+
+<section class="mu-practice-sheet" aria-labelledby="mu-gakufu-sheet-title">
+
+## <span id="mu-gakufu-sheet-title">楽譜の練習作戦シート</span>
+
+<div class="mu-field">
+  <h3>曲名</h3>
+  <div class="mu-write-lines mu-write-lines--one"><span></span></div>
+</div>
+
+<div class="mu-field">
+  <h3>今日練習する小節</h3>
+  <div class="mu-write-lines mu-write-lines--one"><span></span></div>
+</div>
+
+<div class="mu-two-columns">
+  <div class="mu-field">
+    <h3>分からない音符</h3>
+    <div class="mu-write-lines"><span></span><span></span></div>
+  </div>
+  <div class="mu-field">
+    <h3>分からない記号</h3>
+    <div class="mu-write-lines"><span></span><span></span></div>
+  </div>
+</div>
+
+<div class="mu-field">
+  <h3>やったことを確かめよう</h3>
+  <p class="mu-checks">□ 手拍子で確認した　□ 音符を読んだ　□ ゆっくり弾いた</p>
+</div>
+
+<div class="mu-field">
+  <h3>難しかったところ</h3>
+  <div class="mu-write-lines"><span></span><span></span></div>
+</div>
+
+<div class="mu-field">
+  <h3>試した方法</h3>
+  <p class="mu-checks">□ 苦手な部分だけ繰り返した　□ 音符だけ読んだ　□ 片手ずつ弾いた　□ 遅い速さから始めた　□ 前の小節からつなげた　□ その他：<span class="mu-write-lines mu-write-lines--one"><span></span></span></p>
+</div>
+
+<div class="mu-two-columns">
+  <div class="mu-field">
+    <h3>今日できるようになったこと</h3>
+    <div class="mu-write-lines"><span></span><span></span></div>
+  </div>
+  <div class="mu-field">
+    <h3>次に練習すること</h3>
+    <div class="mu-write-lines"><span></span><span></span></div>
+  </div>
+</div>
+
+</section>
+
+## 関連ページ
+
+- [拍子と小節](/manabi-commons/music/hyoushi-to-shousetsu/)
+- [音符と休符の長さ](/manabi-commons/music/onpu-to-kyuufu/)
