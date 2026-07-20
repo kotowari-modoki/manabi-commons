@@ -1655,6 +1655,13 @@
   text-align: center;
 }
 
+/* アイデアシート：案ごとの下がき欄。文字だけでなく絵でも出せるようにします。 */
+.zu-idea-sketch {
+  min-block-size: 6rem;
+  border: 1px solid var(--sl-color-gray-4, #94a3b8);
+  margin-block-end: 0.5rem;
+}
+
 /* 色をつくる実験：大きく塗れるスウォッチ */
 .zu-swatch-grid {
   display: grid;
@@ -1747,6 +1754,17 @@
   .sl-markdown-content {
     min-height: 0 !important;
     height: auto !important;
+  }
+
+  /* 本文コンテナの上下余白は印刷では残さない。
+     画面用の余白がそのまま残ると、用紙に収まる高さのシートでも
+     次のページへあふれる。 */
+  .sl-markdown-content {
+    margin-block-start: 0 !important;
+  }
+
+  .content-panel {
+    padding-block: 0 !important;
   }
 
   /* 教材名だけの表紙ページを作らず、すぐミッションを印刷する */
@@ -2727,6 +2745,12 @@
   .zu-swatch-area {
     border-color: #444;
     min-block-size: 34mm;
+  }
+
+  .zu-idea-sketch {
+    border-color: #444;
+    min-block-size: 32mm;
+    margin-block-end: 2mm;
   }
 
   .zu-swatch-label,
