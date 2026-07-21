@@ -1567,6 +1567,13 @@
   margin-block: 0;
 }
 
+/* Starlight は隣り合う子要素に margin-top を足すため、2列目以降の
+   列が下にずれる。列の見出しと罫線をそろえるため打ち消します。 */
+.zu-sheet-two-columns > *,
+.zu-sheet-three-columns > * {
+  margin-block-start: 0;
+}
+
 /* --one は単独で使われることがあるため、両方で罫線が出るようにします。 */
 .zu-write-lines,
 .zu-write-lines--one {
