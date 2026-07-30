@@ -2844,6 +2844,16 @@
   padding: 1.25rem;
 }
 
+.g5-qr-anchor {
+  display: block;
+  position: static;
+  min-height: 0;
+  block-size: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
 .g5-page-head {
   display: flex;
   justify-content: space-between;
@@ -2914,6 +2924,47 @@
   margin-block: 0.75rem 1rem;
 }
 
+.g5-hint {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem 0.75rem;
+  align-items: start;
+  margin-block: 0.75rem 1rem;
+  border: 1px dashed var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.65rem;
+  padding: 0.65rem 0.8rem;
+}
+
+.g5-hint > * {
+  margin: 0;
+}
+
+.g5-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-block: 0.75rem 1rem;
+}
+
+.g5-guide-grid > div {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0;
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.55rem;
+  padding: 0.55rem 0.7rem;
+}
+
+.g5-guide-grid > div > * {
+  margin: 0;
+}
+
+.g5-compact-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.35rem 1.5rem;
+}
+
 .g5-map,
 .g5-badge-grid,
 .g5-monster-grid {
@@ -2929,6 +2980,19 @@
   border: 1px solid var(--sl-color-gray-5, #cbd5e1);
   border-radius: 0.55rem;
   padding: 0.55rem 0.7rem;
+}
+
+.g5-map > *,
+.g5-badge-grid > *,
+.g5-monster-grid > *,
+.g5-guide-grid > *,
+.g5-grid > *,
+.g5-number-path > *,
+.g5-choice-row > *,
+.g5-code-table > *,
+.g5-formula-grid > *,
+.g5-drawing-grid > * {
+  margin-block: 0;
 }
 
 .g5-questions {
@@ -3027,6 +3091,22 @@
   font-size: 0.9rem;
 }
 
+.g5-scratch {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.3rem 0.75rem;
+  align-content: start;
+  min-height: 7rem;
+  margin-block: 1rem;
+  border: 1.5px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.55rem;
+  padding: 0.65rem 0.75rem;
+}
+
+.g5-scratch > * {
+  margin: 0;
+}
+
 .g5-number-path,
 .g5-choice-row,
 .g5-code-table {
@@ -3091,6 +3171,8 @@
 
 @media (max-width: 40rem) {
   .g5-questions--two,
+  .g5-guide-grid,
+  .g5-compact-steps,
   .g5-grid--two,
   .g5-drawing-grid {
     grid-template-columns: 1fr;
@@ -3131,6 +3213,35 @@
   .g5-noprint + .g5-page {
     break-before: auto;
     page-break-before: auto;
+  }
+
+  .g5-qr-anchor {
+    display: block;
+    position: static !important;
+    min-height: 0 !important;
+    block-size: 0;
+    margin: 0 !important;
+    border: 0 !important;
+    padding: 0 !important;
+    break-before: auto !important;
+    page-break-before: auto !important;
+  }
+
+  .g5-qr-anchor > .print-page-qr {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-end: 0;
+  }
+
+  .g5-page > .g5-page-head {
+    box-sizing: border-box;
+    padding-inline-end: 24mm;
+  }
+
+  .g5-page > .g5-page-head + .sl-heading-wrapper,
+  .g5-page > .g5-page-head + .sl-heading-wrapper + * {
+    box-sizing: border-box;
+    padding-inline-end: 24mm;
   }
 
   .g5-page .sl-heading-wrapper {
@@ -3196,6 +3307,34 @@
     padding: 1.5mm 2.5mm;
   }
 
+  .g5-hint {
+    gap: 1mm 2mm;
+    margin-block: 1.5mm 2mm;
+    padding: 1.5mm 2mm;
+    color: #111;
+    background: #fff;
+    border-color: #666;
+    font-size: 8.2pt;
+  }
+
+  .g5-guide-grid {
+    gap: 1.5mm;
+    margin-block: 1.5mm 2mm;
+  }
+
+  .g5-guide-grid > div {
+    gap: 0.5mm;
+    padding: 1.5mm 2mm;
+    color: #111;
+    background: #fff;
+    border-color: #555;
+  }
+
+  .g5-compact-steps {
+    gap: 1mm 5mm;
+    margin-block: 1.5mm 2mm;
+  }
+
   .g5-questions {
     gap: 1.5mm;
     margin-block: 1.5mm 2mm;
@@ -3234,6 +3373,16 @@
   .g5-selfcheck {
     margin-block-start: 2.5mm;
     padding-block-start: 2mm;
+  }
+
+  .g5-scratch {
+    min-height: 32mm;
+    margin-block: 2.5mm;
+    padding: 2mm;
+    color: #111;
+    background: #fff;
+    border-color: #555;
+    font-size: 8pt;
   }
 
   .g5-map,

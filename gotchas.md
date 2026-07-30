@@ -14,3 +14,5 @@
 - 「隠して書く」練習では、隠す答えを左側へまとめ、手がかりとなる読みとひらがなのことばを右側に残す。何を隠すか、どこまで隠すかを用紙上で明示する。
 - 印刷ページ数の確認は Chrome だけで済ませない。Starlight のレイアウト枠は画面高に合わせた高さを持ち、Firefox はそれを印刷にも反映するため、内容が1枚に収まっていても空白のページが余分に出る。`@media print` で `html, body, .page, .main-frame, main, .content-panel, .sl-container, .sl-markdown-content` の高さを `auto` に戻す。
 - 印刷の検証に Playwright の `emulateMedia({ media: 'print' })` を使うと、印刷用CSSは適用されるがページ分割はされないため、ページ数の不具合を見逃す。Firefox は `firefoxUserPrefs` の `print.always_print_silent` と `Mozilla Save to PDF` で実際の印刷結果をPDFとして取得できる。
+- 印刷ドリルは、ページ数と正解欄だけで完成としない。初見でも「どこに何を書くか」「迷ったとき何を試すか」が分かる説明を置き、余白は単元固有のヒントや途中式の欄として使う。
+- 横並びのカードや記入boxは、各直下要素の `margin-block` を明示的にリセットする。テーマ由来の兄弟要素マージンに任せると、先頭要素だけ上下位置がずれることがある。
