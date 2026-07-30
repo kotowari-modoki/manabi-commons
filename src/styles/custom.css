@@ -3417,3 +3417,76 @@
     font-size: 8.7pt;
   }
 }
+
+/* ===== 社会科見学ノート（sk-note- プレフィックス） ===== */
+
+.sk-note-numbered-lines {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.25rem 0.5rem;
+  align-items: end;
+}
+
+.sk-note-numbered-lines > * {
+  margin-block: 0;
+}
+
+.sk-note-sketch {
+  min-block-size: 11rem;
+  border: 1px dashed var(--sl-color-gray-3, #64748b);
+  border-radius: 0.35rem;
+}
+
+.sk-note-reasoning {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.sk-note-reasoning > * {
+  margin-block: 0;
+}
+
+.sk-note-arrow {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+@media (max-width: 40rem) {
+  .sk-note-reasoning {
+    grid-template-columns: 1fr;
+  }
+
+  .sk-note-arrow {
+    rotate: 90deg;
+    justify-self: center;
+  }
+}
+
+@media print {
+  .sk-note-sheet > .print-page-qr {
+    display: none !important;
+  }
+
+  .sk-note-sketch {
+    min-block-size: 54mm;
+    border-color: #444;
+  }
+
+  .sk-note-reasoning {
+    gap: 2mm;
+  }
+
+  .sk-note-numbered-lines {
+    gap: 0 2mm;
+  }
+
+  .sk-note-sheet--before .zu-write-lines span {
+    block-size: 11mm;
+  }
+
+  .sk-note-sheet--before .zu-write-lines--one span {
+    block-size: 8mm;
+  }
+}
