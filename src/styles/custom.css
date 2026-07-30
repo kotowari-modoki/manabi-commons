@@ -2816,3 +2816,455 @@
     page-break-before: always;
   }
 }
+
+/* ===== 5年生算数 コスモクエスト（g5- プレフィックス） ===== */
+
+.g5-noprint {
+  margin-block: 1rem 2rem;
+}
+
+.g5-print-button {
+  display: block;
+  margin-block: 1rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.75rem 1.4rem;
+  color: white;
+  background: linear-gradient(135deg, #4338ca, #0f766e);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.g5-page {
+  box-sizing: border-box;
+  margin-block: 2.5rem;
+  border: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 1rem;
+  padding: 1.25rem;
+}
+
+.g5-page-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block-end: 0.75rem;
+  border-block-end: 2px solid var(--sl-color-gray-5, #cbd5e1);
+  padding-block-end: 0.4rem;
+  color: var(--sl-color-gray-2, #334155);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.g5-cover {
+  display: grid;
+  align-content: center;
+  min-height: 48rem;
+  text-align: center;
+}
+
+.g5-cover h2 {
+  margin-block: 1rem 0.25rem;
+  font-size: clamp(2.4rem, 8vw, 5rem);
+}
+
+.g5-cover h3 {
+  margin-block: 0 1.5rem;
+}
+
+.g5-kicker {
+  color: var(--sl-color-accent-high, #3730a3);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.g5-cover-illustration {
+  display: block;
+  width: min(100%, 48rem);
+  max-height: 18rem;
+  margin: 1.5rem auto;
+  object-fit: contain;
+}
+
+.g5-name-fields {
+  display: grid;
+  grid-template-columns: auto minmax(10rem, 1fr);
+  gap: 1rem;
+  align-items: end;
+  max-width: 32rem;
+  margin: 2rem auto;
+  text-align: start;
+}
+
+.g5-cover-note,
+.g5-story {
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(224, 231, 255, 0.35);
+}
+
+.g5-cover-note {
+  max-width: 38rem;
+  margin-inline: auto;
+}
+
+.g5-story {
+  border-inline-start: 5px solid var(--sl-color-accent, #4f46e5);
+  margin-block: 0.75rem 1rem;
+}
+
+.g5-map,
+.g5-badge-grid,
+.g5-monster-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-block: 1rem;
+}
+
+.g5-map span,
+.g5-badge-grid span,
+.g5-monster-grid span {
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.55rem;
+  padding: 0.55rem 0.7rem;
+}
+
+.g5-questions {
+  display: grid;
+  gap: 0.65rem;
+  margin-block: 0.75rem 1rem;
+  padding-inline-start: 1.6rem;
+}
+
+.g5-questions--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2rem;
+}
+
+.g5-questions li {
+  padding-inline-start: 0.2rem;
+  line-height: 1.65;
+}
+
+.g5-questions li::after {
+  content: '';
+  display: inline-block;
+  inline-size: 5rem;
+  block-size: 1.2em;
+  margin-inline-start: 0.5rem;
+  border-block-end: 1px solid var(--sl-color-gray-4, #94a3b8);
+  vertical-align: text-bottom;
+}
+
+.g5-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.g5-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.g5-card {
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.6rem;
+  padding: 0.75rem;
+}
+
+.g5-workbox {
+  min-height: 10rem;
+  margin-block: 0.75rem;
+  border: 1.5px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.5rem;
+  background-image:
+    linear-gradient(to right, transparent 49.7%, rgba(148, 163, 184, 0.2) 50%, transparent 50.3%),
+    linear-gradient(to bottom, transparent 49.7%, rgba(148, 163, 184, 0.2) 50%, transparent 50.3%);
+  background-size: 2rem 2rem;
+}
+
+.g5-workbox--short {
+  min-height: 5rem;
+}
+
+.g5-workbox--medium {
+  min-height: 8rem;
+}
+
+.g5-lines {
+  display: grid;
+  margin-block: 0.5rem 1rem;
+}
+
+.g5-lines span {
+  display: block;
+  min-height: 2.4rem;
+  border-block-end: 1.5px solid var(--sl-color-gray-4, #94a3b8);
+}
+
+.g5-lines--large span {
+  min-height: 3.5rem;
+}
+
+.g5-write {
+  display: inline-block;
+  min-width: 8rem;
+  min-height: 1.7rem;
+  margin-inline: 0.35rem;
+  border-block-end: 1.5px solid currentColor;
+  vertical-align: bottom;
+}
+
+.g5-write--long {
+  min-width: 16rem;
+}
+
+.g5-selfcheck {
+  margin-block-start: 1rem;
+  border-block-start: 2px dashed var(--sl-color-gray-5, #cbd5e1);
+  padding-block-start: 0.65rem;
+  font-size: 0.9rem;
+}
+
+.g5-number-path,
+.g5-choice-row,
+.g5-code-table {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-block: 0.75rem 1rem;
+}
+
+.g5-number-path span,
+.g5-choice-row span,
+.g5-code-table span {
+  flex: 1 1 4rem;
+  border: 1.5px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.5rem;
+  padding: 0.65rem;
+  text-align: center;
+}
+
+.g5-formula-grid {
+  display: grid;
+  gap: 0.7rem;
+  margin-block: 0.75rem 1rem;
+}
+
+.g5-formula-grid span {
+  border: 1px solid var(--sl-color-gray-5, #cbd5e1);
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+}
+
+.g5-drawing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-block: 1rem;
+}
+
+.g5-drawing-grid > div {
+  min-height: 11rem;
+  border: 1.5px solid var(--sl-color-gray-4, #94a3b8);
+  border-radius: 0.6rem;
+  padding: 0.65rem;
+}
+
+.g5-certificate {
+  margin-block: 2rem;
+  border: 5px double var(--sl-color-gray-3, #64748b);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 2.1;
+}
+
+.g5-answers h3 {
+  margin-block: 0.9rem 0.25rem;
+}
+
+.g5-answers p {
+  margin-block: 0.25rem 0.7rem;
+}
+
+@media (max-width: 40rem) {
+  .g5-questions--two,
+  .g5-grid--two,
+  .g5-drawing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .g5-noprint {
+    display: none !important;
+  }
+
+  main:has(.g5-page) > .content-panel:first-child {
+    display: none;
+  }
+
+  main:has(.g5-page) .content-panel,
+  main:has(.g5-page) .sl-container {
+    max-width: none;
+    padding: 0 !important;
+  }
+
+  .g5-page {
+    position: relative;
+    box-sizing: border-box;
+    min-height: 272mm;
+    margin: 0;
+    break-before: page;
+    page-break-before: always;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    color: #111;
+    background: #fff;
+    font-size: 9.3pt;
+    line-height: 1.35;
+  }
+
+  .g5-noprint + .g5-page {
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  .g5-page .sl-heading-wrapper {
+    margin-block: 2mm 1mm;
+  }
+
+  .g5-page h2 {
+    margin-block: 2mm 1.5mm;
+    font-size: 17pt;
+    line-height: 1.15;
+  }
+
+  .g5-page h3 {
+    margin-block: 2.5mm 1mm;
+    font-size: 11.5pt;
+    line-height: 1.2;
+  }
+
+  .g5-page p,
+  .g5-page ol,
+  .g5-page blockquote,
+  .g5-page table {
+    margin-block: 1.5mm;
+  }
+
+  .g5-cover {
+    display: grid;
+    min-height: 272mm;
+    padding: 12mm;
+  }
+
+  .g5-cover h2 {
+    font-size: 38pt;
+  }
+
+  .g5-cover-illustration {
+    width: 100%;
+    max-height: 58mm;
+    margin-block: 5mm;
+  }
+
+  .g5-cover-note,
+  .g5-story,
+  .g5-card,
+  .g5-map span,
+  .g5-badge-grid span,
+  .g5-monster-grid span,
+  .g5-formula-grid span {
+    color: #111;
+    background: #fff;
+    border-color: #555;
+  }
+
+  .g5-page-head {
+    margin-block-end: 2mm;
+    padding-block-end: 1mm;
+    color: #111;
+    font-size: 8pt;
+  }
+
+  .g5-story {
+    margin-block: 1.5mm 2mm;
+    padding: 1.5mm 2.5mm;
+  }
+
+  .g5-questions {
+    gap: 1.5mm;
+    margin-block: 1.5mm 2mm;
+  }
+
+  .g5-questions li {
+    line-height: 1.4;
+  }
+
+  .g5-workbox {
+    min-height: 32mm;
+    margin-block: 2mm;
+    background-image: none;
+  }
+
+  .g5-workbox--short {
+    min-height: 17mm;
+  }
+
+  .g5-workbox--medium {
+    min-height: 25mm;
+  }
+
+  .g5-lines {
+    margin-block: 1mm 2mm;
+  }
+
+  .g5-lines span {
+    min-height: 8mm;
+  }
+
+  .g5-lines--large span {
+    min-height: 12mm;
+  }
+
+  .g5-selfcheck {
+    margin-block-start: 2.5mm;
+    padding-block-start: 2mm;
+  }
+
+  .g5-map,
+  .g5-badge-grid,
+  .g5-monster-grid {
+    gap: 1.5mm;
+    margin-block: 2mm;
+  }
+
+  .g5-map span,
+  .g5-badge-grid span,
+  .g5-monster-grid span {
+    padding: 1.5mm 2mm;
+  }
+
+  .g5-drawing-grid {
+    gap: 2mm;
+    margin-block: 2mm;
+  }
+
+  .g5-drawing-grid > div {
+    min-height: 42mm;
+    padding: 2mm;
+  }
+
+  .g5-certificate {
+    margin-block: 10mm;
+    padding: 14mm 8mm;
+  }
+
+  .g5-answers {
+    font-size: 8.7pt;
+  }
+}
