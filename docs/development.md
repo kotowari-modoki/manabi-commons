@@ -67,6 +67,22 @@ public/
 - GitHub リポジトリへの編集リンクも `astro.config.mjs` の `editLink.baseUrl` で管理します
 - `.github/workflows/` に GitHub Pages 用ワークフローがあります
 
+## OGP画像
+
+`pnpm build` は、教材の `title` から1200 × 630のPNGを自動生成します。教科ディレクトリに応じて色を変え、`learning_context.subject` と `learning_context.grade` があれば表示します。教材ごとの画像登録は不要です。
+
+- 生成先: `dist/og/index.png`（トップ）、`dist/og/math/sho4-hissan-practice.png`（教材の例）
+- ローカル確認: `pnpm dev` の起動後、`http://localhost:4321/manabi-commons/og/index.png` を開く
+- `src/pages/og/[...slug].png.ts` がコレクションを列挙し、`src/lib/og-image.ts` が描画します。開発時は下書きも生成しますが、公開ビルドでは `draft: true` を除外します。
+- `src/components/overrides/Head.astro` が絶対URLの `og:image` と `twitter:image` を追加します。404ページにはトップ画像を使います。frontmatterやサイト設定で明示した画像は優先されます。
+- 長い題名は単語の途中や助詞の直前を避けながら折り返し、画像内に収まるよう文字サイズを調整します。
+
+生成には既存依存の [Sharp](https://sharp.pixelplumbing.com/) を使います。SVGの図形と日本語の文字を合成するため、Rust用のビルド環境や画像配信用のサーバーは不要です。公開ビルド時と画像の閲覧時に、画像生成のための外部APIやフォント取得は行いません。
+
+フォントは `public/fonts/zen-kaku-gothic-new/` に同梱した **Zen Kaku Gothic New Bold** を明示的に指定します。ページ表示用のWebフォントとしては読み込みません。配布元と元のライセンスは同ディレクトリのREADMEと `OFL.txt` にあります。
+
+確認は `pnpm test:unit`、`pnpm test:e2e`、`pnpm build` で行います。全ページ共通スモークテストは、OGPタグ、画像のHTTP応答、PNG形式と寸法まで検証します。
+
 ## 現状の注意点
 
 - `src/content/docs/index.mdx` と `src/content/docs/guides/example.md` などにはスターター由来のサンプルが残っています

@@ -1,7 +1,19 @@
 ---
-// ABOUTME: Starlight の Head をオーバーライドし、共通の補助スクリプトを全ページに注入します。
-// ABOUTME: 読み上げ機能と印刷教材の動的QRコードをAstroのバンドル対象にします。
+// ABOUTME: Starlight の Head にページ別のOGP画像と共通の補助スクリプトを追加します。
+// ABOUTME: 共有用メタデータを補完し、読み上げ・印刷QR・楽譜をバンドル対象にします。
 import Default from '@astrojs/starlight/components/Head.astro';
+import { getSocialImageTags } from '../../lib/og-image';
+
+const { entry, head, siteTitle } = Astro.locals.starlightRoute;
+if (Astro.site) {
+  head.push(...getSocialImageTags({
+    id: entry.id === '404' ? 'index' : entry.id,
+    title: entry.id === '404' ? siteTitle : entry.data.title,
+    site: Astro.site,
+    base: import.meta.env.BASE_URL,
+    head,
+  }));
+}
 ---
 
 <Default><slot /></Default>
