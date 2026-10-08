@@ -1,12 +1,13 @@
 // ABOUTME: 教材のタイトルと教科から、共有用の日本語OGP画像とメタデータを作ります。
-// ABOUTME: 同梱フォントとSharpで描画し、公開ビルド中に外部サービスへ接続しません。
+// ABOUTME: 同梱フォントとRust製のresvgで描画し、公開ビルド中に外部サービスへ接続しません。
+import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import sharp from 'sharp';
+import { Resvg } from '@resvg/resvg-js';
+import { fontOptions, layoutText, textSvg } from './og-text.ts';
 
 const WIDTH = 1200;
 const HEIGHT = 630;
 const SITE_NAME = 'まなびコモンズ';
-const FONT_FILE = resolve('public/fonts/zen-kaku-gothic-new/ZenKakuGothicNew-Bold.ttf');
 
 type HeadEntry = { tag: string; attrs?: Record<string, unknown> };
 type MetaTag = { tag: 'meta'; attrs: Record<string, string> };
@@ -71,68 +72,8 @@ const themes: Record<string, { label: string; color: string; light: string }> = 
 };
 const defaultTheme = { label: '無料の教科書', color: '#2563eb', light: '#e1ecff' };
 
-function escapeMarkup(text: string): string {
-  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;').replace(/'/g, '&apos;');
-}
-
-function titleMarkup(text: string): string {
-  const groups: string[] = [];
-  const particles = /^(の|に|を|は|が|で|と|も|へ|や|から|まで|だけ|って|[、。！？）」』])$/u;
-  for (const { segment } of new Intl.Segmenter('ja', { granularity: 'word' }).segment(text)) {
-    if (groups.length && particles.test(segment) && !/\s$/u.test(groups[groups.length - 1])) {
-      groups[groups.length - 1] += segment;
-    } else {
-      groups.push(segment);
-    }
-  }
-  return groups.map((group) => /^\s+$/u.test(group) ? group
-    : `<span allow_breaks="false">${escapeMarkup(group)}</span>`).join('');
-}
-
-/** Pango handles Japanese line breaking; measure the result before placing it on the card. */
-async function textBlock(text: string, size: number, color: string, width: number, height: number, balance = false) {
-  const normalized = text.replace(/\s+/gu, ' ').trim();
-  const content = balance ? titleMarkup(normalized) : escapeMarkup(normalized);
-  for (let fontSize = size; ; fontSize = Math.max(12, fontSize - 4)) {
-    const render = (lineWidth: number) => sharp({ text: {
-      text: `<span foreground="${color}">${content}</span>`,
-      font: `Zen Kaku Gothic New Bold ${fontSize}`,
-      fontfile: FONT_FILE,
-      width: lineWidth,
-      spacing: 10,
-      wrap: 'word-char',
-      rgba: true,
-    } }).png().toBuffer({ resolveWithObject: true });
-    let result = await render(width);
-    if (result.info.width <= width && result.info.height <= height) {
-      if (balance && result.info.height > fontSize * 1.5) {
-        // Find a narrower measure with the same line count, avoiding a lone final character.
-        const maxHeight = Math.min(height, result.info.height + Math.floor(fontSize / 10));
-        let low = fontSize;
-        let high = width;
-        for (let attempt = 0; attempt < 7 && high - low > 2; attempt++) {
-          const candidateWidth = Math.floor((low + high) / 2);
-          const candidate = await render(candidateWidth);
-          if (candidate.info.height <= maxHeight && candidate.info.width <= width) {
-            high = candidateWidth;
-            result = candidate;
-          } else {
-            low = candidateWidth;
-          }
-        }
-      }
-      return result;
-    }
-    if (fontSize === 12) {
-      return sharp(result.data).resize({ width, height, fit: 'inside', withoutEnlargement: true })
-        .png().toBuffer({ resolveWithObject: true });
-    }
-  }
-}
-
-function background(color: string, light: string, badgeWidth: number): Buffer {
-  return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+function background(color: string, light: string, badgeWidth: number): string {
+  return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630">
     <defs>
       <pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse">
         <path d="M26 0H0V26" fill="none" stroke="${color}" stroke-opacity=".09"/>
@@ -165,7 +106,7 @@ function background(color: string, light: string, badgeWidth: number): Buffer {
     <rect x="1056" y="557" width="22" height="22" rx="5" fill="${color}"/>
     <rect x="1085" y="557" width="22" height="22" rx="5" fill="#efc55d"/>
     <rect x="1114" y="557" width="22" height="22" rx="5" fill="#84ae92"/>
-  </svg>`);
+  `;
 }
 
 export async function renderOgImage({ id, title, grade, subject }: {
@@ -175,28 +116,25 @@ export async function renderOgImage({ id, title, grade, subject }: {
   subject?: string;
 }): Promise<Buffer> {
   const theme = themes[id.split('/')[0]] ?? defaultTheme;
-  const [brand, label, heading, footer, wordmark, icon] = await Promise.all([
-    textBlock(SITE_NAME, 32, '#203b54', 440, 50),
-    textBlock(subject?.trim() || theme.label, 23, theme.color, 410, 30),
-    textBlock(title.trim() || SITE_NAME, 72, '#203b54', 792, 228, true),
-    textBlock('だれでも、無料で学べる教科書', 22, '#586b75', 760, 36),
-    textBlock('MANABI COMMONS', 18, '#617280', 250, 28),
-    sharp(resolve('public/favicon.svg')).resize(60, 60).png().toBuffer(),
-  ]);
-  const badgeWidth = label.info.width + 60;
-  const layers: sharp.OverlayOptions[] = [
-    { input: icon, left: 58, top: 52 },
-    { input: brand.data, left: 132, top: 69 },
-    { input: wordmark.data, left: 1136 - wordmark.info.width, top: 77 },
-    { input: label.data, left: 105, top: 178 + Math.round((46 - label.info.height) / 2) },
-    { input: heading.data, left: 64, top: 256 + Math.round((228 - heading.info.height) / 2) },
-    { input: footer.data, left: 64, top: 554 },
+  const brand = layoutText(SITE_NAME, { fontSize: 32, width: 440, height: 50 });
+  const label = layoutText(subject?.trim() || theme.label, { fontSize: 23, width: 410, height: 30 });
+  const heading = layoutText(title.trim() || SITE_NAME, { fontSize: 72, width: 792, height: 228, balance: true });
+  const footer = layoutText('だれでも、無料で学べる教科書', { fontSize: 22, width: 760, height: 36 });
+  const wordmark = layoutText('MANABI COMMONS', { fontSize: 18, width: 250, height: 28 });
+  const icon = (await readFile(resolve('public/favicon.svg'))).toString('base64');
+  const badgeWidth = label.width + 60;
+  const layers = [
+    `<image x="58" y="52" width="60" height="60" xlink:href="data:image/svg+xml;base64,${icon}"/>`,
+    textSvg(brand, 132, 69, '#203b54'),
+    textSvg(wordmark, 1136 - wordmark.width, 77, '#617280'),
+    textSvg(label, 105, 178 + (46 - label.height) / 2, theme.color),
+    textSvg(heading, 64, 256 + (228 - heading.height) / 2, '#203b54'),
+    textSvg(footer, 64, 554, '#586b75'),
   ];
   if (grade?.trim()) {
-    const gradeText = await textBlock(grade, 21, '#617280', 780 - badgeWidth, 32);
-    layers.push({ input: gradeText.data, left: 64 + badgeWidth + 20,
-      top: 178 + Math.round((46 - gradeText.info.height) / 2) });
+    const gradeText = layoutText(grade, { fontSize: 21, width: 780 - badgeWidth, height: 32 });
+    layers.push(textSvg(gradeText, 64 + badgeWidth + 20, 178 + (46 - gradeText.height) / 2, '#617280'));
   }
-  return sharp(background(theme.color, theme.light, badgeWidth))
-    .composite(layers).removeAlpha().png().toBuffer();
+  const svg = background(theme.color, theme.light, badgeWidth) + layers.join('') + '</svg>';
+  return new Resvg(svg, fontOptions).render().asPng();
 }

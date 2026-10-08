@@ -68,7 +68,8 @@ describe('PNG generation', () => {
   it('renders a Japanese title as an opaque 1200 × 630 PNG', async () => {
     const png = await renderOgImage({ id: 'math/lesson', title: '5年生の算数 コスモクエスト', grade: '小学5年' });
     const metadata = await sharp(png).metadata();
-    expect(metadata).toMatchObject({ format: 'png', width: 1200, height: 630, hasAlpha: false });
+    expect(metadata).toMatchObject({ format: 'png', width: 1200, height: 630 });
+    expect((await sharp(png).stats()).isOpaque).toBe(true);
     expect(png.byteLength).toBeLessThan(500_000);
   });
 
